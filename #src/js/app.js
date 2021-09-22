@@ -1,5 +1,5 @@
 import { webpSupportTest } from './modules/webp-support-test.js';
-// import { HeaderScroll } from './modules/header-scroll.js';
+import { HeaderScroll } from './modules/header-scroll.js';
 import { scrollWidthCalc } from './modules/calc-scroll-width.js';
 // import { test } from './modules/test.js';
 import { Scroll } from './modules/scroll.js';
@@ -10,9 +10,10 @@ import 'swiper/css';
 
 webpSupportTest();
 
-// const H = new HeaderScroll('.header', {
-//   blockFixedAfter: '.page__solutions',
-// });
+const H = new HeaderScroll('.header', {
+  blockFixedAfter: '.page__solutions',
+  // bodyWillLock: true, //Пока отключил, т.к. при ресайзе срабатывает ложно
+});
 
 const solutionsSlider = new Swiper('.swiper-solutions', {
   modules: [Pagination],

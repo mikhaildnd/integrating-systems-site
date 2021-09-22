@@ -1,6 +1,6 @@
 //====================================================================================================
 .header {
-  display: none;
+  // display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -29,7 +29,7 @@
         color: lighten($black, 20%);
       }
     }
-    .header-contacts__item {
+    .contacts-menu__item {
       color: $black;
       &:hover {
         color: lighten($black, 20%);
@@ -102,13 +102,17 @@
     color: inherit;
   }
 }
-.header-contacts {
-  // .header-contacts__list
+//========================================================================================================================================================
+//*Плашка с номером тел. и кнопкой попапа
+.contacts-menu {
+  // .contacts-menu__list
   &__list {
     display: flex;
+    align-items: center;
     margin: 0px -16px;
+    white-space: nowrap;
   }
-  // .header-contacts__item
+  // .contacts-menu__item
   &__item {
     padding: 0px 16px;
     font-weight: 700;
@@ -126,12 +130,11 @@
       color: #e5e5e59f;
     }
   }
-  // .header-contacts__link
+  // .contacts-menu__link
   &__link {
     color: inherit;
   }
 }
-
 //====================================================================================================
 
 /*

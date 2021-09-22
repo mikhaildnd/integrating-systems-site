@@ -8,6 +8,7 @@ export class HeaderScroll {
       addDistForTriggering = 0, //Дополнительное расстояние от хедера для срабатывания события
       classHide = 'header--hide',
       classFixed = 'header--fixed',
+      bodyWillLock = false,
     } = options;
 
     this.container = container;
@@ -15,6 +16,9 @@ export class HeaderScroll {
     this.addDistForTriggering = addDistForTriggering;
     this.classFixed = classFixed;
     this.classHide = classHide;
+
+    // this.bodyWillLock = bodyWillLock;
+    // this.scrollWidth = this.scrollWidthCalc();
 
     this.init();
   }
@@ -25,6 +29,10 @@ export class HeaderScroll {
     container.addEventListener('scroll', () => {
       this.hide();
       this.fixed();
+
+      // if (this.bodyWillLock) {
+      //   this.willLock();
+      // }
     });
   }
   hide() {
@@ -64,6 +72,27 @@ export class HeaderScroll {
       return console.log(error);
     }
   }
+
+  // scrollWidthCalc() {
+  //   return window.innerWidth - document.documentElement.clientWidth;
+  // }
+
+  // willLock() {
+  //   if (window.innerWidth === document.documentElement.clientWidth) {
+  //     console.log('willLockEnable');
+  //     // this.header.style.overflowY = 'scroll';
+  //     // this.header.style.transform = 'translateZ(0)';
+  //     // this.header.style.transition = 'none';
+
+  //     // this.header.style.paddingRight = this.scrollWidth + 'px';
+  //     this.header.style.display = 'none';
+  //     // this.hide();
+  //   } else {
+  //     // this.header.style.paddingRight = 0;
+  //     this.header.style.display = 'block';
+  //     // this.fixed();
+  //   }
+  // }
 }
 
 //Как использовать
@@ -72,6 +101,8 @@ export class HeaderScroll {
 //   blockFixedAfter: '.page__solutions', //Класс или селектор блока, после которого нужно показывать  хедер
 //   addDistForTriggering: 1.5, //Коеффиц. дополнительного расстояния на котором срабатывает добавление класса. 1.5 = полторы высоты хедера. Необяз.парам.
 //   classHide: 'header--hide', //Класс, который при достижении скроллом высоты шапки скрывает/показывает ее (по умолч. 'header--hide'). Необяз.парам.
-//   classToRm: 'header--fixed', //Класс, который ,при достижении высоты нужного мне блока, фиксирует шапку и заливает ее цветом и в обратном порядке (по умолч. 'header--fixed'). Необяз.парам.
+//   classFixed: 'header--fixed', //Класс, который ,при достижении высоты нужного мне блока, фиксирует шапку и заливает ее цветом и в обратном порядке (по умолч. 'header--fixed'). Необяз.парам.
+//   bodyWillLock: false, //Если true, то шапка скроется, когда ширина клиента и ширина окна будут равны (исчезнет скролл)
+//   и появится если ширина клиента меньше ширины окна, может надо по-другому реализовывать, хз
 // });
 // H.init('.header'); //Инициализируем. Передаем нужный класс или селектор хедера (по умолч. селектор 'header') (querySelector) -- переделано, \\этого нет

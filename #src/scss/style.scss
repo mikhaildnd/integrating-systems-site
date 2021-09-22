@@ -61,13 +61,13 @@ body {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
   @media (max-width: $md1+px) {
-    max-width: 970px;
+    // max-width: 970px;
   }
   @media (max-width: $md2+px) {
-    max-width: 750px;
+    // max-width: 750px;
   }
   @media (max-width: $md3+px) {
-    max-width: none;
+    // max-width: none;
     padding: 0 10px;
   }
 }
@@ -132,12 +132,8 @@ body {
     padding-top: 118px;
     padding-bottom: 64px;
   }
-  // .page__next2
-  &__next2 {
-    min-height: 100vh;
-    background-color: rgb(110, 240, 218);
-  }
 }
+//========================================================================================================================================================
 .hero-section {
   position: relative;
   z-index: 1;
