@@ -354,6 +354,12 @@ body._lock {
   display: none;
 }
 
+.header__dropdown .header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 ._no-webp .header__dropdown-inner{
   background-image: url("../img/hero-img-1.jpg"); }
 
@@ -1436,7 +1442,7 @@ body._lock {
 }
 
 @media (min-width: 767.98px) {
-  .contacts-menu--adaptive {
+  .header__dropdown .contacts-menu {
     display: none;
   }
 }
@@ -1498,6 +1504,26 @@ body._lock {
 
   .header__dropdown.active {
     display: block;
+  }
+
+  .header__dropdown .header-nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    max-height: 100%;
+    margin: 0;
+    overflow-x: auto;
+  }
+
+  .header__dropdown .header-nav__item {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 17px 0;
   }
 
   .header__trigger {
@@ -1586,28 +1612,8 @@ body._lock {
             transform: rotate3d(0, 0, 1, -45deg);
   }
 
-  .header-nav__list {
+  .header-nav {
     display: none;
-  }
-
-  .header-nav__list--adaptive {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-    max-height: 100%;
-    margin: 0;
-    overflow-x: auto;
-  }
-
-  .header-nav__item {
-    font-size: 16px;
-    line-height: 20px;
-    padding: 17px 0;
   }
 
   .contacts-menu__list {
@@ -1639,7 +1645,7 @@ body._lock {
 }
 
 @media (max-width: 767.98px) {
-  .contacts-menu__list {
+  .header__dropdown .contacts-menu__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1649,12 +1655,12 @@ body._lock {
             align-items: flex-start;
   }
 
-  .contacts-menu__item--popup {
-    display: none;
+  .header__dropdown .contacts-menu__item {
+    display: block;
   }
 
-  .contacts-menu__item--adaptive {
-    display: block;
+  .contacts-menu__item--popup {
+    display: none;
   }
 }
 
@@ -1680,18 +1686,14 @@ body._lock {
 }
 
 @media (max-width: 374.98px) {
-  .header__trigger {
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
+  .header__content {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
-  .contacts-menu__item--phone {
+  .contacts-menu {
     display: none;
-  }
-
-  .contacts-menu__item--adaptive {
-    display: block;
   }
 }
 
