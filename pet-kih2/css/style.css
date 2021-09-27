@@ -322,13 +322,13 @@ body._lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  padding: 23px 0px;
+  padding-top: 23px;
+  padding-bottom: 23px;
   border-bottom: 1px solid #4d4d4d;
 }
 
 .header__logo {
-  margin: 0px 127px 0px 0px;
+  margin-right: 127px;
 }
 
 .header__nav {
@@ -348,6 +348,28 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   margin: 0px 0px 0px auto;
+}
+
+.header__dropdown {
+  display: none;
+}
+
+._no-webp .header__dropdown-inner{
+  background-image: url("../img/hero-img-1.jpg"); }
+
+.header__dropdown-inner {
+  width: 100%;
+  height: 100%;
+  max-width: 392px;
+  background-color: #1e468a;
+  padding: 80px 30px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header__trigger {
+  display: none;
 }
 
 .logo path {
@@ -394,7 +416,6 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   margin: 0px -16px;
-  white-space: nowrap;
 }
 
 .contacts-menu__item {
@@ -408,6 +429,7 @@ body._lock {
   -webkit-transition: color 0.2s ease 0s;
   -o-transition: color 0.2s ease 0s;
   transition: color 0.2s ease 0s;
+  white-space: nowrap;
 }
 
 .contacts-menu__item:hover {
@@ -422,52 +444,6 @@ body._lock {
 .contacts-menu__link {
   color: inherit;
 }
-
-/*
-//Burger
-.icon-menu {
-	display: none;
-	@media (max-width: $md3+px) {
-		display: block;
-		position: absolute;
-		top: 18px;
-		right: 10px;
-		width: 30px;
-		height: 18px;
-		cursor: pointer;
-		z-index: 5;
-		span {
-			transition: all 0.3s ease 0s;
-			top: calc(50% - 1px);
-			left: 0px;
-			position: absolute;
-			width: 100%;
-			height: 2px;
-			background-color: #000;
-			&:first-child {
-				top: 0px;
-			}
-			&:last-child {
-				top: auto;
-				bottom: 0px;
-			}
-		}
-		&._active {
-			span {
-				transform: scale(0);
-				&:first-child {
-					transform: rotate(-45deg);
-					top: calc(50% - 1px);
-				}
-				&:last-child {
-					transform: rotate(45deg);
-					bottom: calc(50% - 1px);
-				}
-			}
-		}
-	}
-}
-*/
 
 .footer__content {
   background-color: #1a1b1f;
@@ -579,6 +555,7 @@ body._lock {
       -ms-flex-align: end;
           align-items: flex-end;
   min-height: 100vh;
+  padding-top: 120px;
   padding-bottom: 120px;
 }
 
@@ -1458,11 +1435,267 @@ body._lock {
   margin: 0 auto;
 }
 
-@media (max-width: 767.98px) {
-  ._container {
-    padding: 0 10px;
+@media (min-width: 767.98px) {
+  .contacts-menu--adaptive {
+    display: none;
   }
 }
+
+@media (max-width: 1500px) {
+  ._container {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+
+@media (max-width: 1325px) {
+  .header__logo {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-nav__item {
+    padding: 0 8px;
+  }
+
+  .contacts-menu__item {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .contacts-menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .contacts-menu__item:first-child {
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .header__logo {
+    position: relative;
+    z-index: 2;
+    margin-right: 75px;
+  }
+
+  .header__dropdown {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.609);
+  }
+
+  .header__dropdown.active {
+    display: block;
+  }
+
+  .header__trigger {
+    position: relative;
+    z-index: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    width: 34px;
+    height: 16px;
+    background: 0 0;
+    border: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+
+  .header__trigger span {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 2px;
+    vertical-align: bottom;
+    background: #fff;
+    -webkit-transition: background 0.3s 0.5s;
+    -o-transition: background 0.3s 0.5s;
+    transition: background 0.3s 0.5s;
+  }
+
+  .header__trigger span::after,
+  .header__trigger span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transition: top 0.3s 0.3s, -webkit-transform 0.3s;
+    transition: top 0.3s 0.3s, -webkit-transform 0.3s;
+    -o-transition: top 0.3s 0.3s, transform 0.3s;
+    transition: top 0.3s 0.3s, transform 0.3s;
+    transition: top 0.3s 0.3s, transform 0.3s, -webkit-transform 0.3s;
+  }
+
+  .header__trigger span::before {
+    top: 7px;
+  }
+
+  .header__trigger span::after {
+    top: -7px;
+  }
+
+  .header__trigger.active span {
+    background: 0 0;
+  }
+
+  .header__trigger.active span::before,
+  .header__trigger.active span::after {
+    top: 0;
+    -webkit-transition: top 0.3s, -webkit-transform 0.3s 0.5s;
+    transition: top 0.3s, -webkit-transform 0.3s 0.5s;
+    -o-transition: top 0.3s, transform 0.3s 0.5s;
+    transition: top 0.3s, transform 0.3s 0.5s;
+    transition: top 0.3s, transform 0.3s 0.5s, -webkit-transform 0.3s 0.5s;
+  }
+
+  .header__trigger.active span::before {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+            transform: rotate3d(0, 0, 1, 45deg);
+  }
+
+  .header__trigger.active span::after {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+            transform: rotate3d(0, 0, 1, -45deg);
+  }
+
+  .header-nav__list {
+    display: none;
+  }
+
+  .header-nav__list--adaptive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    max-height: 100%;
+    margin: 0;
+    overflow-x: auto;
+  }
+
+  .header-nav__item {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 17px 0;
+  }
+
+  .contacts-menu__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .contacts-menu__item:first-child {
+    margin-bottom: 0;
+  }
+
+  .contacts-menu__item--phone {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .contacts-menu__item--popup {
+    font-size: 12px;
+    letter-spacing: normal;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contacts-menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .contacts-menu__item--popup {
+    display: none;
+  }
+
+  .contacts-menu__item--adaptive {
+    display: block;
+  }
+}
+
+@media (max-width: 625px) {
+  .header__logo {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .header__logo {
+    margin-right: 18px;
+  }
+
+  .header__trigger {
+    width: 25px;
+  }
+
+  .contacts-menu__item--phone {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media (max-width: 374.98px) {
+  .header__trigger {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+  .contacts-menu__item--phone {
+    display: none;
+  }
+
+  .contacts-menu__item--adaptive {
+    display: block;
+  }
+}
+
+._webp .header__dropdown-inner{ background-image: url(../img/hero-img-1.webp); }
 
 ._webp .hero-section{ background-image: url(../img/hero-img-5.webp); }
 
