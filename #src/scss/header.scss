@@ -1,5 +1,6 @@
 //====================================================================================================
 .header {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -10,12 +11,21 @@
 
   &--fixed {
     background-color: #fff;
-    transform: translateY(0%);
+    // transform: translateY(0%);
     .header__content {
       border-bottom: 0;
     }
     .logo path {
       fill: #1e468a;
+    }
+    .header__trigger {
+      span {
+        background-color: $brand;
+        &::before,
+        &::after {
+          background-color: $brand;
+        }
+      }
     }
     .header-nav__item {
       color: $black;
@@ -27,6 +37,22 @@
       color: $black;
       &:hover {
         color: lighten($black, 20%);
+      }
+      &--phone {
+        color: $brand;
+      }
+    }
+  }
+  &--fixed.active {
+    .logo path {
+      fill: $white;
+    }
+    .header__trigger {
+      span {
+        &::before,
+        &::after {
+          background-color: $white;
+        }
       }
     }
   }
@@ -41,7 +67,7 @@
     padding-top: 23px;
     padding-bottom: 23px;
     border-bottom: 1px solid darken($white, 70%);
-    @media (max-width: 374.98px) {
+    @media (max-width: $md6+px) {
       justify-content: space-between;
     }
   }
@@ -53,7 +79,7 @@
     @media (max-width: 1325px) {
       margin-right: 40px;
     }
-    @media (max-width: 1023.98px) {
+    @media (max-width: $md2+px) {
       position: relative;
       z-index: 2;
       margin-right: 75px;
@@ -61,7 +87,7 @@
     @media (max-width: 625px) {
       margin-right: 30px;
     }
-    @media (max-width: 479.98px) {
+    @media (max-width: $md5+px) {
       margin-right: 18px;
     }
   }
@@ -79,12 +105,14 @@
   // .header__dropdown
   &__dropdown {
     display: none;
-    @media (max-width: 1023.98px) {
+    @media (max-width: $md2+px) {
       position: fixed;
       top: 0;
+      right: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      bottom: 0;
+      // width: 100%;
+      // height: 100%;
       background-color: rgba(0, 0, 0, 0.609);
       &.active {
         display: block;
@@ -95,18 +123,21 @@
       display: flex;
       // .header__dropdown .header-nav__list
       &__list {
-        @media (max-width: 1023.98px) {
+        @media (max-width: $md2+px) {
           display: flex;
           flex-direction: column;
           width: 100%;
           max-height: 100%;
           margin: 0; //! У ориг. листа отриц.
-          overflow-x: auto;
         }
       }
       // .header__dropdown .header-nav__item
       &__item {
-        @media (max-width: 1023.98px) {
+        color: $white;
+        &:hover {
+          color: darken($white, 20%);
+        }
+        @media (max-width: $md2+px) {
           font-size: 16px;
           line-height: 20px;
           padding: 17px 0;
@@ -115,19 +146,26 @@
     }
     // .header__dropdown .contacts-menu
     & .contacts-menu {
-      @media (min-width: 767.98px) {
+      @media (min-width: $md4+px) {
         display: none;
       }
       // .header__dropdown .contacts-menu__list
       &__list {
-        @media (max-width: 767.98px) {
+        @media (max-width: $md4+px) {
           flex-direction: column;
           align-items: flex-start;
         }
       }
       // .header__dropdown .contacts-menu__item
       &__item {
-        @media (max-width: 767.98px) {
+        color: $white;
+        &:hover {
+          color: darken($white, 20%);
+        }
+        &--popup {
+          color: darken($white, 40%);
+        }
+        @media (max-width: $md4+px) {
           display: block;
         }
       }
@@ -138,18 +176,23 @@
     width: 100%;
     height: 100%;
     max-width: 392px;
-    background-color: $brand;
     padding: 80px 30px 0;
+    background-color: $brand;
     background-image: url('../img/hero-img-1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     // background-position: 0 0;
     background-position: center;
   }
+  // .header__dropdown-menu
+  &__dropdown-menu {
+    height: 100%;
+    overflow-y: auto;
+  }
   // .header-nav__trigger
   &__trigger {
     display: none;
-    @media (max-width: 1023.98px) {
+    @media (max-width: $md2+px) {
       position: relative;
       z-index: 2;
       display: flex;
@@ -167,8 +210,8 @@
         width: 34px;
         height: 2px;
         vertical-align: bottom;
-        background: #fff;
-        transition: background 0.3s 0.5s;
+        background-color: #fff;
+        transition: background-color 0.3s 0.5s;
         &::after,
         &::before {
           content: '';
@@ -176,7 +219,7 @@
           left: 0;
           width: 100%;
           height: 2px;
-          background: #fff;
+          background-color: #fff;
           transform-origin: 50% 50%;
           transition: top 0.3s 0.3s, transform 0.3s;
         }
@@ -204,7 +247,7 @@
         }
       }
     }
-    @media (max-width: 479.98px) {
+    @media (max-width: $md5+px) {
       width: 25px;
     }
   }
@@ -224,7 +267,7 @@
 }
 //========================================================================================================================================================
 .header-nav {
-  @media (max-width: 1023.98px) {
+  @media (max-width: $md2+px) {
     display: none;
   }
   // .header-nav__list
@@ -258,7 +301,7 @@
 //========================================================================================================================================================
 //*Плашка с номером тел. и кнопкой попапа
 .contacts-menu {
-  @media (max-width: 374.98px) {
+  @media (max-width: $md6+px) {
     display: none;
   }
   // .contacts-menu__list
@@ -270,7 +313,7 @@
       flex-direction: column;
       align-items: flex-start;
     }
-    @media (max-width: 1023.98px) {
+    @media (max-width: $md2+px) {
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
@@ -298,30 +341,33 @@
         margin-bottom: 3px;
       }
     }
-    @media (max-width: 1023.98px) {
+    @media (max-width: $md2+px) {
       &:first-child {
         margin-bottom: 0;
       }
     }
 
     &--phone {
-      @media (max-width: 1023.98px) {
+      @media (max-width: $md2+px) {
         font-size: 16px;
         line-height: 19px;
       }
-      @media (max-width: 479.98px) {
+      @media (max-width: $md5+px) {
         font-size: 14px;
         line-height: 17px;
       }
     }
     &--popup {
       font-weight: 500;
-      color: #e5e5e59f;
-      @media (max-width: 1023.98px) {
+      color: darken($white, 40%);
+      &:hover {
+        color: $white;
+      }
+      @media (max-width: $md2+px) {
         font-size: 12px;
         letter-spacing: normal;
       }
-      @media (max-width: 767.98px) {
+      @media (max-width: $md4+px) {
         display: none;
       }
     }

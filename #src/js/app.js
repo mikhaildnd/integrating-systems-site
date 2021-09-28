@@ -10,10 +10,10 @@ import 'swiper/css';
 
 webpSupportTest();
 
-// const H = new HeaderScroll('.header', {
-//   blockFixedAfter: '.page__solutions',
-//   // bodyWillLock: true, //Пока отключил, т.к. при ресайзе срабатывает ложно
-// });
+const H = new HeaderScroll('.header', {
+  blockFixedAfter: '.page__solutions',
+  // bodyWillLock: true, //Пока отключил, т.к. при ресайзе срабатывает ложно
+});
 
 const solutionsSlider = new Swiper('.swiper-solutions', {
   modules: [Pagination],
@@ -172,9 +172,11 @@ const sertificationSlider = new Swiper('.swiper-sertification', {
 
 const burgerBtn = document.querySelector('.header__trigger');
 const burgerMenu = document.querySelector('.header__dropdown');
+const header = document.querySelector('.header');
 
 burgerBtn.addEventListener('click', () => {
   burgerBtn.classList.toggle('active');
   burgerMenu.classList.toggle('active');
+  header.classList.toggle('active');
   document.body.classList.toggle('_lock');
 });
