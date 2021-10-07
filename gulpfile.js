@@ -94,7 +94,7 @@ export const scripts = () => {
     },
     mode: isDev ? 'development' : 'production',
     //https://webpack.js.org/configuration/devtool/
-    devtool: isDev ? 'eval-source-map' : 'none', //мб false в 5 вебпаке
+    devtool: isDev ? 'eval-source-map' : false, //мб false в 5 вебпаке //upd: да
   };
 
   return gulp

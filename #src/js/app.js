@@ -11,24 +11,24 @@ import 'swiper/css';
 webpSupportTest();
 
 const H = new HeaderScroll('.header', {
-  blockFixedAfter: '.page__solutions',
+  blockFixedAfter: '.page__solution',
   // bodyWillLock: true, //Пока отключил, т.к. при ресайзе срабатывает ложно
 });
 
-const solutionsSlider = new Swiper('.swiper-solutions', {
-  modules: [Pagination],
-  pagination: {
-    el: '.slider-solutions__pagination',
-    bulletClass: 'slider-solutions__pagination-bullet',
-    bulletActiveClass: 'slider-solutions__pagination-bullet-active',
-    clickable: true,
-    renderBullet: (index, className) => {
-      return `<span class="${className}">
-                <span></span>
-              </span>`;
-    },
-  },
-});
+// const solutionsSlider = new Swiper('.swiper-solutions', {
+//   modules: [Pagination],
+//   pagination: {
+//     el: '.slider-solutions__pagination',
+//     bulletClass: 'slider-solutions__pagination-bullet',
+//     bulletActiveClass: 'slider-solutions__pagination-bullet-active',
+//     clickable: true,
+//     renderBullet: (index, className) => {
+//       return `<span class="${className}">
+//                 <span></span>
+//               </span>`;
+//     },
+//   },
+// });
 const historySlider = new Swiper('.swiper-history', {
   modules: [Pagination, Mousewheel, Parallax],
   speed: 1000,
@@ -179,4 +179,21 @@ burgerBtn.addEventListener('click', () => {
   burgerMenu.classList.toggle('active');
   header.classList.toggle('active');
   document.body.classList.toggle('_lock');
+});
+//========================================================================================================================================================
+const solutionSlider = new Swiper('.solution-swiper', {
+  modules: [Pagination],
+  speed: 1000,
+  slidesPerView: 1,
+  pagination: {
+    el: '.solution-slider__pagination',
+    bulletClass: 'solution-slider__pagination-bullet',
+    bulletActiveClass: 'solution-slider__pagination-bullet-active',
+    clickable: true,
+    renderBullet: (index, className) => {
+      return `<span class="${className}">
+                <span></span>
+              </span>`;
+    },
+  },
 });

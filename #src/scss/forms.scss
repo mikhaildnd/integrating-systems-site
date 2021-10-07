@@ -25,35 +25,38 @@
   padding: 0px 0px;
   transition: all 0.1s ease 0s;
   white-space: nowrap;
+  overflow: hidden;
   &::after {
     content: '';
-    // display: block;
     position: absolute;
     height: 2px;
     width: 80%;
     background-color: $white;
-    // left: 50%;
     bottom: 10%;
-    // transform: translate(-50%, 0px);
     left: 0;
     right: 0;
     margin: auto;
-  }
-  @media (min-width: 992px) {
-    &:hover {
+    @media (max-width: $md2+px) {
+      width: 90%;
     }
+  }
+  &--xs {
+    padding: 16px 24px;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 700;
+  }
+  &--md {
+    padding: 24px 32px;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
   }
   &--lg {
     padding: 32px 40px;
     font-size: 16px;
     line-height: 16px;
     font-weight: 500;
-  }
-  &--md {
-    padding: 24px 32px;
-    font-size: 12px;
-    line-height: 12px;
-    font-weight: 700;
   }
   &--bg-brand {
     color: $white;

@@ -1,6 +1,6 @@
 //====================================================================================================
 .header {
-  display: none;
+  // display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -61,12 +61,16 @@
   }
   // .header__content
   &__content {
+    height: 80px;
     display: flex;
     align-items: center;
     // width: 100%; //для IE нужно явно задать ширину, чтобы нормально отобразилось //?Но если поставить маргины с боков, то справа контент уедет за границу экрана
-    padding-top: 23px;
-    padding-bottom: 23px;
+    // padding-top: 23px;
+    // padding-bottom: 23px;
     border-bottom: 1px solid darken($white, 70%);
+    @media (max-width: $md2+px) {
+      height: 60px;
+    }
     @media (max-width: $md6+px) {
       justify-content: space-between;
     }
