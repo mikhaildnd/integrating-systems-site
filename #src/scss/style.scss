@@ -111,63 +111,6 @@ body {
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
   flex: 1 1 auto;
-  //! .page__hero
-  // &__hero {
-  //   display: flex;
-  //   align-items: flex-end;
-  //   height: 100vh;
-  //   // padding-top: 120px;
-  //   padding-bottom: 120px;
-  //   .bg--cross-grid::before {
-  //     top: 154px;
-  //     right: 14px;
-  //   }
-  //! }
-  // .page__solution
-  &__solution {
-    // min-height: 100vh;
-    // position: relative;
-    // z-index: 1;
-    // padding-top: 155px;
-    // padding-bottom: 80px;
-    // background-color: $brand;
-    // @media (min-width: 1920px) {
-    //   max-height: 1080px;
-    // }
-    // @media (min-width: $md1+px) {
-    //   max-height: 900px;
-    // }
-    // @media (min-width: 1366px) {
-    //   max-height: 768px;
-    // }
-
-    // @media (max-width: $md2+px) {
-    //   padding-top: 120px;
-    //   padding-bottom: 28px;
-    // }
-    // @media (max-width: $md4+px) {
-    //   padding-bottom: 36px;
-    // }
-    // @media (max-width: $md7+px) {
-    //   padding-top: 100px;
-    //   // padding-bottom: 36px;
-    // }
-    //! .bg--cross-grid::before {
-    //   top: 154px;
-    //   right: 14px;
-    //   @media (max-width: $md2+px) {
-    //     top: 115px;
-    //   }
-    //! }
-  }
-  // .page__philosophy
-  &__philosophy {
-    min-height: 120vh;
-  }
-  // .page__mission
-  &__mission {
-    background-color: $white;
-  }
   // .page__history
   &__history {
     min-height: 100vh;
@@ -350,51 +293,83 @@ body {
       display: none;
     }
   }
-}
+} //!на уд.
 //========================================================================================================================================================
 .philosophy-section {
   position: relative;
-  // background-color: rgb(0, 37, 160);
-  // .philosophy__bg-container
-  &__bg-container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-color: #000;
-  }
-  // .philosophy__bg
-  &__bg {
-    background: url('../img/philosophy-bg.jpg') 0 0 / cover no-repeat;
-    width: 100%;
-    height: 100%;
-    // animation: scale 20s linear 1 forwards;
-  }
-  // .philosophy__container
-  &__container {
-    padding: 118px 0px 120px 0px;
+  background: url('../img/philosophy-bg.jpg') 0 0 / cover no-repeat;
+  // // .philosophy__bg-container
+  // &__bg-container {
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   z-index: -1;
+  //   background-color: #000;
+  // }
+  // // .philosophy__bg
+  // &__bg {
+  //   background: url('../img/philosophy-bg.jpg') 0 0 / cover no-repeat;
+  //   width: 100%;
+  //   height: 100%;
+  //   // animation: scale 20s linear 1 forwards;
+  // }
+  // .philosophy__content
+  &__content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 104px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 40px;
+    @media (min-width: $md4+px) {
+      padding-top: 96px;
+      padding-bottom: 56px;
+    }
+    @media (min-width: $md1+px) {
+      padding-top: 118px;
+      padding-bottom: 160px;
+    }
   }
   // .philosophy__info
   &__info {
+    margin-bottom: 24px;
+    @media (min-width: $md4+px) {
+      margin-bottom: 40px;
+    }
+    @media (min-width: $md1+px) {
+      margin-bottom: 85px;
+    }
   }
   // .philosophy__note
   &__note {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
-    line-height: 24px;
+    line-height: 2;
     color: $white;
-    margin-bottom: 37px;
+    margin-bottom: 18px;
+    @media (min-width: $md1+px) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
   }
   // .philosophy__title
   &__title {
-    width: 74%;
-    font-size: 48px;
+    font-size: 25px;
     font-weight: 700;
-    line-height: 56px;
+    line-height: 1.2;
     color: $white;
-    margin-bottom: 85px;
+    @media (min-width: $md4+px) {
+      font-size: 32px;
+    }
+    @media (min-width: $md2+px) {
+      max-width: 720px;
+    }
+    @media (min-width: $md1+px) {
+      font-size: 48px;
+      max-width: 1070px;
+    }
   }
   // .philosophy__nav
   &__nav {
@@ -406,22 +381,37 @@ body {
   &__list {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -20px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    @media (min-width: $md5+px) {
+      margin-right: -5px;
+      margin-left: -5px;
+    }
+    @media (min-width: $md4+px) {
+      margin-top: -8px;
+      margin-right: -8px;
+      margin-bottom: -8px;
+      margin-left: -8px;
+    }
+    @media (min-width: $md1+px) {
+      margin-top: -20px;
+      margin-right: -20px;
+      margin-bottom: -20px;
+      margin-left: -20px;
+    }
   }
   // .nav-philosophy__item
   &__item {
+    flex-basis: 100%;
+    z-index: 1;
     position: relative;
-    flex: 0 0 auto;
     display: flex;
-    align-items: flex-end;
     flex-wrap: wrap;
-    padding: 39px 41px 42px;
-    max-width: 330px;
-    height: 328px;
-    // min-height: 328px; //чтобы блок увеличивался при переполнении
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 24px;
+    height: 230px;
     outline: 1px solid darken($white, 80%);
-    margin: 0 20px 40px;
-    overflow: hidden; //если текст будет выезжать при помощи транслейта, то не будет видно анимации век блока
     &::after {
       content: '';
       position: absolute;
@@ -438,46 +428,71 @@ body {
       z-index: -1;
       opacity: 0;
     }
-    &:hover::after {
+    &.active::after {
       opacity: 1;
     }
-
-    // &:hover .nav-philosophy__text {
-    //   display: block;
-    //   height: 100%;
-    // }
-    // &:hover .nav-philosophy__title {
-    //   margin-bottom: 23px;
-    // }
+    @media (min-width: $md5+px) {
+      flex-basis: calc(50% - 10px);
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    @media (min-width: $md4+px) {
+      flex-basis: calc(33.33% - 16px);
+      height: 232px;
+      margin-top: 8px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      margin-left: 8px;
+    }
+    @media (min-width: $md2+px) {
+      flex-basis: calc(25% - 16px);
+    }
+    @media (min-width: $md1+px) {
+      height: 328px;
+      flex-basis: calc(25% - 40px);
+      margin-top: 20px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
   }
-  // .nav-philosophy__action
+  &__item.active .nav-philosophy__text-wrapper {
+    transform: translateY(0%);
+  }
+  &__item.active .nav-philosophy__text {
+    display: block;
+  }
+  &__item.active .nav-philosophy__button {
+    span {
+      width: 20px;
+      &::before {
+        transform: translate(0px, 3px) rotate(-135deg);
+      }
+      &::after {
+        transform: translate(0px, -3px) rotate(135deg);
+      }
+    }
+  }
+  // .nav-philosophy__button-wrapper
+  &__button-wrapper {
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+  }
+  // .nav-philosophy__button
   &__button {
     display: flex;
     justify-content: center;
     align-items: center;
     // align-self: flex-start;
-    width: 41px;
-    height: 41px;
+    width: 32px;
+    height: 32px;
     border: 1px solid $white;
     cursor: pointer;
-    margin-bottom: 10px;
     user-select: none; //?узнать
-
-    &:hover {
-      span {
-        width: 30px;
-        &::before {
-          transform: translate(0px, 5px) rotate(-135deg);
-        }
-        &::after {
-          transform: translate(0px, -5px) rotate(135deg);
-        }
-      }
-    }
     span {
       position: relative;
       display: inline-block;
-      width: 15px;
+      width: 10px;
       height: 0;
       transition: width 0.3s linear;
       &::before,
@@ -490,55 +505,107 @@ body {
         transform-origin: 50% 50%;
       }
       &::before {
-        top: -5px;
+        top: -3px;
         transform: rotate(45deg);
         transition: transform 0.3s linear;
       }
       &::after {
-        top: 5px;
+        top: 3px;
         transform: rotate(-45deg);
         transition: transform 0.3s linear;
       }
     }
   }
+  // .nav-philosophy__text-wrapper
+  &__text-wrapper {
+    transform: translateY(10%);
+    align-self: flex-end;
+    transition: all 0.3s linear;
+  }
   // .nav-philosophy__title
   &__title {
-    flex: 0 0 100%;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 32px;
-    margin-top: auto;
+    line-height: 1.5;
+    // margin-top: auto;
     color: $white;
   }
   // .nav-philosophy__text
   &__text {
-    font-size: 16px;
+    display: none;
+    font-size: 13px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.5;
     color: darken($white, 30%);
-    overflow: hidden;
   }
 }
 //========================================================================================================================================================
 .mission-section {
-  // .mission__container
-  &__container {
-    display: flex;
-    padding: 104px 0px 100px 0px;
+  // .mission__content
+  &__content {
+    // display: flex;
+    padding-top: 36px;
+    padding-bottom: 70px;
+    @media (min-width: $md4+px) {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+    @media (min-width: $md2+px) {
+      display: flex;
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+  }
+  // .mission-section__text-wrapper
+  &__text-wrapper {
+    margin-bottom: 36px;
+    @media (min-width: $md4+px) {
+      margin-bottom: 46px;
+    }
+    @media (min-width: $md2+px) {
+      flex: 1 1 50%;
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
   }
   // .mission__title
   &__title {
     // flex: 0 1 580px;
-    max-width: 580px;
-    font-size: 48px;
-    line-height: 1.125;
+    // max-width: 580px;
+    font-size: 18px;
+    line-height: 1.2;
     font-weight: 700;
-    color: $black;
-    margin-right: 286px;
+    margin-bottom: 34px;
+    // color: $black;
+    // margin-right: 286px;
+    @media (min-width: $md7+px) {
+      font-size: 25px;
+    }
+    @media (min-width: $md4+px) {
+      font-size: 32px;
+      line-height: 1.25;
+    }
+    @media (min-width: $md2+px) {
+      margin-bottom: 48px;
+    }
+  }
+  // .mission__btn-wrapper
+  &__btn-wrapper {
+    text-transform: uppercase;
+  }
+  // .mission__btn
+  &__btn {
+    width: 100%;
+    @media (min-width: $md2+px) {
+      max-width: 140px;
+    }
   }
   // .mission__review
   &__review {
-    // flex: 0 1 auto;
+    @media (min-width: $md2+px) {
+      flex: 1 1 50%;
+      margin-left: 30px;
+    }
   }
 }
 //========================================================================================================================================================
@@ -549,12 +616,39 @@ body {
   // .review-block__text
   &__text {
     // flex: 0 1 100%;
-    max-width: 330px;
-    font-size: 16px;
+    position: relative;
+    font-size: 14px;
     line-height: 1.5;
     font-weight: 400;
     color: lighten($black, 30%);
     margin-bottom: 34px;
+    padding-left: 16px;
+    padding-right: 16px;
+    &::before,
+    &::after {
+      color: $black;
+      // font-size: 16px;
+    }
+    &::before {
+      content: '<';
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      content: '/>';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    @media (min-width: $md7+px) {
+      font-size: 16px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media (min-width: $md4+px) {
+      margin-bottom: 26px;
+    }
   }
   // .review-block__autor
   &__autor {
@@ -567,8 +661,11 @@ body {
 
   // .autor-block__img
   &__img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
     border-radius: 50%;
-    margin-right: 40px;
+    margin-right: 24px;
   }
   // .autor-block__autor-info
   &__autor-info {
@@ -577,16 +674,18 @@ body {
   }
   // .autor-block__name
   &__name {
-    flex: 0 1 100%;
+    flex: 0 0 100%;
     margin-bottom: 6px;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 2;
     white-space: nowrap;
   }
   // .autor-block__position
   &__position {
+    flex: 0 0 100%;
     font-size: 12px;
     line-height: 1.33;
+    color: lighten($black, 50%);
   }
 }
 //========================================================================================================================================================
@@ -988,53 +1087,34 @@ body {
       background-position: center;
       // background-size: cover;
       background-size: contain;
-      width: 280px;
+      //* width: 280px;
+      width: 100%; //!можно убрать, чтобы вернуться  старому варианту и расском. ширины
       height: 340px;
       @media (min-width: $md6+px) {
-        width: 400px;
+        // width: 400px;
         height: 485px;
       }
       @media (min-width: $md4+px) {
-        width: 530px;
+        // width: 530px;
         height: 645px;
       }
       @media (min-width: $md3+px) {
         order: 2;
-        width: 400px;
+        // width: 400px;
         height: 485px;
       }
       @media (min-width: $md1+px) {
-        width: 460px;
+        // width: 460px;
         height: 555px;
       }
       @media (min-width: 1920px) {
-        width: 560px;
+        // width: 560px;
         height: 680px;
       }
     }
     &--bg-sheets {
       &::before {
         background-image: url(../img/solutions-sheet.svg);
-        // @media (min-width: $md6+px) {
-        //   width: 400px;
-        //   height: 485px;
-        // }
-        // @media (min-width: $md4+px) {
-        //   width: 530px;
-        //   height: 645px;
-        // }
-        // @media (min-width: $md3+px) {
-        //   width: 400px;
-        //   height: 485px;
-        // }
-        // @media (min-width: $md1+px) {
-        //   width: 460px;
-        //   height: 555px;
-        // }
-        // @media (min-width: 1920px) {
-        //   width: 560px;
-        //   height: 680px;
-        // }
       }
     }
     &--bg-taxi {
@@ -1055,6 +1135,7 @@ body {
   }
   // .solution-slider__promo
   &__promo {
+    flex-shrink: 0; //!можно убрать, чтобы вернуться  старому варианту
     transform: translateY(-25px);
     @media (min-width: $md7+px) {
       transform: translateY(-30px);
@@ -1163,9 +1244,10 @@ body {
     align-items: center;
     margin-bottom: 10px;
     padding: 0 80px;
-    width: 100%;
+    // width: 100%;
     height: 140px;
     counter-reset: item;
+    transition: all 0.3s linear;
     &::before {
       content: '';
       position: absolute;
@@ -1186,7 +1268,6 @@ body {
       margin-bottom: 25px;
     }
     @media (max-width: $md2+px) {
-      // flex-shrink: 0;
       justify-content: flex-start;
       padding: 0 50px;
     }

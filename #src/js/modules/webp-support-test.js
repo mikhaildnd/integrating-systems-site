@@ -8,7 +8,6 @@ export function webpSupportTest() {
 }
 const testingItem = document.querySelector('html');
 const supportTest = (support) => {
-  console.log(support);
   support ? testingItem.classList.add('_webp') : testingItem.classList.add('_no-webp');
 };
 

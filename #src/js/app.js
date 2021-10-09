@@ -3,6 +3,7 @@ import { HeaderScroll } from './modules/header-scroll.js';
 import { scrollWidthCalc } from './modules/calc-scroll-width.js';
 // import { test } from './modules/test.js';
 import { Scroll } from './modules/scroll.js';
+import { PaginationMove } from './modules/PaginationMove.js';
 
 import Swiper, { Pagination, Navigation, Mousewheel, Parallax } from 'swiper';
 import 'swiper/css';
@@ -11,7 +12,7 @@ import 'swiper/css';
 webpSupportTest();
 
 const H = new HeaderScroll('.header', {
-  blockFixedAfter: '.page__solution',
+  blockFixedAfter: '.solution-slider',
   // bodyWillLock: true, //Пока отключил, т.к. при ресайзе срабатывает ложно
 });
 
@@ -47,28 +48,17 @@ const historySlider = new Swiper('.swiper-history', {
   },
 });
 
-historySlider.on('slideChange', () => {
-  changeYear();
-  movePagination();
+const historyPagination = new PaginationMove({
+  sliderVar: historySlider, //переменная свайпер-слайдера
+  paginationSelector: '.slider-history__pagination',
+  step: 50,
 });
 
-function movePagination() {
-  const pagination = document.querySelector('.slider-history__pagination');
-
-  const style = getComputedStyle(pagination);
-
-  let leftPosition = parseFloat(style.left);
-  let step = 50;
-
-  if (historySlider.activeIndex > historySlider.previousIndex) {
-    leftPosition -= step * (+historySlider.activeIndex - +historySlider.previousIndex);
-  } else if (historySlider.activeIndex < historySlider.previousIndex) {
-    leftPosition += step * (+historySlider.previousIndex - +historySlider.activeIndex);
-  }
-
-  pagination.style.left = leftPosition + 'px';
-}
-
+historySlider.on('slideChange', () => {
+  changeYear();
+  historyPagination.move();
+});
+//========================================================================================================================================================
 function changeYear() {
   const domElement = document.querySelector('.slider-history__heading');
 
@@ -183,7 +173,7 @@ burgerBtn.addEventListener('click', () => {
 //========================================================================================================================================================
 const solutionSlider = new Swiper('.solution-swiper', {
   modules: [Pagination],
-  speed: 1000,
+  // speed: 1000,
   slidesPerView: 1,
   pagination: {
     el: '.solution-slider__pagination',
@@ -197,3 +187,40 @@ const solutionSlider = new Swiper('.solution-swiper', {
     },
   },
 });
+
+const solutionPagination = new PaginationMove({
+  sliderVar: solutionSlider, //переменная свайпер-слайдера
+  paginationSelector: '.solution-slider__pagination',
+  step: 100,
+});
+
+solutionSlider.on('slideChange', () => {
+  solutionPagination.move();
+});
+//========================================================================================================================================================
+const philosophyList = document.querySelector('.nav-philosophy__list');
+// const philosophyItem = document.querySelector('.nav-philosophy__item');
+// console.log(philosophyItem.className);
+
+// let selectedItem;
+
+philosophyList.addEventListener('click', (e) => {
+  let listItem = e.target.closest('.nav-philosophy__item');
+  // let listItem = e.target.closest('li');
+  console.log(listItem);
+
+  if (!listItem) return;
+
+  if (!philosophyList.contains(listItem)) return;
+
+  listItem.classList.toggle('active');
+  // highlightBlock(listItem);
+});
+
+function highlightBlock(listItem) {
+  // if (selectedItem) {
+  //   selectedItem.classList.remove('active');
+  // }
+  // selectedItem = listItem;
+  // selectedItem.classList.add('active');
+}
