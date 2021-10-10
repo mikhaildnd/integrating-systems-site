@@ -78,75 +78,70 @@ function changeYear() {
 }
 //========================================================================================================================================================
 
-const scroll = new Scroll();
+// const scroll = new Scroll();
 
-// function sliderEvents() {
-const historySection = document.querySelector('.history-section');
-const historyBtn = document.querySelector('.slider-history__btn ');
+// // function sliderEvents() {
+// const historySection = document.querySelector('.history-section');
+// const historyBtn = document.querySelector('.slider-history__btn ');
 
-document.addEventListener('scroll', fixSlider);
+// document.addEventListener('scroll', fixSlider);
 
-historyBtn.addEventListener('click', skipSlider);
+// historyBtn.addEventListener('click', skipSlider);
 
-function skipSlider(event) {
-  // event.currentTarget.removeEventListener(event.type, fixSlider);
-  // document.removeEventListener('scroll', fixSlider);
-  document.body.style.overflowY = '';
-  document.body.style.paddingRight = 0;
-  historySlider.mousewheel.disable();
-  const elementPosition = getCoords(historySection);
+// function skipSlider(event) {
+//   // event.currentTarget.removeEventListener(event.type, fixSlider);
+//   // document.removeEventListener('scroll', fixSlider);
+//   document.body.style.overflowY = '';
+//   document.body.style.paddingRight = 0;
+//   historySlider.mousewheel.disable();
+//   const elementPosition = getCoords(historySection);
 
-  let offsetPosition = scroll.isUp
-    ? elementPosition.top - elementPosition.height
-    : elementPosition.bottom;
+//   let offsetPosition = scroll.isUp
+//     ? elementPosition.top - elementPosition.height
+//     : elementPosition.bottom;
 
-  window.scrollBy({
-    top: offsetPosition,
-    behavior: 'smooth',
-  });
-  event.currentTarget.removeEventListener(event.type, skipSlider);
-  setTimeout(() => {
-    document.addEventListener('scroll', fixSlider);
-  }, 500);
-}
-
-function fixSlider(event) {
-  const elemCoords = getCoords(historySection);
-  // console.log(elemCoords.top);
-
-  if (elemCoords.top >= -50 && elemCoords.top <= 50) {
-    historySection.scrollIntoView();
-    // window.scrollBy({
-    //   top: elemCoords.top,
-    //   behavior: 'smooth',
-    // });
-
-    // setTimeout(() => {
-    document.body.style.paddingRight = scrollWidthCalc() + 'px';
-    document.body.style.overflowY = 'hidden';
-    historySlider.mousewheel.enable();
-    // }, 500);
-    event.currentTarget.removeEventListener(event.type, fixSlider);
-    historyBtn.addEventListener('click', skipSlider);
-  }
-}
-
-// получаем координаты элемента в контексте документа
-function getCoords(elem) {
-  let box = elem.getBoundingClientRect();
-
-  return {
-    top: box.top,
-    right: box.right,
-    bottom: box.bottom,
-    left: box.left,
-    height: box.height,
-  };
-}
+//   window.scrollBy({
+//     top: offsetPosition,
+//     behavior: 'smooth',
+//   });
+//   event.currentTarget.removeEventListener(event.type, skipSlider);
+//   setTimeout(() => {
+//     document.addEventListener('scroll', fixSlider);
+//   }, 500);
 // }
 
-// sliderEvents();
+// function fixSlider(event) {
+//   const elemCoords = getCoords(historySection);
+//   // console.log(elemCoords.top);
 
+//   if (elemCoords.top >= -50 && elemCoords.top <= 50) {
+//     historySection.scrollIntoView();
+//     // window.scrollBy({
+//     //   top: elemCoords.top,
+//     //   behavior: 'smooth',
+//     // });
+
+//     // setTimeout(() => {
+//     document.body.style.paddingRight = scrollWidthCalc() + 'px';
+//     document.body.style.overflowY = 'hidden';
+//     historySlider.mousewheel.enable();
+//     // }, 500);
+//     event.currentTarget.removeEventListener(event.type, fixSlider);
+//     historyBtn.addEventListener('click', skipSlider);
+//   }
+// }
+// // получаем координаты элемента в контексте документа
+// function getCoords(elem) {
+//   let box = elem.getBoundingClientRect();
+
+//   return {
+//     top: box.top,
+//     right: box.right,
+//     bottom: box.bottom,
+//     left: box.left,
+//     height: box.height,
+//   };
+// }
 //========================================================================================================================================================
 const sertificationSlider = new Swiper('.swiper-sertification', {
   modules: [Navigation],
@@ -199,14 +194,9 @@ solutionSlider.on('slideChange', () => {
 });
 //========================================================================================================================================================
 const philosophyList = document.querySelector('.nav-philosophy__list');
-// const philosophyItem = document.querySelector('.nav-philosophy__item');
-// console.log(philosophyItem.className);
-
-// let selectedItem;
 
 philosophyList.addEventListener('click', (e) => {
   let listItem = e.target.closest('.nav-philosophy__item');
-  // let listItem = e.target.closest('li');
   console.log(listItem);
 
   if (!listItem) return;
@@ -214,13 +204,4 @@ philosophyList.addEventListener('click', (e) => {
   if (!philosophyList.contains(listItem)) return;
 
   listItem.classList.toggle('active');
-  // highlightBlock(listItem);
 });
-
-function highlightBlock(listItem) {
-  // if (selectedItem) {
-  //   selectedItem.classList.remove('active');
-  // }
-  // selectedItem = listItem;
-  // selectedItem.classList.add('active');
-}
