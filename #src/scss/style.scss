@@ -712,47 +712,55 @@ body {
   height: 100vh;
   overflow: hidden;
   position: relative;
-  // .slider-history__wrapper
-  &__wrapper {
-    max-width: 1050px;
-    margin: 0 auto;
-    padding-top: 180px; //если задать блоку .slider-history, то слайды уменьшатся
+  // .slider-history__static-block
+  &__static-block {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 32px 20px;
+  }
+
+  // .slider-history__date-block
+  &__date-block {
+    position: absolute;
+    // z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   // .slider-history__heading
   &__heading {
+    // flex: 0 0 100%;
+    // align-self: center;
     position: relative;
-    z-index: 2;
-    // position: absolute;
-    // top: 0;
-    // left: 53%;
-    // max-width: 1080px;
-    // margin-top: 220px;
-    // margin: 220px auto 0;
-    font-size: 430px;
+    // z-index: 2;
+    font-size: 127px;
     font-weight: 700;
     color: $white;
     z-index: 2;
-    margin-bottom: 46px;
-    // transform: translateX(-53%);
+    // margin-bottom: 46px;
+    @media (min-width: $md1+px) {
+      font-size: 430px;
+    }
   }
   // .slider-history__pagination
   &__pagination {
-    // position: absolute;
-    position: relative;
-    z-index: 3;
-    // bottom: 10%;
-    // left: 50%;
-    // transform: translateX(-50%);
+    flex: 0 0 100%;
+    // position: relative;
+    position: absolute;
+    left: 0;
+    bottom: -45px;
+    width: 100%;
+    // z-index: 3;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     height: 20px;
-    width: 1440px;
     transition: all 0.3s linear;
     counter-reset: year 1991;
-    margin-top: 20px;
-    margin-bottom: 88px;
-    // background-color: #fff;
     &::before {
       content: '';
       position: absolute;
@@ -789,6 +797,8 @@ body {
   }
   // .slider-history__btn-wrapper
   &__btn-wrapper {
+    flex: 0 0 100%;
+    align-self: flex-end;
     position: relative;
     z-index: 2;
   }
@@ -797,31 +807,28 @@ body {
     cursor: pointer;
   }
 
-  // .slider-history__bg-wrapper
-  &__bg-wrapper {
-    position: absolute !important;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -2;
+  // .slider-history__slide-wrapper
+  &__slide-wrapper {
+    // width: 100%;
+    // height: 100%;
   }
   // .slider-history__slide
   &__slide {
     position: relative;
     display: flex;
+    flex-direction: column;
     height: 100%;
+    @media (min-width: $md2+px) {
+      flex-direction: row;
+    }
   }
-  // .slider-history__right-block
-  &__right-block {
+  // .slider-history__bg-block
+  &__bg-block {
     position: relative;
-    flex-basis: 50%;
+    flex: 0 0 50%;
     display: flex;
-    // flex-wrap: wrap;
-    // width: 50%;
     background-size: cover;
     background-position: center;
-    margin-left: auto;
 
     &--1 {
       background-image: url(../img/bg-history-1.jpg);
@@ -833,11 +840,23 @@ body {
       background-image: url(../img/bg-history-3.jpg);
     }
   }
+  // .slider-history__text-wrapepr
+  &__text-wrapper {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 52px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 52px;
+    @media (min-width: $md2+px) {
+      justify-content: center;
+      align-items: flex-end;
+    }
+  }
   // .slider-history__text
   &__text {
-    flex-basis: 100%;
     max-width: 450px;
-    margin: auto auto 115px;
     font-size: 16px;
     line-height: 1.5;
     color: $white;
