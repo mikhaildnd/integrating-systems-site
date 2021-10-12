@@ -34,7 +34,7 @@ const historySlider = new Swiper('.swiper-history', {
   modules: [Pagination, Mousewheel, Parallax, Navigation],
   speed: 1000,
   direction: 'vertical',
-  parallax: true,
+  parallax: false,
   slidesPerView: 1,
 
   navigation: {
@@ -83,12 +83,11 @@ function changeYear() {
   }
 }
 //========================================================================================================================================================
-
 // const scroll = new Scroll();
 
 // // function sliderEvents() {
-// const historySection = document.querySelector('.history-section');
-// const historyBtn = document.querySelector('.slider-history__btn ');
+// const historySection = document.querySelector('.slider-history');
+// const historyBtn = document.querySelector('.slider-history__btn--skip ');
 
 // document.addEventListener('scroll', fixSlider);
 
