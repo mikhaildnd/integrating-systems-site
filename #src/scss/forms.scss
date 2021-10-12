@@ -26,6 +26,7 @@
   transition: all 0.1s ease 0s;
   white-space: nowrap;
   overflow: hidden;
+  cursor: pointer;
   &::after {
     content: '';
     position: absolute;
@@ -72,7 +73,7 @@
       background-color: $brand;
     }
     &:hover {
-      background-color: darken($white, 10%);
+      background-color: transparentize($white, 0.1);
     }
   }
   &--bg-transparent {

@@ -31,11 +31,17 @@ const H = new HeaderScroll('.header', {
 //   },
 // });
 const historySlider = new Swiper('.swiper-history', {
-  modules: [Pagination, Mousewheel, Parallax],
+  modules: [Pagination, Mousewheel, Parallax, Navigation],
   speed: 1000,
   direction: 'vertical',
   parallax: true,
   slidesPerView: 1,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
   pagination: {
     el: '.slider-history__pagination',
     bulletClass: 'slider-history__pagination-bullet',
@@ -125,6 +131,9 @@ function changeYear() {
 //     document.body.style.paddingRight = scrollWidthCalc() + 'px';
 //     document.body.style.overflowY = 'hidden';
 //     historySlider.mousewheel.enable();
+//     historySlider.on('touchmove', () => {
+//       console.log('hey');
+//     });
 //     // }, 500);
 //     event.currentTarget.removeEventListener(event.type, fixSlider);
 //     historyBtn.addEventListener('click', skipSlider);
