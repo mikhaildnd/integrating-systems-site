@@ -9,6 +9,12 @@
   transition: all 0.2s ease;
   transform: none;
 
+  & .contacts-menu {
+    @media (max-width: $md6+px) {
+      display: none;
+    }
+  }
+
   &--fixed {
     background-color: #fff;
     // transform: translateY(0%);
@@ -258,10 +264,10 @@
 }
 //========================================================================================================================================================
 .logo {
-  // .logo__img
+  // .logo__img//todo мб удалить
   &__img {
   }
-  // .logo__link
+  // .logo__link//todo мб удалить
   &__link {
   }
   path {
@@ -305,9 +311,6 @@
 //========================================================================================================================================================
 //*Плашка с номером тел. и кнопкой попапа
 .contacts-menu {
-  @media (max-width: $md6+px) {
-    display: none;
-  }
   // .contacts-menu__list
   &__list {
     display: flex;
