@@ -156,6 +156,23 @@ const sertificationSlider = new Swiper('.swiper-sertification', {
   speed: 1000,
   slidesPerView: 4,
   spaceBetween: 40,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+    },
+    992: {
+      slidesPerView: 4,
+      spaceBetween: 16,
+    },
+    1400: {
+      spaceBetween: 40,
+    },
+  },
   navigation: {
     nextEl: '.sertification-section__btn--next',
     prevEl: '.sertification-section__btn--prev',

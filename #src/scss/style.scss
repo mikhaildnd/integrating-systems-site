@@ -111,11 +111,6 @@ body {
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
   flex: 1 1 auto;
-  // .page__sertification
-  &__sertification {
-    padding-top: 118px;
-    padding-bottom: 64px;
-  }
 }
 //========================================================================================================================================================
 .hero-section {
@@ -695,6 +690,7 @@ body {
   }
 }
 //========================================================================================================================================================
+//todo Поднять блок с цифрами повыше
 .slider-history {
   height: 100vh;
   overflow: hidden;
@@ -943,28 +939,71 @@ body {
 .sertification-section {
   // .sertification-section__wrapper
   &__wrapper {
-    max-width: 1440px;
-    margin: 0 auto;
+    padding-top: 104px;
+    padding-bottom: 50px;
+    @media (min-width: $md4+px) {
+      padding-top: 64px;
+      padding-bottom: 72px;
+    }
+    @media (min-width: $md3+px) {
+      padding-bottom: 80px;
+    }
   }
   // .sertification-section__info
   &__info {
+    margin-bottom: 14px;
+    // @media (min-width: $md4+px) {
+    //   margin-bottom: 48px;
+    // }
+    // @media (min-width: $md1+px) {
+    //   margin-bottom: 60px;
+    // }
   }
   // .sertification-section__note
   &__note {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 2;
     font-weight: 700;
     color: $brand;
-    margin-bottom: 38px;
+    margin-bottom: 18px;
+    @media (min-width: $md5+px) {
+      font-size: 14px;
+    }
+    // @media (min-width: $md2+px) {
+    //   font-size: 16px;
+    // }
+    @media (min-width: $md1+px) {
+      margin-bottom: 30px;
+    }
   }
   // .sertification-section__title
   &__title {
-    font-size: 48px;
+    font-size: 20px;
     line-height: 1.15;
     font-weight: 700;
     color: $black;
     max-width: 1070px;
-    margin-bottom: 60px; //?sertification-section__btn-wrapper
+    @media (min-width: $md7+px) {
+      font-size: 25px;
+    }
+    @media (min-width: $md5+px) {
+      font-size: 30px;
+      max-width: 80%;
+    }
+    @media (min-width: $md4+px) {
+      font-size: 32px;
+      line-height: 1.25;
+    }
+    @media (min-width: $md3+px) {
+      font-size: 36px;
+      line-height: 1.15;
+    }
+    @media (min-width: $md2+px) {
+      font-size: 40px;
+    }
+    @media (min-width: $md1+px) {
+      font-size: 44px;
+    }
   }
   // .sertification-section__slider
   &__slider {
@@ -986,12 +1025,9 @@ body {
   }
   // sertification-section__btn-wrapper
   &__btn-wrapper {
-    position: absolute;
-    z-index: 2;
-    top: -110px; //?sertification-section__title
-    right: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    margin-bottom: 30px;
   }
   // sertification-section__btn
   &__btn {
@@ -1032,6 +1068,12 @@ body {
       span {
         transform: rotate(180deg);
       }
+    }
+  }
+  .swiper-button-disabled > span {
+    &::before,
+    &::after {
+      background-color: lightgrey;
     }
   }
 }
