@@ -1,0 +1,114 @@
+.hero-section {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  min-height: 380px;
+  height: 100vh;
+  padding-bottom: 24px;
+  background-color: $brand;
+  @media (min-width: $md1+px) {
+    padding-bottom: 120px;
+  }
+  @media (min-width: $md2+px) {
+    min-height: 768px;
+  }
+  @media (min-width: $md4+px) {
+    min-height: 610px;
+    padding-bottom: 80px;
+  }
+  @media (min-width: $md6+px) {
+    min-height: 400px;
+    padding-bottom: 40px;
+  }
+  &--bg-img {
+    background-image: url('../img/hero-img-5.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+  }
+  .bg--cross-grid::before {
+    top: 154px;
+    right: 14px;
+  }
+  // .hero-section__inner
+  &__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  // .hero-section__title
+  &__title {
+    max-width: 950px;
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 94px;
+    color: $white;
+    margin-left: 0;
+    margin-bottom: 64px;
+    @media (max-width: 1024px) {
+      font-size: 64px;
+      line-height: 1;
+      max-width: 635px;
+    }
+    @media (max-width: 768px) {
+      font-size: 50px;
+      max-width: 535px;
+      margin-bottom: 54px;
+    }
+    @media (max-width: 600px) {
+      font-size: 40px;
+      max-width: 400px;
+      margin-bottom: 36px;
+    }
+    @media (max-width: 460px) {
+      font-size: 38px;
+      max-width: 100%;
+    }
+    @media (max-width: 375px) {
+      font-size: 30px;
+    }
+  }
+  // .hero-section__btn-wrapper
+  &__btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+  }
+  // .hero-section__btn
+  &__btn {
+    margin: 0 20px;
+    @media (max-width: 1024px) {
+      height: 56px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  // .hero-section__grid
+  &__grid {
+  }
+  // .hero-section__tip
+  &__tip {
+    position: absolute;
+    right: 106px;
+    bottom: 0;
+    color: $white;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 500;
+    @media (max-width: 1024px) {
+      right: 46px;
+    }
+    @media (max-width: 768px) {
+      right: 0;
+      bottom: 100px;
+    }
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+}
