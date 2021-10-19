@@ -11,77 +11,63 @@ import 'swiper/css';
 
 webpSupportTest();
 
-const H = new HeaderScroll('.header', {
-  blockFixedAfter: '.solution-slider',
-  // bodyWillLock: true, //Пока отключил, т.к. при ресайзе срабатывает ложно
-});
+// const H = new HeaderScroll('.header', {
+//   blockFixedAfter: '.solution-slider',
+//   // bodyWillLock: true, //Пока отключил, т.к. при ресайзе срабатывает ложно
+// });
 
-// const solutionsSlider = new Swiper('.swiper-solutions', {
-//   modules: [Pagination],
+// const historySlider = new Swiper('.swiper-history', {
+//   modules: [Pagination, Mousewheel, Parallax, Navigation],
+//   speed: 1000,
+//   direction: 'vertical',
+//   parallax: false,
+//   slidesPerView: 1,
+
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+
 //   pagination: {
-//     el: '.slider-solutions__pagination',
-//     bulletClass: 'slider-solutions__pagination-bullet',
-//     bulletActiveClass: 'slider-solutions__pagination-bullet-active',
+//     el: '.slider-history__pagination',
+//     bulletClass: 'slider-history__pagination-bullet',
+//     bulletActiveClass: 'slider-history__pagination-bullet-active',
 //     clickable: true,
-//     renderBullet: (index, className) => {
-//       return `<span class="${className}">
-//                 <span></span>
-//               </span>`;
-//     },
+//     // dynamicBullets: true,
+//     // renderBullet: (index, className) => {
+//     //   return '<span class="' + className + '">' + '<span>' + '</span>' + '</span>';
+//     // },
 //   },
 // });
-const historySlider = new Swiper('.swiper-history', {
-  modules: [Pagination, Mousewheel, Parallax, Navigation],
-  speed: 1000,
-  direction: 'vertical',
-  parallax: false,
-  slidesPerView: 1,
 
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+// const historyPagination = new PaginationMove({
+//   sliderVar: historySlider, //переменная свайпер-слайдера
+//   paginationSelector: '.slider-history__pagination',
+//   step: 50,
+// });
 
-  pagination: {
-    el: '.slider-history__pagination',
-    bulletClass: 'slider-history__pagination-bullet',
-    bulletActiveClass: 'slider-history__pagination-bullet-active',
-    clickable: true,
-    // dynamicBullets: true,
-    // renderBullet: (index, className) => {
-    //   return '<span class="' + className + '">' + '<span>' + '</span>' + '</span>';
-    // },
-  },
-});
-
-const historyPagination = new PaginationMove({
-  sliderVar: historySlider, //переменная свайпер-слайдера
-  paginationSelector: '.slider-history__pagination',
-  step: 50,
-});
-
-historySlider.on('slideChange', () => {
-  changeYear();
-  historyPagination.move();
-});
+// historySlider.on('slideChange', () => {
+//   changeYear();
+//   historyPagination.move();
+// });
 //========================================================================================================================================================
-function changeYear() {
-  const domElement = document.querySelector('.slider-history__heading');
+// function changeYear() {
+//   const domElement = document.querySelector('.slider-history__heading');
 
-  let content = domElement.innerHTML;
-  let isTargetNum = Number.isInteger(+content);
-  let paginationTransform;
+//   let content = domElement.innerHTML;
+//   let isTargetNum = Number.isInteger(+content);
+//   let paginationTransform;
 
-  if (!isTargetNum) return;
-  // console.log(historySlider.previousIndex);
-  if (historySlider.activeIndex > historySlider.previousIndex) {
-    domElement.innerHTML =
-      +domElement.innerHTML + +historySlider.activeIndex - +historySlider.previousIndex;
-  } else if (historySlider.activeIndex < historySlider.previousIndex) {
-    domElement.innerHTML =
-      +domElement.innerHTML - +historySlider.previousIndex + +historySlider.activeIndex;
-  }
-}
+//   if (!isTargetNum) return;
+//   // console.log(historySlider.previousIndex);
+//   if (historySlider.activeIndex > historySlider.previousIndex) {
+//     domElement.innerHTML =
+//       +domElement.innerHTML + +historySlider.activeIndex - +historySlider.previousIndex;
+//   } else if (historySlider.activeIndex < historySlider.previousIndex) {
+//     domElement.innerHTML =
+//       +domElement.innerHTML - +historySlider.previousIndex + +historySlider.activeIndex;
+//   }
+// }
 //========================================================================================================================================================
 // const scroll = new Scroll();
 
@@ -151,33 +137,33 @@ function changeYear() {
 //   };
 // }
 //========================================================================================================================================================
-const sertificationSlider = new Swiper('.swiper-sertification', {
-  modules: [Navigation],
-  speed: 1000,
-  slidesPerView: 4,
-  spaceBetween: 40,
-  breakpoints: {
-    320: {
-      slidesPerView: 2,
-      spaceBetween: 16,
-    },
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 16,
-    },
-    992: {
-      slidesPerView: 4,
-      spaceBetween: 16,
-    },
-    1400: {
-      spaceBetween: 40,
-    },
-  },
-  navigation: {
-    nextEl: '.sertification-section__btn--next',
-    prevEl: '.sertification-section__btn--prev',
-  },
-});
+// const sertificationSlider = new Swiper('.swiper-sertification', {
+//   modules: [Navigation],
+//   speed: 1000,
+//   slidesPerView: 4,
+//   spaceBetween: 40,
+//   breakpoints: {
+//     320: {
+//       slidesPerView: 2,
+//       spaceBetween: 16,
+//     },
+//     768: {
+//       slidesPerView: 3,
+//       spaceBetween: 16,
+//     },
+//     992: {
+//       slidesPerView: 4,
+//       spaceBetween: 16,
+//     },
+//     1400: {
+//       spaceBetween: 40,
+//     },
+//   },
+//   navigation: {
+//     nextEl: '.sertification-section__btn--next',
+//     prevEl: '.sertification-section__btn--prev',
+//   },
+// });
 //========================================================================================================================================================
 
 const burgerBtn = document.querySelector('.header__trigger');
@@ -191,42 +177,41 @@ burgerBtn.addEventListener('click', () => {
   document.body.classList.toggle('_lock');
 });
 //========================================================================================================================================================
-const solutionSlider = new Swiper('.solution-swiper', {
-  modules: [Pagination],
-  // speed: 1000,
-  slidesPerView: 1,
-  pagination: {
-    el: '.solution-slider__pagination',
-    bulletClass: 'solution-slider__pagination-bullet',
-    bulletActiveClass: 'solution-slider__pagination-bullet-active',
-    clickable: true,
-    renderBullet: (index, className) => {
-      return `<span class="${className}">
-                <span></span>
-              </span>`;
-    },
-  },
-});
+// const solutionSlider = new Swiper('.solution-swiper', {
+//   modules: [Pagination],
+//   // speed: 1000,
+//   slidesPerView: 1,
+//   pagination: {
+//     el: '.solution-slider__pagination',
+//     bulletClass: 'solution-slider__pagination-bullet',
+//     bulletActiveClass: 'solution-slider__pagination-bullet-active',
+//     clickable: true,
+//     renderBullet: (index, className) => {
+//       return `<span class="${className}">
+//                 <span></span>
+//               </span>`;
+//     },
+//   },
+// });
 
-const solutionPagination = new PaginationMove({
-  sliderVar: solutionSlider, //переменная свайпер-слайдера
-  paginationSelector: '.solution-slider__pagination',
-  step: 100,
-});
+// const solutionPagination = new PaginationMove({
+//   sliderVar: solutionSlider, //переменная свайпер-слайдера
+//   paginationSelector: '.solution-slider__pagination',
+//   step: 100,
+// });
 
-solutionSlider.on('slideChange', () => {
-  solutionPagination.move();
-});
+// solutionSlider.on('slideChange', () => {
+//   solutionPagination.move();
+// });
 //========================================================================================================================================================
-const philosophyList = document.querySelector('.nav-philosophy__list');
+// const philosophyList = document.querySelector('.nav-philosophy__list');
 
-philosophyList.addEventListener('click', (e) => {
-  let listItem = e.target.closest('.nav-philosophy__item');
-  console.log(listItem);
+// philosophyList.addEventListener('click', (e) => {
+//   let listItem = e.target.closest('.nav-philosophy__item');
 
-  if (!listItem) return;
+//   if (!listItem) return;
 
-  if (!philosophyList.contains(listItem)) return;
+//   if (!philosophyList.contains(listItem)) return;
 
-  listItem.classList.toggle('active');
-});
+//   listItem.classList.toggle('active');
+// });

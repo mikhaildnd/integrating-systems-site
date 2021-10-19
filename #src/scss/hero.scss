@@ -21,11 +21,26 @@
     min-height: 400px;
     padding-bottom: 40px;
   }
-  &--bg-img {
-    background-image: url('../img/hero-img-5.jpg');
+  &--bg {
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: cover;
+  }
+  &--bg-img-1 {
+    background-image: url('../img/hero-img-5.jpg');
+  }
+  &--bg-sed {
+    background-image: url('../img/documents-bg.jpg');
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #351299;
+      opacity: 0.85;
+    }
   }
   .bg--cross-grid::before {
     top: 154px;
