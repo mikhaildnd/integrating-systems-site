@@ -117,3 +117,9 @@
     }
   }
 }
+.swiper-button-disabled > span {
+  &::before,
+  &::after {
+    background-color: lightgrey;
+  }
+}

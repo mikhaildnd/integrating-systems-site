@@ -215,3 +215,27 @@ burgerBtn.addEventListener('click', () => {
 
 //   listItem.classList.toggle('active');
 // });
+//========================================================================================================================================================
+const reviewsSlider = new Swiper('.solution-reviews__slider', {
+  modules: [Navigation],
+  speed: 1000,
+  // spaceBetween: 40,
+  breakpoints: {
+    320: {
+      spaceBetween: 50,
+    },
+    768: {
+      spaceBetween: 75,
+    },
+    992: {
+      spaceBetween: 100,
+    },
+    1400: {
+      spaceBetween: 150,
+    },
+  },
+  navigation: {
+    nextEl: '.solution-reviews__button--next',
+    prevEl: '.solution-reviews__button--prev',
+  },
+});

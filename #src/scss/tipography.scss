@@ -31,6 +31,7 @@
       }
       @media (min-width: $md4+px) {
         line-height: 1.5;
+        hyphens: none;
       }
     }
 
@@ -67,7 +68,6 @@
 //========================================================================================================================================================
 .autor-block {
   display: flex;
-
   // .autor-block__img
   &__img {
     flex-shrink: 0;
@@ -100,6 +100,7 @@
     margin-bottom: 6px;
     font-size: 12px;
     line-height: 1.2;
+    max-width: 530px;
   }
   // .autor-block__position
   &__position {
@@ -107,5 +108,20 @@
     font-size: 12px;
     line-height: 1.33;
     color: lighten($black, 50%);
+  }
+}
+//========================================================================================================================================================
+._heading {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
+  @media (min-width: $md7+px) {
+    font-size: 30px;
+  }
+  @media (min-width: $md6+px) {
+    font-size: 32px;
+  }
+  @media (min-width: $md5+px) {
+    font-size: 34px;
   }
 }

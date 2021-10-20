@@ -138,18 +138,10 @@
 }
 .instructions {
   &__heading {
-    font-size: 28px;
     text-align: center;
     margin-bottom: 56px;
-    @media (min-width: $md7+px) {
-      font-size: 32px;
-      margin-bottom: 60px;
-    }
-    @media (min-width: $md6+px) {
-      font-size: 34px;
-    }
-    @media (min-width: $md5+px) {
-      font-size: 38px;
+    @media (min-width: $md4+px) {
+      text-align: left;
     }
   }
   &__item {
@@ -242,11 +234,25 @@
 }
 
 .solution-reviews {
+  padding: 24px 0;
   //todo объеденить стили заголовков
   &__heading {
-    font-size: 28px;
     text-align: center;
-    margin-bottom: 56px;
-    font-weight: 700;
+    margin-bottom: 34px;
+    @media (min-width: $md4+px) {
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+  &__slider {
+    // position: relative;
+  }
+  &__button-wrapper {
+    justify-content: flex-end;
+    margin-bottom: 14px;
+
+    // position: absolute;
+    // top: 0;
+    // right: 0;
   }
 }

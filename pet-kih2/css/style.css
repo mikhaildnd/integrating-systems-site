@@ -275,6 +275,11 @@ body._lock {
           transform: rotate(180deg);
 }
 
+.swiper-button-disabled > span::before,
+.swiper-button-disabled > span::after {
+  background-color: lightgrey;
+}
+
 .header {
   display: none;
   position: fixed;
@@ -744,6 +749,7 @@ body._lock {
   margin-bottom: 6px;
   font-size: 12px;
   line-height: 1.2;
+  max-width: 530px;
 }
 
 .autor-block__position {
@@ -751,6 +757,12 @@ body._lock {
   font-size: 12px;
   line-height: 1.33;
   color: #9397a5;
+}
+
+._heading {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 .hero-section {
@@ -1868,7 +1880,6 @@ body._lock {
 }
 
 .instructions__heading {
-  font-size: 28px;
   text-align: center;
   margin-bottom: 56px;
 }
@@ -1918,11 +1929,20 @@ body._lock {
   line-height: 1.2;
 }
 
+.solution-reviews {
+  padding: 24px 0;
+}
+
 .solution-reviews__heading {
-  font-size: 28px;
   text-align: center;
-  margin-bottom: 56px;
-  font-weight: 700;
+  margin-bottom: 34px;
+}
+
+.solution-reviews__button-wrapper {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 14px;
 }
 
 .page {
@@ -1974,6 +1994,10 @@ body._lock {
     padding-right: 20px;
   }
 
+  ._heading {
+    font-size: 30px;
+  }
+
   .mission-section__title {
     font-size: 25px;
   }
@@ -2012,11 +2036,6 @@ body._lock {
   .benefits__heading {
     font-size: 38px;
   }
-
-  .instructions__heading {
-    font-size: 32px;
-    margin-bottom: 60px;
-  }
 }
 
 @media (min-width: 410px) {
@@ -2033,6 +2052,10 @@ body._lock {
     -webkit-column-gap: 10px;
        -moz-column-gap: 10px;
             column-gap: 10px;
+  }
+
+  ._heading {
+    font-size: 32px;
   }
 
   .hero-section {
@@ -2079,10 +2102,6 @@ body._lock {
     font-size: 40px;
   }
 
-  .instructions__heading {
-    font-size: 34px;
-  }
-
   .instructions__item li {
     font-size: 16px;
   }
@@ -2115,6 +2134,10 @@ body._lock {
 @media (min-width: 576px) {
   .autor-block__img {
     margin-right: 24px;
+  }
+
+  ._heading {
+    font-size: 34px;
   }
 
   .nav-philosophy__list {
@@ -2234,10 +2257,6 @@ body._lock {
     font-size: 50px;
   }
 
-  .instructions__heading {
-    font-size: 38px;
-  }
-
   .instructions__item li {
     font-size: 18px;
   }
@@ -2296,6 +2315,9 @@ body._lock {
 
   .review-block__text p {
     line-height: 1.5;
+    -webkit-hyphens: none;
+        -ms-hyphens: none;
+            hyphens: none;
   }
 
   .review-block__text {
@@ -2448,6 +2470,10 @@ body._lock {
     padding-right: 15px;
   }
 
+  .instructions__heading {
+    text-align: left;
+  }
+
   .instructions__item ul {
     -ms-flex-preferred-size: 70%;
         flex-basis: 70%;
@@ -2474,6 +2500,11 @@ body._lock {
 
   .item-instructions__text {
     font-size: 20px;
+  }
+
+  .solution-reviews__heading {
+    text-align: left;
+    margin-bottom: 0;
   }
 }
 
