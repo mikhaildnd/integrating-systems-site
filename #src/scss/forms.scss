@@ -73,3 +73,47 @@
     border: 1px solid $brand;
   }
 }
+//========================================================================================================================================================
+.twin-button-wrapper {
+  display: flex;
+}
+.twin-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 41px;
+  height: 41px;
+  border: 1px solid $brand;
+  cursor: pointer;
+  user-select: none;
+  &:first-child {
+    border-right: 1px solid transparent;
+  }
+  span {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $brand;
+    }
+    &::before {
+      top: -5px;
+      transform: rotate(45deg);
+    }
+    &::after {
+      top: 5px;
+      transform: rotate(-45deg);
+    }
+  }
+  &--prev {
+    span {
+      transform: rotate(180deg);
+    }
+  }
+}

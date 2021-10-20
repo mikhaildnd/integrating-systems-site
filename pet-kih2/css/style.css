@@ -209,6 +209,72 @@ body._lock {
   border: 1px solid #1e468a;
 }
 
+.twin-button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.twin-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 41px;
+  height: 41px;
+  border: 1px solid #1e468a;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.twin-button:first-child {
+  border-right: 1px solid transparent;
+}
+
+.twin-button span {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 1px;
+}
+
+.twin-button span::before,
+.twin-button span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #1e468a;
+}
+
+.twin-button span::before {
+  top: -5px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.twin-button span::after {
+  top: 5px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.twin-button--prev span {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .header {
   display: none;
   position: fixed;
@@ -576,6 +642,117 @@ body._lock {
   margin-bottom: 20px;
 }
 
+.review-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.review-block__text {
+  position: relative;
+  margin-bottom: 34px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.review-block__text span {
+  display: block;
+  margin: 0.5em 0;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #1a1b1f;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.review-block__text p {
+  margin: 0.5em 0;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #606372;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.review-block__blockquote::before,
+.review-block__blockquote::after {
+  position: absolute;
+  color: #1a1b1f;
+}
+
+.review-block__blockquote::before {
+  content: "<";
+  top: 10px;
+  left: 0;
+}
+
+.review-block__blockquote::after {
+  content: "/>";
+  right: 0;
+  bottom: 10px;
+}
+
+.review-block__autor {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.autor-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.autor-block__img {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 14px;
+  overflow: hidden;
+}
+
+.autor-block__img--round {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.autor-block__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.autor-block__autor-info {
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+}
+
+.autor-block__name {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.autor-block__position {
+  display: block;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #9397a5;
+}
+
 .hero-section {
   position: relative;
   z-index: 1;
@@ -933,92 +1110,6 @@ body._lock {
 
 .mission-section__btn {
   width: 100%;
-}
-
-.review-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.review-block__text {
-  position: relative;
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #606372;
-  margin-bottom: 34px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.review-block__text::before,
-.review-block__text::after {
-  color: #1a1b1f;
-}
-
-.review-block__text::before {
-  content: "<";
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.review-block__text::after {
-  content: "/>";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
-.review-block__autor {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.autor-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.autor-block__img {
-  width: 80px;
-  height: 80px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-  margin-right: 24px;
-}
-
-.autor-block__autor-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.autor-block__name {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-  margin-bottom: 6px;
-  font-size: 12px;
-  line-height: 2;
-  white-space: nowrap;
-}
-
-.autor-block__position {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-  font-size: 12px;
-  line-height: 1.33;
-  color: #9397a5;
 }
 
 .slider-history {
@@ -1827,6 +1918,13 @@ body._lock {
   line-height: 1.2;
 }
 
+.solution-reviews__heading {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 56px;
+  font-weight: 700;
+}
+
 .page {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -1867,14 +1965,17 @@ body._lock {
     font-size: 13px;
   }
 
-  .mission-section__title {
-    font-size: 25px;
+  .review-block__text p {
+    font-size: 16px;
   }
 
   .review-block__text {
-    font-size: 16px;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .mission-section__title {
+    font-size: 25px;
   }
 
   .slider-history__heading {
@@ -2012,6 +2113,10 @@ body._lock {
 }
 
 @media (min-width: 576px) {
+  .autor-block__img {
+    margin-right: 24px;
+  }
+
   .nav-philosophy__list {
     margin-right: -5px;
     margin-left: -5px;
@@ -2185,6 +2290,18 @@ body._lock {
     display: none;
   }
 
+  .review-block__text span {
+    line-height: 1.5;
+  }
+
+  .review-block__text p {
+    line-height: 1.5;
+  }
+
+  .review-block__text {
+    margin-bottom: 26px;
+  }
+
   .hero-section {
     min-height: 610px;
     padding-bottom: 80px;
@@ -2232,10 +2349,6 @@ body._lock {
   .mission-section__title {
     font-size: 32px;
     line-height: 1.25;
-  }
-
-  .review-block__text {
-    margin-bottom: 26px;
   }
 
   .slider-history__heading {

@@ -383,86 +383,6 @@
   }
 }
 //========================================================================================================================================================
-.review-block {
-  display: flex;
-  flex-wrap: wrap;
-  // flex-direction: flex-start;
-  // .review-block__text
-  &__text {
-    // flex: 0 1 100%;
-    position: relative;
-    font-size: 14px;
-    line-height: 1.5;
-    font-weight: 400;
-    color: lighten($black, 30%);
-    margin-bottom: 34px;
-    padding-left: 16px;
-    padding-right: 16px;
-    &::before,
-    &::after {
-      color: $black;
-      // font-size: 16px;
-    }
-    &::before {
-      content: '<';
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    &::after {
-      content: '/>';
-      position: absolute;
-      right: 0;
-      bottom: 0;
-    }
-    @media (min-width: $md7+px) {
-      font-size: 16px;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-    @media (min-width: $md4+px) {
-      margin-bottom: 26px;
-    }
-  }
-  // .review-block__autor
-  &__autor {
-    align-items: center;
-  }
-}
-//========================================================================================================================================================
-.autor-block {
-  display: flex;
-
-  // .autor-block__img
-  &__img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 24px;
-  }
-  // .autor-block__autor-info
-  &__autor-info {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  // .autor-block__name
-  &__name {
-    flex: 0 0 100%;
-    margin-bottom: 6px;
-    font-size: 12px;
-    line-height: 2;
-    white-space: nowrap;
-  }
-  // .autor-block__position
-  &__position {
-    flex: 0 0 100%;
-    font-size: 12px;
-    line-height: 1.33;
-    color: lighten($black, 50%);
-  }
-}
-//========================================================================================================================================================
 //todo Поднять блок с цифрами повыше
 .slider-history {
   height: 100vh;
@@ -725,12 +645,6 @@
   // .sertification-section__info
   &__info {
     margin-bottom: 14px;
-    // @media (min-width: $md4+px) {
-    //   margin-bottom: 48px;
-    // }
-    // @media (min-width: $md1+px) {
-    //   margin-bottom: 60px;
-    // }
   }
   // .sertification-section__note
   &__note {
@@ -742,9 +656,6 @@
     @media (min-width: $md5+px) {
       font-size: 14px;
     }
-    // @media (min-width: $md2+px) {
-    //   font-size: 16px;
-    // }
     @media (min-width: $md1+px) {
       margin-bottom: 30px;
     }
