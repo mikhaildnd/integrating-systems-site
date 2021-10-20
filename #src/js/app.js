@@ -239,3 +239,20 @@ const reviewsSlider = new Swiper('.solution-reviews__slider', {
     prevEl: '.solution-reviews__button--prev',
   },
 });
+//========================================================================================================================================================
+const accordeon = document.querySelector('.accordeon');
+
+accordeon.addEventListener('click', (e) => {
+  let accordItem = e.target.closest('.item-accordeon__top');
+
+  if (!accordItem) return;
+
+  if (!accordeon.contains(accordItem)) return;
+
+  accordItem.classList.toggle('show');
+  let panel = accordItem.nextElementSibling;
+  console.log(panel.scrollHeight);
+  panel.style.maxHeight
+    ? (panel.style.maxHeight = null)
+    : (panel.style.maxHeight = panel.scrollHeight + 'px');
+});

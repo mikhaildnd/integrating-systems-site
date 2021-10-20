@@ -1,0 +1,90 @@
+.questions {
+  // .questions__heading
+  &__heading {
+    margin-bottom: 36px;
+  }
+  // .questions__accordeon
+  &__accordeon {
+  }
+}
+
+.accordeon {
+  // .accordeon__item
+  &__item {
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.item-accordeon {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  border: 1px solid #bcc8cf;
+  span {
+    display: block;
+    max-width: 85%;
+  }
+  // .item-accordeon__top
+  &__top {
+    display: flex;
+    padding: 24px 32px;
+    //*для скрипта, при открытии таба
+    &.show {
+      .item-accordeon__heading {
+        color: $black;
+      }
+      .item-accordeon__icon {
+        // transform: rotate(120deg);
+        &::after {
+          transform: translate(-50%, -50%) rotate(270deg);
+        }
+        &::before {
+          transform: translate(-50%, -50%) rotate(-180deg);
+        }
+      }
+    }
+  }
+  // .item-accordeon__heading
+  &__heading {
+    color: $brand;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+  }
+  // .item-accordeon__icon
+  &__icon {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    position: relative;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 2px;
+      background-color: $brand;
+      transform: translate(-50%, -50%);
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+  // .item-accordeon__bottom
+  &__bottom {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  // .item-accordeon__text
+  &__text {
+    padding: 0 32px 24px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: lighten($black, 30%);
+  }
+}

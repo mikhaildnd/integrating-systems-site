@@ -173,7 +173,6 @@
         &:last-child {
           margin-bottom: 0;
         }
-        // font-size: 16px;
       }
       @media (min-width: $md3+px) {
         hyphens: none;
@@ -245,14 +244,9 @@
     }
   }
   &__slider {
-    // position: relative;
   }
   &__button-wrapper {
     justify-content: flex-end;
     margin-bottom: 14px;
-
-    // position: absolute;
-    // top: 0;
-    // right: 0;
   }
 }
