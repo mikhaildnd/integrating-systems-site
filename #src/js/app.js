@@ -251,7 +251,6 @@ accordeon.addEventListener('click', (e) => {
 
   accordItem.classList.toggle('show');
   let panel = accordItem.nextElementSibling;
-  console.log(panel.scrollHeight);
   panel.style.maxHeight
     ? (panel.style.maxHeight = null)
     : (panel.style.maxHeight = panel.scrollHeight + 'px');

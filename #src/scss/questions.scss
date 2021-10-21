@@ -1,4 +1,8 @@
 .questions {
+  padding: 24px 0;
+  @media (min-width: $md2+px) {
+    padding: 28px 0;
+  }
   // .questions__heading
   &__heading {
     margin-bottom: 36px;
@@ -19,18 +23,28 @@
 }
 
 .item-accordeon {
-  position: relative;
-  z-index: 1;
+  padding: 10px 8px;
   cursor: pointer;
   border: 1px solid #bcc8cf;
-  span {
-    display: block;
-    max-width: 85%;
+  @media (min-width: $md7+px) {
+    padding: 12px 10px;
+  }
+  @media (min-width: $md5+px) {
+    padding: 14px 20px;
+  }
+  @media (min-width: $md4+px) {
+    padding: 24px 32px;
   }
   // .item-accordeon__top
   &__top {
+    width: 100%;
+    user-select: none;
     display: flex;
-    padding: 24px 32px;
+    justify-content: space-between;
+    // padding: 10px 14px;
+    // @media (min-width: $md4+px) {
+    //   padding: 24px 32px;
+    // }
     //*для скрипта, при открытии таба
     &.show {
       .item-accordeon__heading {
@@ -50,24 +64,52 @@
   // .item-accordeon__heading
   &__heading {
     color: $brand;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 700;
     text-align: left;
+    margin-right: 10px;
+    line-height: 1.5;
+    @media (min-width: $md7+px) {
+      font-size: 16px;
+    }
+    @media (min-width: $md5+px) {
+      font-size: 18px;
+    }
+    @media (min-width: $md4+px) {
+      font-size: 20px;
+    }
+    span {
+      display: block;
+      @media (min-width: $md6+px) {
+        max-width: 85%;
+      }
+    }
   }
   // .item-accordeon__icon
   &__icon {
-    flex: 0 0 50px;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
+    flex: 0 0 20px;
+    // width: 40px;
+    height: 20px;
+    margin-left: 5px;
     position: relative;
+    @media (min-width: $md7+px) {
+      margin-left: 10px;
+    }
+    @media (min-width: $md6+px) {
+      flex-basis: 30px;
+      height: 30px;
+    }
+    @media (min-width: $md4+px) {
+      flex-basis: 40px;
+      height: 40px;
+    }
     &::after,
     &::before {
       content: '';
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 40px;
+      width: 100%;
       height: 2px;
       background-color: $brand;
       transform: translate(-50%, -50%);
@@ -82,9 +124,18 @@
   }
   // .item-accordeon__text
   &__text {
-    padding: 0 32px 24px;
-    font-size: 16px;
+    margin-top: 14px;
+    font-size: 12px;
     line-height: 1.5;
     color: lighten($black, 30%);
+    @media (min-width: $md7+px) {
+      font-size: 14px;
+    }
+    @media (min-width: $md5+px) {
+      font-size: 16px;
+    }
+    @media (min-width: $md4+px) {
+      margin-top: 24px;
+    }
   }
 }

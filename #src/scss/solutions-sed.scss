@@ -234,7 +234,9 @@
 
 .solution-reviews {
   padding: 24px 0;
-  //todo объеденить стили заголовков
+  @media (min-width: $md2+px) {
+    padding: 28px 0;
+  }
   &__heading {
     text-align: center;
     margin-bottom: 34px;
