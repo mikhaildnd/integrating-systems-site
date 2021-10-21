@@ -64,6 +64,10 @@ body {
 ._container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
+  @media (max-width: 575.98px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   @media (max-width: 1500px) {
     padding-left: 32px;
     padding-right: 32px;

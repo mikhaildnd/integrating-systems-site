@@ -68,9 +68,10 @@
     font-weight: 700;
     text-align: left;
     margin-right: 10px;
-    line-height: 1.5;
+    line-height: 1.3;
     @media (min-width: $md7+px) {
       font-size: 16px;
+      line-height: 1.5;
     }
     @media (min-width: $md5+px) {
       font-size: 18px;

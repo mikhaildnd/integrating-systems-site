@@ -231,7 +231,6 @@
     }
   }
 }
-
 .solution-reviews {
   padding: 24px 0;
   @media (min-width: $md2+px) {
@@ -250,5 +249,13 @@
   &__button-wrapper {
     justify-content: flex-end;
     margin-bottom: 14px;
+  }
+}
+//========================================================================================================================================================
+.contacts {
+  &__heading {
+    margin-bottom: 36px;
+  }
+  &__form {
   }
 }

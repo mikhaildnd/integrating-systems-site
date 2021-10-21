@@ -375,9 +375,7 @@
             <div class="accordeon__item item-accordeon">
               <button class="item-accordeon__top">
                 <div class="item-accordeon__heading">
-                  <!-- <span> -->
-                    Как происходит процесс внедрения системы? 
-                  <!-- </span> -->
+                  <span>Как происходит процесс внедрения системы?</span>
                 </div>
                 <div class="item-accordeon__icon"></div>
               </button>
@@ -398,8 +396,8 @@
               <button class="item-accordeon__top">
                 <div class="item-accordeon__heading">
                   <span>
-                    Требуется ли приобретение квалифицированной ЭП 
-                    для всех сотрудников нашей организации, если мы будем использовать СЭД?
+                    Требуется ли приобретение квалифицированной ЭП для всех сотрудников нашей
+                    организации, если мы будем использовать СЭД?
                   </span>
                 </div>
                 <div class="item-accordeon__icon"></div>
@@ -425,6 +423,45 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="page__contacts contacts _container _container--sm">
+          <h3 class="contacts__heading _heading">Связаться с нами</h3>
+          <form class="contacts__form form" action="#" method="post">
+            <div class="form__group form__group--name">
+              <input class="form__input" placeholder=" " type="text" id="name" name="user_name" />
+              <label class="form__label" for="name">Ваше имя</label>
+            </div>
+            <div class="form__group form__group--phone">
+              <input class="form__input" placeholder=" " type="tel" id="phone" name="user_mail" />
+              <label class="form__label" for="phone">Телефон</label>
+            </div>
+            <div class="form__group form__group--textarea">
+              <textarea
+                class="form__textarea"
+                placeholder=" "
+                id="msg"
+                name="user_message"
+              ></textarea>
+              <label class="form__label form__label--textarea" for="msg">Комментарий</label>
+            </div>
+            <div class="form__group form__group--submit">
+              <div class="form__label-checkbox checkbox-label">
+                <label class="checkbox-label__container">
+                  <div class="checkbox-label__input">
+                    <input class="checkbox-label__input" type="checkbox" />
+                  </div>
+                  <div class="checkbox-label__text">
+                    <span>
+                      Я выражаю свое согласие с Политикой конфиденциальности и разрешаю обработку
+                      своих персональных данных
+                    </span>
+                  </div>
+                </label>
+              </div>
+              <button class="form__btn btn btn--md btn--bg-brand" type="submit">Отправить</button>
+            </div>
+          </form>
         </div>
       </main>
       @@include('_footer.html',{})
