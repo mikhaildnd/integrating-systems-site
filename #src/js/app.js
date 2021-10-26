@@ -3,7 +3,9 @@ import { HeaderScroll } from './modules/header-scroll.js';
 import { scrollWidthCalc } from './modules/calc-scroll-width.js';
 // import { test } from './modules/test.js';
 import { Scroll } from './modules/scroll.js';
-import { PaginationMove } from './modules/PaginationMove.js';
+import { PaginationMove } from './modules/pagination-move.js';
+import { Accordeon } from './modules/toggle-accordeon.js';
+import { toggleClass } from './modules/helpers.js';
 
 import Swiper, { Pagination, Navigation, Mousewheel, Parallax } from 'swiper';
 import 'swiper/css';
@@ -11,34 +13,36 @@ import 'swiper/css';
 
 webpSupportTest();
 
-// const H = new HeaderScroll('.header', {
-//   blockFixedAfter: '.solution-slider',
-//   // bodyWillLock: true, //Пока отключил, т.к. при ресайзе срабатывает ложно
-// });
+new HeaderScroll('.header', {
+  // blockFixedAfter: '.solution-slider',
+  // bodyWillLock: true, //Пока отключил, т.к. при ресайзе срабатывает ложно
+});
 
-// const historySlider = new Swiper('.swiper-history', {
-//   modules: [Pagination, Mousewheel, Parallax, Navigation],
-//   speed: 1000,
-//   direction: 'vertical',
-//   parallax: false,
-//   slidesPerView: 1,
+//========================================================================================================================================================
+const historySlider = new Swiper('.swiper-history', {
+  modules: [Pagination, Mousewheel, Parallax, Navigation],
+  speed: 1000,
+  direction: 'vertical',
+  parallax: false,
+  slidesPerView: 1,
 
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-//   pagination: {
-//     el: '.slider-history__pagination',
-//     bulletClass: 'slider-history__pagination-bullet',
-//     bulletActiveClass: 'slider-history__pagination-bullet-active',
-//     clickable: true,
-//     // dynamicBullets: true,
-//     // renderBullet: (index, className) => {
-//     //   return '<span class="' + className + '">' + '<span>' + '</span>' + '</span>';
-//     // },
-//   },
-// });
+  pagination: {
+    el: '.slider-history__pagination',
+    bulletClass: 'slider-history__pagination-bullet',
+    bulletActiveClass: 'slider-history__pagination-bullet-active',
+    clickable: true,
+    // dynamicBullets: true,
+    // renderBullet: (index, className) => {
+    //   return '<span class="' + className + '">' + '<span>' + '</span>' + '</span>';
+    // },
+  },
+});
+//========================================================================================================================================================
 
 // const historyPagination = new PaginationMove({
 //   sliderVar: historySlider, //переменная свайпер-слайдера
@@ -137,35 +141,34 @@ webpSupportTest();
 //   };
 // }
 //========================================================================================================================================================
-// const sertificationSlider = new Swiper('.swiper-sertification', {
-//   modules: [Navigation],
-//   speed: 1000,
-//   slidesPerView: 4,
-//   spaceBetween: 40,
-//   breakpoints: {
-//     320: {
-//       slidesPerView: 2,
-//       spaceBetween: 16,
-//     },
-//     768: {
-//       slidesPerView: 3,
-//       spaceBetween: 16,
-//     },
-//     992: {
-//       slidesPerView: 4,
-//       spaceBetween: 16,
-//     },
-//     1400: {
-//       spaceBetween: 40,
-//     },
-//   },
-//   navigation: {
-//     nextEl: '.sertification-section__btn--next',
-//     prevEl: '.sertification-section__btn--prev',
-//   },
-// });
+const sertificationSlider = new Swiper('.swiper-sertification', {
+  modules: [Navigation],
+  speed: 1000,
+  slidesPerView: 4,
+  spaceBetween: 40,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+    },
+    992: {
+      slidesPerView: 4,
+      spaceBetween: 16,
+    },
+    1400: {
+      spaceBetween: 40,
+    },
+  },
+  navigation: {
+    nextEl: '.sertification-section__btn--next',
+    prevEl: '.sertification-section__btn--prev',
+  },
+});
 //========================================================================================================================================================
-
 const burgerBtn = document.querySelector('.header__trigger');
 const burgerMenu = document.querySelector('.header__dropdown');
 const header = document.querySelector('.header');
@@ -177,23 +180,24 @@ burgerBtn.addEventListener('click', () => {
   document.body.classList.toggle('_lock');
 });
 //========================================================================================================================================================
-// const solutionSlider = new Swiper('.solution-swiper', {
-//   modules: [Pagination],
-//   // speed: 1000,
-//   slidesPerView: 1,
-//   pagination: {
-//     el: '.solution-slider__pagination',
-//     bulletClass: 'solution-slider__pagination-bullet',
-//     bulletActiveClass: 'solution-slider__pagination-bullet-active',
-//     clickable: true,
-//     renderBullet: (index, className) => {
-//       return `<span class="${className}">
-//                 <span></span>
-//               </span>`;
-//     },
-//   },
-// });
+const solutionSlider = new Swiper('.solution-swiper', {
+  modules: [Pagination],
+  // speed: 1000,
+  slidesPerView: 1,
+  pagination: {
+    el: '.solution-slider__pagination',
+    bulletClass: 'solution-slider__pagination-bullet',
+    bulletActiveClass: 'solution-slider__pagination-bullet-active',
+    clickable: true,
+    renderBullet: (index, className) => {
+      return `<span class="${className}">
+                <span></span>
+              </span>`;
+    },
+  },
+});
 
+//todo переделать логику движения лайдера, сделать проверку на наличие/отсутствие переменных
 // const solutionPagination = new PaginationMove({
 //   sliderVar: solutionSlider, //переменная свайпер-слайдера
 //   paginationSelector: '.solution-slider__pagination',
@@ -215,6 +219,14 @@ burgerBtn.addEventListener('click', () => {
 
 //   listItem.classList.toggle('active');
 // });
+//========================================================================================================================================================
+const philosophyList = document.querySelector('.nav-philosophy__list');
+//from helpers.js
+toggleClass({
+  container: philosophyList,
+  eTargetSelector: '.nav-philosophy__item',
+  toggleClass: 'active',
+});
 //========================================================================================================================================================
 const reviewsSlider = new Swiper('.solution-reviews__slider', {
   modules: [Navigation],
@@ -240,18 +252,7 @@ const reviewsSlider = new Swiper('.solution-reviews__slider', {
   },
 });
 //========================================================================================================================================================
-const accordeon = document.querySelector('.accordeon');
-
-accordeon.addEventListener('click', (e) => {
-  let accordItem = e.target.closest('.item-accordeon__top');
-
-  if (!accordItem) return;
-
-  if (!accordeon.contains(accordItem)) return;
-
-  accordItem.classList.toggle('show');
-  let panel = accordItem.nextElementSibling;
-  panel.style.maxHeight
-    ? (panel.style.maxHeight = null)
-    : (panel.style.maxHeight = panel.scrollHeight + 'px');
+const accord = new Accordeon({
+  blockSelector: '.accordeon',
+  openingBlock: '.item-accordeon__top',
 });

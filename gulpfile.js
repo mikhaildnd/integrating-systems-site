@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import logger from 'gulplog';
+// import logger from 'gulplog';
 import plumber from 'gulp-plumber';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
@@ -9,7 +9,7 @@ import groupMedia from 'gulp-group-css-media-queries';
 // import sourcemap from 'gulp-sourcemaps'; //не установлен
 import gulpIf from 'gulp-if';
 import del from 'del';
-import debug from 'gulp-debug';
+// import debug from 'gulp-debug';
 import webpackStream from 'webpack-stream';
 import sync from 'browser-sync';
 import imagemin from 'gulp-imagemin';
@@ -23,13 +23,13 @@ import fonter from 'gulp-fonter';
 import ttf2woff from 'gulp-ttf2woff';
 import ttf2woff2 from 'gulp-ttf2woff2';
 
-import path, { dirname } from 'path';
+import path from 'path';
 import { fileURLToPath } from 'url';
 
 import fs from 'fs';
 
 const scss = gulpSass(dartSass);
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const project_name = path.basename(__dirname);
 const src_folder = '#src';
 
@@ -71,7 +71,7 @@ export const scripts = () => {
     watch: false,
     entry: {
       app: './#src/js/app.js',
-      // app2: './#src/js/app2.js',
+      // vendors: './#src/js/vendors.js',
     },
     output: {
       filename: '[name].min.js',
@@ -82,7 +82,8 @@ export const scripts = () => {
         {
           test: /\.js$/,
           loader: 'babel-loader',
-          include: path.join(__dirname, '#src'),
+          include: path.join(__dirname, '#src/js'),
+          // include: path.join(__dirname, '#src'),
           // exclude: '/node_modules/',
         },
         {

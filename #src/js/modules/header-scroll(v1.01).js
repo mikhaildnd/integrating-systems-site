@@ -4,7 +4,7 @@ export class HeaderScroll {
 
     const {
       container = document,
-      // blockFixedAfter = null,
+      blockFixedAfter = null,
       addDistForTriggering = 0, //Дополнительное расстояние от хедера для срабатывания события
       classHide = 'header--hide',
       classFixed = 'header--fixed',
@@ -12,7 +12,7 @@ export class HeaderScroll {
     } = options;
 
     this.container = container;
-    // this.blockFixedAfter = blockFixedAfter; //Блок на высоту которого ориентируется фиксация хэдэра ('header--fixed')
+    this.blockFixedAfter = blockFixedAfter; //Блок на высоту которого ориентируется фиксация хэдэра ('header--fixed')
     this.addDistForTriggering = addDistForTriggering;
     this.classFixed = classFixed;
     this.classHide = classHide;
@@ -57,26 +57,20 @@ export class HeaderScroll {
     // const elAfterFixed = this.blockFixedAfter //Элемент после которого будет position fixed
     //   ? document.querySelector(this.blockFixedAfter)
     //   : this.header.nextElementSibling.children[1];
-    // console.log(this.header.nextElementSibling.children[1]);
     // return elAfterFixed.getBoundingClientRect().y;
 
-    const elAfterFixed = this.header.nextElementSibling.firstElementChild; //Элемент после которого будет position fixed
-    //?переделано, пока что отключен выбор блока
-    return elAfterFixed.getBoundingClientRect().bottom;
-
-    // try {
-    //   if (!this.blockFixedAfter) {
-    //     throw new TypeError('"blockFixedAfter" не заполнен!');
-    //   }
-
-    //   const elAfterFixed = document.querySelector(this.blockFixedAfter);
-    //   if (!elAfterFixed) {
-    //     throw new TypeError('"blockFixedAfter" селектор отсутствует в документе!');
-    //   }
-    //   return elAfterFixed.getBoundingClientRect().y;
-    // } catch (error) {
-    //   return console.log(error);
-    // }
+    try {
+      if (!this.blockFixedAfter) {
+        throw new TypeError('"blockFixedAfter" не заполнен!');
+      }
+      const elAfterFixed = document.querySelector(this.blockFixedAfter);
+      if (!elAfterFixed) {
+        throw new TypeError('"blockFixedAfter" селектор отсутствует в документе!');
+      }
+      return elAfterFixed.getBoundingClientRect().y;
+    } catch (error) {
+      return console.log(error);
+    }
   }
 
   // scrollWidthCalc() {
