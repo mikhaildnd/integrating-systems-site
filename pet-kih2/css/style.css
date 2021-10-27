@@ -111,12 +111,14 @@ body._lock {
 }
 
 ._container {
-  max-width: 1440px;
+  max-width: 1504px;
   margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 ._container--sm {
-  max-width: 950px;
+  max-width: 1014px;
 }
 
 .btn {
@@ -898,10 +900,6 @@ body._lock {
   color: #9397a5;
 }
 
-.questions {
-  padding: 24px 0;
-}
-
 .questions__heading {
   margin-bottom: 36px;
 }
@@ -1188,6 +1186,7 @@ body._lock {
   padding: 24px;
   height: 230px;
   outline: 1px solid #333333;
+  cursor: pointer;
 }
 
 .nav-philosophy__item::after {
@@ -2007,21 +2006,21 @@ body._lock {
      object-position: 0 0;
 }
 
-.solution-futures {
-  padding-top: 42px;
+.solution-advantages {
+  padding-top: 32px;
+  padding-bottom: 40px;
 }
 
-.solution-futures__term {
-  margin-bottom: 32px;
+.solution-advantages__term {
+  margin-bottom: 16px;
 }
 
-.solution-futures__ref {
+.solution-advantages__ref {
+  margin-bottom: 40px;
+}
+
+.solution-advantages__benefits {
   margin-bottom: 50px;
-}
-
-.solution-futures__benefits {
-  margin-bottom: 80px;
-  background-color: whitesmoke;
 }
 
 .term {
@@ -2056,12 +2055,10 @@ body._lock {
 
 .benefits {
   position: relative;
-  padding-top: 60px;
 }
 
 .benefits__inner {
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: 100px;
   background-image: url(../img/dome.svg);
   background-repeat: no-repeat;
   background-position: center 0;
@@ -2072,17 +2069,17 @@ body._lock {
   font-size: 34px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 32px;
 }
 
 .benefits__item {
-  margin-bottom: 46px;
   max-width: 200px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .item-benefits {
+  padding: 24px 0;
   text-align: center;
 }
 
@@ -2107,11 +2104,15 @@ body._lock {
 
 .instructions__heading {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 28px;
 }
 
 .instructions__item {
   margin-bottom: 40px;
+}
+
+.instructions__item:last-child {
+  margin-bottom: 0;
 }
 
 .instructions__item ul {
@@ -2155,10 +2156,6 @@ body._lock {
   line-height: 1.2;
 }
 
-.solution-reviews {
-  padding: 24px 0;
-}
-
 .solution-reviews__heading {
   text-align: center;
   margin-bottom: 34px;
@@ -2191,7 +2188,7 @@ body._lock {
 }
 
 .page__philosophy {
-  padding-top: 104px;
+  padding-top: 50px;
   padding-bottom: 40px;
 }
 
@@ -2205,18 +2202,17 @@ body._lock {
   padding-bottom: 50px;
 }
 
-.page__term {
-  margin-top: 42px;
-  margin-bottom: 32px;
+.page__reviews {
+  padding-top: 78px;
+  padding-bottom: 24px;
 }
 
-.page__ref {
-  margin-bottom: 50px;
+.page__questions {
+  padding: 24px 0;
 }
 
-.page__benefits {
-  margin-bottom: 80px;
-  background-color: whitesmoke;
+.page__contacts {
+  padding: 24px 0;
 }
 
 @media (min-width: 375px) {
@@ -2323,8 +2319,28 @@ body._lock {
     font-size: 20px;
   }
 
+  .solution-advantages {
+    padding-bottom: 50px;
+  }
+
+  .solution-advantages__term {
+    margin-bottom: 20px;
+  }
+
+  .solution-advantages__ref {
+    margin-bottom: 48px;
+  }
+
   .benefits__heading {
     font-size: 38px;
+  }
+
+  .instructions__heading {
+    margin-bottom: 30px;
+  }
+
+  .page__philosophy {
+    margin-bottom: 56px;
   }
 }
 
@@ -2397,6 +2413,10 @@ body._lock {
     padding: 0 40px;
   }
 
+  .solution-advantages__term {
+    margin-bottom: 22px;
+  }
+
   .ref::before {
     margin-right: 20px;
   }
@@ -2444,6 +2464,11 @@ body._lock {
 }
 
 @media (min-width: 576px) {
+  ._container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
   .form__group--submit {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -2614,7 +2639,15 @@ body._lock {
     margin-left: 15px;
   }
 
-  .solution-futures__ref span {
+  .solution-advantages {
+    padding-top: 38px;
+  }
+
+  .solution-advantages__term {
+    margin-bottom: 24px;
+  }
+
+  .solution-advantages__ref span {
     max-width: 580px;
   }
 
@@ -2628,7 +2661,11 @@ body._lock {
   }
 
   .benefits__heading {
-    font-size: 50px;
+    font-size: 46px;
+  }
+
+  .instructions__heading {
+    margin-bottom: 32px;
   }
 
   .instructions__item li {
@@ -2639,8 +2676,8 @@ body._lock {
     font-size: 22px;
   }
 
-  .page__ref span {
-    max-width: 580px;
+  .page__philosophy {
+    margin-bottom: 60px;
   }
 }
 
@@ -2828,6 +2865,23 @@ body._lock {
     font-size: 24px;
   }
 
+  .solution-advantages {
+    padding-top: 44px;
+    padding-bottom: 70px;
+  }
+
+  .solution-advantages__term {
+    margin-bottom: 28px;
+  }
+
+  .solution-advantages__ref {
+    margin-bottom: 58px;
+  }
+
+  .solution-advantages__benefits {
+    margin-bottom: 100px;
+  }
+
   .term {
     font-size: 24px;
   }
@@ -2838,7 +2892,7 @@ body._lock {
   }
 
   .benefits__heading {
-    font-size: 64px;
+    font-size: 54px;
   }
 
   .benefits__list {
@@ -2861,6 +2915,7 @@ body._lock {
   }
 
   .instructions__heading {
+    margin-bottom: 80px;
     text-align: left;
   }
 
@@ -3033,6 +3088,19 @@ body._lock {
     padding: 56px 0 0;
   }
 
+  .solution-advantages {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+
+  .solution-advantages__term {
+    margin-bottom: 32px;
+  }
+
+  .solution-advantages__ref {
+    margin-bottom: 80px;
+  }
+
   .ref::before {
     width: 83px;
     height: 98px;
@@ -3102,10 +3170,6 @@ body._lock {
 }
 
 @media (min-width: 1024px) {
-  .questions {
-    padding: 28px 0;
-  }
-
   .hero-section {
     min-height: 768px;
   }
@@ -3203,13 +3267,25 @@ body._lock {
     font-size: 42px;
   }
 
-  .solution-reviews {
-    padding: 28px 0;
+  .solution-advantages {
+    padding-top: 58px;
   }
 
   .page__mission {
     padding-top: 64px;
     padding-bottom: 64px;
+  }
+
+  .page__reviews {
+    padding-bottom: 28px;
+  }
+
+  .page__questions {
+    padding: 28px 0;
+  }
+
+  .page__contacts {
+    padding: 28px 0;
   }
 }
 
@@ -3304,6 +3380,14 @@ body._lock {
     margin-bottom: 76px;
   }
 
+  .solution-advantages {
+    padding-top: 80px;
+  }
+
+  .solution-advantages__term {
+    margin-bottom: 38px;
+  }
+
   .term {
     font-size: 28px;
   }
@@ -3330,13 +3414,6 @@ body._lock {
 @media (min-width: 1920px) {
   .solution-slider__content::before {
     height: 680px;
-  }
-}
-
-@media (max-width: 1500px) {
-  ._container {
-    padding-left: 32px;
-    padding-right: 32px;
   }
 }
 
@@ -3696,13 +3773,6 @@ body._lock {
   .contacts-menu__item--phone {
     font-size: 14px;
     line-height: 17px;
-  }
-}
-
-@media (max-width: 575.98px) {
-  ._container {
-    padding-left: 16px;
-    padding-right: 16px;
   }
 }
 

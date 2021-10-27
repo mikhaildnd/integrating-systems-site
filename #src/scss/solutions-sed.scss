@@ -1,11 +1,60 @@
-.solution-futures {
-  padding-top: 42px;
-  // padding-top: 64px;
+.solution-advantages {
+  padding-top: 32px;
+  padding-bottom: 40px;
+  @media (min-width: $md7+px) {
+    padding-bottom: 50px;
+  }
+  @media (min-width: $md6+px) {
+  }
+  @media (min-width: $md5+px) {
+    padding-top: 38px;
+  }
+  @media (min-width: $md4+px) {
+    padding-top: 44px;
+    padding-bottom: 70px;
+  }
+  @media (min-width: $md3+px) {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+  @media (min-width: $md2+px) {
+    padding-top: 58px;
+  }
+  @media (min-width: $md1+px) {
+    padding-top: 80px;
+  }
   &__term {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
+    @media (min-width: $md7+px) {
+      margin-bottom: 20px;
+    }
+    @media (min-width: $md6+px) {
+      margin-bottom: 22px;
+    }
+    @media (min-width: $md5+px) {
+      margin-bottom: 24px;
+    }
+    @media (min-width: $md4+px) {
+      margin-bottom: 28px;
+    }
+    @media (min-width: $md3+px) {
+      margin-bottom: 32px;
+    }
+    @media (min-width: $md1+px) {
+      margin-bottom: 38px;
+    }
   }
   &__ref {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    @media (min-width: $md7+px) {
+      margin-bottom: 48px;
+    }
+    @media (min-width: $md4+px) {
+      margin-bottom: 58px;
+    }
+    @media (min-width: $md3+px) {
+      margin-bottom: 80px;
+    }
     span {
       @media (min-width: $md5+px) {
         max-width: 580px;
@@ -13,12 +62,15 @@
     }
   }
   &__benefits {
-    margin-bottom: 80px;
-    background-color: rgb(245, 245, 245);
+    margin-bottom: 50px;
+    @media (min-width: $md4+px) {
+      margin-bottom: 100px;
+    }
   }
   &__instructions {
   }
 }
+
 .term {
   font-size: 16px;
   line-height: 1.2;
@@ -68,11 +120,8 @@
 }
 .benefits {
   position: relative;
-  padding-top: 60px;
-
   &__inner {
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding-top: 100px;
     background-image: url(../img/dome.svg);
     background-repeat: no-repeat;
     background-position: center 0;
@@ -82,19 +131,18 @@
     font-size: 34px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 32px;
     @media (min-width: $md7+px) {
       font-size: 38px;
-      // margin-bottom: 70px;
     }
     @media (min-width: $md6+px) {
       font-size: 40px;
     }
     @media (min-width: $md5+px) {
-      font-size: 50px;
+      font-size: 46px;
     }
     @media (min-width: $md4+px) {
-      font-size: 64px;
+      font-size: 54px;
     }
   }
   &__list {
@@ -104,7 +152,7 @@
     }
   }
   &__item {
-    margin-bottom: 46px;
+    // margin-bottom: 46px;
     max-width: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -115,6 +163,7 @@
   }
 }
 .item-benefits {
+  padding: 24px 0;
   text-align: center;
   @media (min-width: $md4+px) {
     padding-left: 15px;
@@ -139,13 +188,23 @@
 .instructions {
   &__heading {
     text-align: center;
-    margin-bottom: 56px;
+    margin-bottom: 28px;
+    @media (min-width: $md7+px) {
+      margin-bottom: 30px;
+    }
+    @media (min-width: $md5+px) {
+      margin-bottom: 32px;
+    }
     @media (min-width: $md4+px) {
+      margin-bottom: 80px;
       text-align: left;
     }
   }
   &__item {
     margin-bottom: 40px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     ul {
       padding-left: 25px;
       border-left: 2px dashed rgb(214, 214, 214);
@@ -232,10 +291,6 @@
   }
 }
 .solution-reviews {
-  padding: 24px 0;
-  @media (min-width: $md2+px) {
-    padding: 28px 0;
-  }
   &__heading {
     text-align: center;
     margin-bottom: 34px;

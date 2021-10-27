@@ -176,6 +176,7 @@
     padding: 24px;
     height: 230px;
     outline: 1px solid darken($white, 80%);
+    cursor: pointer;
     &::after {
       content: '';
       position: absolute;
