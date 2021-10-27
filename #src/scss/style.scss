@@ -89,6 +89,7 @@ body {
 @import 'header';
 @import 'footer';
 @import 'tipography';
+@import 'comments';
 @import 'questions';
 @import 'hero';
 @import 'home';
@@ -99,4 +100,88 @@ body {
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
   flex: 1 1 auto;
+  &__hero {
+    padding-bottom: 24px;
+    @media (min-width: $md1+px) {
+      padding-bottom: 120px;
+    }
+    @media (min-width: $md4+px) {
+      padding-bottom: 80px;
+    }
+    @media (min-width: $md6+px) {
+      padding-bottom: 40px;
+    }
+  }
+  &__slider-solution {
+    padding-top: 100px;
+    padding-bottom: 140px;
+    @media (min-width: $md4+px) {
+      padding-top: 120px;
+    }
+    @media (min-width: $md3+px) {
+      padding-bottom: 160px;
+    }
+    @media (min-width: $md1+px) {
+      padding-bottom: 200px;
+    }
+  }
+  &__philosophy {
+    padding-top: 104px;
+    padding-bottom: 40px;
+    @media (min-width: $md4+px) {
+      padding-top: 96px;
+      padding-bottom: 56px;
+    }
+    @media (min-width: $md1+px) {
+      padding-top: 118px;
+      padding-bottom: 160px;
+    }
+  }
+  &__mission {
+    padding-top: 36px;
+    padding-bottom: 70px;
+    @media (min-width: $md4+px) {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+    @media (min-width: $md2+px) {
+      padding-top: 64px;
+      padding-bottom: 64px;
+      // max-width: 1000px;
+    }
+    @media (min-width: $md1+px) {
+      // max-width: 1200px;
+      padding-top: 104px;
+      padding-bottom: 104px;
+    }
+  }
+  &__sertification {
+    padding-top: 104px;
+    padding-bottom: 50px;
+    @media (min-width: $md4+px) {
+      padding-top: 64px;
+      padding-bottom: 72px;
+    }
+    @media (min-width: $md3+px) {
+      padding-bottom: 80px;
+    }
+  }
+  &__term {
+    margin-top: 42px;
+    margin-bottom: 32px;
+  }
+  &__ref {
+    margin-bottom: 50px;
+    span {
+      @media (min-width: $md5+px) {
+        max-width: 580px;
+      }
+    }
+  }
+  &__benefits {
+    margin-bottom: 80px;
+    background-color: rgb(245, 245, 245);
+  }
+  &__instructions {
+  }
 }

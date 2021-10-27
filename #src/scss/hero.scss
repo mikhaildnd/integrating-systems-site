@@ -5,21 +5,15 @@
   align-items: flex-end;
   min-height: 380px;
   height: 100vh;
-  padding-bottom: 24px;
   background-color: $brand;
-  @media (min-width: $md1+px) {
-    padding-bottom: 120px;
-  }
   @media (min-width: $md2+px) {
     min-height: 768px;
   }
   @media (min-width: $md4+px) {
     min-height: 610px;
-    padding-bottom: 80px;
   }
   @media (min-width: $md6+px) {
     min-height: 400px;
-    padding-bottom: 40px;
   }
   &--bg {
     background-repeat: no-repeat;

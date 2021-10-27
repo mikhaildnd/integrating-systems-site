@@ -780,6 +780,12 @@ body._lock {
   margin-bottom: 20px;
 }
 
+._heading {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 .review-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -890,12 +896,6 @@ body._lock {
   font-size: 12px;
   line-height: 1.33;
   color: #9397a5;
-}
-
-._heading {
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.5;
 }
 
 .questions {
@@ -1017,7 +1017,6 @@ body._lock {
           align-items: flex-end;
   min-height: 380px;
   height: 100vh;
-  padding-bottom: 24px;
   background-color: #1e468a;
 }
 
@@ -1139,12 +1138,10 @@ body._lock {
 }
 
 .philosophy-section__content {
-  max-width: 1440px;
+  max-width: calc(1440px + 64px);
   margin: 0 auto;
-  padding-top: 104px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .philosophy-section__info {
@@ -1339,11 +1336,6 @@ body._lock {
   font-weight: 400;
   line-height: 1.5;
   color: #b3b3b3;
-}
-
-.mission-section__content {
-  padding-top: 36px;
-  padding-bottom: 70px;
 }
 
 .mission-section__text-wrapper {
@@ -1570,11 +1562,6 @@ body._lock {
   overflow: hidden;
 }
 
-.sertification-section__wrapper {
-  padding-top: 104px;
-  padding-bottom: 50px;
-}
-
 .sertification-section__info {
   margin-bottom: 14px;
 }
@@ -1747,9 +1734,7 @@ body._lock {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  padding-top: 100px;
   padding-right: 32px;
-  padding-bottom: 140px;
   padding-left: 32px;
 }
 
@@ -2196,6 +2181,44 @@ body._lock {
           flex: 1 1 auto;
 }
 
+.page__hero {
+  padding-bottom: 24px;
+}
+
+.page__slider-solution {
+  padding-top: 100px;
+  padding-bottom: 140px;
+}
+
+.page__philosophy {
+  padding-top: 104px;
+  padding-bottom: 40px;
+}
+
+.page__mission {
+  padding-top: 36px;
+  padding-bottom: 70px;
+}
+
+.page__sertification {
+  padding-top: 104px;
+  padding-bottom: 50px;
+}
+
+.page__term {
+  margin-top: 42px;
+  margin-bottom: 32px;
+}
+
+.page__ref {
+  margin-bottom: 50px;
+}
+
+.page__benefits {
+  margin-bottom: 80px;
+  background-color: whitesmoke;
+}
+
 @media (min-width: 375px) {
   .checkbox-label__input {
     width: 28px;
@@ -2235,6 +2258,10 @@ body._lock {
     font-size: 13px;
   }
 
+  ._heading {
+    font-size: 30px;
+  }
+
   .review-block__text {
     padding-left: 20px;
     padding-right: 20px;
@@ -2242,10 +2269,6 @@ body._lock {
 
   .review-block__text p {
     font-size: 16px;
-  }
-
-  ._heading {
-    font-size: 30px;
   }
 
   .item-accordeon {
@@ -2341,7 +2364,6 @@ body._lock {
 
   .hero-section {
     min-height: 400px;
-    padding-bottom: 40px;
   }
 
   .solution-slider__content::before {
@@ -2389,6 +2411,10 @@ body._lock {
 
   .item-instructions__text {
     font-size: 20px;
+  }
+
+  .page__hero {
+    padding-bottom: 40px;
   }
 
   .nav-footer > .footer__contacts {
@@ -2468,12 +2494,12 @@ body._lock {
     width: 140px;
   }
 
-  .autor-block__img {
-    margin-right: 24px;
-  }
-
   ._heading {
     font-size: 34px;
+  }
+
+  .autor-block__img {
+    margin-right: 24px;
   }
 
   .item-accordeon {
@@ -2612,6 +2638,10 @@ body._lock {
   .item-instructions__text {
     font-size: 22px;
   }
+
+  .page__ref span {
+    max-width: 580px;
+  }
 }
 
 @media (min-width: 610px) {
@@ -2706,12 +2736,6 @@ body._lock {
 
   .hero-section {
     min-height: 610px;
-    padding-bottom: 80px;
-  }
-
-  .philosophy-section__content {
-    padding-top: 96px;
-    padding-bottom: 56px;
   }
 
   .philosophy-section__info {
@@ -2739,11 +2763,6 @@ body._lock {
     margin-left: 8px;
   }
 
-  .mission-section__content {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-
   .mission-section__text-wrapper {
     margin-bottom: 46px;
   }
@@ -2761,18 +2780,9 @@ body._lock {
     padding-top: 80px;
   }
 
-  .sertification-section__wrapper {
-    padding-top: 64px;
-    padding-bottom: 72px;
-  }
-
   .sertification-section__title {
     font-size: 32px;
     line-height: 1.25;
-  }
-
-  .solution-slider__content {
-    padding-top: 120px;
   }
 
   .solution-slider__content::before {
@@ -2886,6 +2896,29 @@ body._lock {
     text-align: left;
     margin-bottom: 0;
   }
+
+  .page__hero {
+    padding-bottom: 80px;
+  }
+
+  .page__slider-solution {
+    padding-top: 120px;
+  }
+
+  .page__philosophy {
+    padding-top: 96px;
+    padding-bottom: 56px;
+  }
+
+  .page__mission {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .page__sertification {
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -2928,10 +2961,6 @@ body._lock {
     margin-bottom: 26px;
   }
 
-  .sertification-section__wrapper {
-    padding-bottom: 80px;
-  }
-
   .sertification-section__title {
     font-size: 36px;
     line-height: 1.15;
@@ -2945,7 +2974,6 @@ body._lock {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding-bottom: 160px;
   }
 
   .solution-slider__content::before {
@@ -3014,6 +3042,14 @@ body._lock {
     -webkit-hyphens: none;
         -ms-hyphens: none;
             hyphens: none;
+  }
+
+  .page__slider-solution {
+    padding-bottom: 160px;
+  }
+
+  .page__sertification {
+    padding-bottom: 80px;
   }
   .footer__logo {
     -ms-grid-row: 1;
@@ -3087,13 +3123,11 @@ body._lock {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-top: 64px;
-    padding-bottom: 64px;
     max-width: 1000px;
   }
 
   .mission-section__text-wrapper {
-    max-width: 400px;
+    max-width: 450px;
     margin-right: 30px;
     margin-bottom: 0;
   }
@@ -3172,18 +3206,14 @@ body._lock {
   .solution-reviews {
     padding: 28px 0;
   }
+
+  .page__mission {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 
 @media (min-width: 1400px) {
-  .hero-section {
-    padding-bottom: 120px;
-  }
-
-  .philosophy-section__content {
-    padding-top: 118px;
-    padding-bottom: 160px;
-  }
-
   .philosophy-section__info {
     margin-bottom: 85px;
   }
@@ -3217,8 +3247,6 @@ body._lock {
 
   .mission-section__content {
     max-width: 1200px;
-    padding-top: 104px;
-    padding-bottom: 104px;
   }
 
   .mission-section__text-wrapper {
@@ -3250,7 +3278,6 @@ body._lock {
   .solution-slider__content {
     max-width: calc(1440px + 64px);
     margin: 0 auto;
-    padding-bottom: 200px;
   }
 
   .solution-slider__content::before {
@@ -3279,6 +3306,24 @@ body._lock {
 
   .term {
     font-size: 28px;
+  }
+
+  .page__hero {
+    padding-bottom: 120px;
+  }
+
+  .page__slider-solution {
+    padding-bottom: 200px;
+  }
+
+  .page__philosophy {
+    padding-top: 118px;
+    padding-bottom: 160px;
+  }
+
+  .page__mission {
+    padding-top: 104px;
+    padding-bottom: 104px;
   }
 }
 
