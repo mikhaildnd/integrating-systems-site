@@ -10,7 +10,8 @@
   }
   // .footer__nav
   &__nav {
-    padding: 45px 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
   }
   // .footer__info
   &__info {
@@ -23,7 +24,8 @@
       'privacy privacy'
       'rights rights ';
     row-gap: 18px;
-    padding: 40px 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
     @media (min-width: 650px) {
       grid-template-rows: minmax(60px, 1fr) min-content;
       grid-template-areas:

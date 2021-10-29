@@ -89,29 +89,30 @@ body {
 @import 'tipography';
 @import 'comments';
 @import 'questions';
-@import 'hero';
 @import 'home';
+@import 'hero';
 @import 'solutions';
 @import 'solutions-sed';
+@import 'integrating';
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
   flex: 1 1 auto;
-  &__hero {
-    padding-bottom: 24px;
-    @media (min-width: $md6+px) {
-      padding-bottom: 40px;
-    }
-    @media (min-width: $md5+px) {
-    }
-    @media (min-width: $md4+px) {
-      padding-bottom: 80px;
-    }
-    @media (min-width: $md1+px) {
-      padding-bottom: 120px;
-    }
-  }
+  // &__hero {
+  //   padding-bottom: 24px;
+  //   @media (min-width: $md6+px) {
+  //     padding-bottom: 40px;
+  //   }
+  //   @media (min-width: $md5+px) {
+  //   }
+  //   @media (min-width: $md4+px) {
+  //     padding-bottom: 80px;
+  //   }
+  //   @media (min-width: $md1+px) {
+  //     padding-bottom: 120px;
+  //   }
+  // }
   &__slider-solution {
     padding-top: 100px;
     padding-bottom: 140px;
