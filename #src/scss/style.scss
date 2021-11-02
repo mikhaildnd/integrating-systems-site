@@ -115,15 +115,17 @@ body {
   // }
   &__slider-solution {
     padding-top: 100px;
-    padding-bottom: 140px;
+    padding-bottom: 30px;
     @media (min-width: $md4+px) {
       padding-top: 120px;
+      padding-bottom: 36px;
     }
-    @media (min-width: $md3+px) {
-      padding-bottom: 160px;
-    }
+    // @media (min-width: $md3+px) {
+    //   padding-bottom: 160px;
+    // }
     @media (min-width: $md1+px) {
-      padding-bottom: 200px;
+      // padding-bottom: 200px;
+      padding-bottom: 84px;
     }
   }
   &__philosophy {

@@ -351,11 +351,11 @@
   }
   // .mission__btn-wrapper
   &__btn-wrapper {
-    text-transform: uppercase;
   }
   // .mission__btn
   &__btn {
     width: 100%;
+    text-transform: uppercase;
     @media (min-width: $md2+px) {
       max-width: 140px;
     }
@@ -852,70 +852,57 @@
 
 //========================================================================================================================================================
 .solution-slider {
-  position: relative;
+  position: relative; //для грида
   z-index: 1;
   background-color: $brand;
+  &__content {
+    overflow: hidden;
+  }
   // .solution-slider__wrapper
-  &__wrapper {
-    // max-width: 1440px;
-    // margin: 0 auto;
+  &__slides-wrapper {
+    margin-bottom: 24px;
   }
   // .solution-slider__slide
   &__slide {
   }
-  // .solution-slider__content //иначе не ограничивается корректно без доп. контейнера
-  &__content {
+  // .solution-slider__content
+  &__slide-content {
     z-index: 2;
     position: relative;
     display: flex;
     flex-direction: column;
     position: relative;
-    // padding-top: 100px;
-    padding-right: 16px;
-    // padding-bottom: 140px;
-    padding-left: 16px;
-    // @media (min-width: $md4+px) {
-    //   padding-top: 120px;
-    // }
-    @media (min-width: $md5+px) {
-      padding-right: 32px;
-      padding-left: 32px;
-    }
     @media (min-width: $md3+px) {
       flex-direction: row;
       justify-content: space-between;
-      // padding-bottom: 160px;
     }
-    @media (min-width: $md1+px) {
-      max-width: calc(1440px + 64px);
-      margin: 0 auto;
-      // padding-bottom: 200px;
-    }
+    // @media (min-width: $md1+px) {
+    //   max-width: calc(1440px + 64px);
+    //   margin: 0 auto;
+    // }
 
     &::before {
       content: '';
       align-self: center;
-      // transform: translateY(100px);
-      // margin-bottom: 75px;
       background-repeat: no-repeat;
       background-position: center;
-      // background-size: cover;
       background-size: contain;
-      //* width: 280px;
-      width: 100%; //!можно убрать, чтобы вернуться  старому варианту и расском. ширины
+      width: 100%;
       height: 340px;
+      margin-bottom: -30px;
       @media (min-width: $md6+px) {
         // width: 400px;
         height: 485px;
       }
       @media (min-width: $md4+px) {
         // width: 530px;
-        height: 645px;
+        // height: 500px;
       }
       @media (min-width: $md3+px) {
         order: 2;
+        margin-bottom: 0;
         // width: 400px;
-        height: 485px;
+        // height: 485px;
       }
       @media (min-width: $md1+px) {
         // width: 460px;
@@ -949,22 +936,8 @@
   }
   // .solution-slider__promo
   &__promo {
-    flex-shrink: 0; //!можно убрать, чтобы вернуться  старому варианту
-    transform: translateY(-25px);
-    @media (min-width: $md7+px) {
-      transform: translateY(-30px);
-    }
-    @media (min-width: $md6+px) {
-      transform: translateY(-35px);
-    }
-    @media (min-width: $md5+px) {
-      transform: translateY(-40px);
-    }
-    @media (min-width: $md4+px) {
-      transform: translateY(-45px);
-    }
+    flex-shrink: 0;
     @media (min-width: $md3+px) {
-      transform: none;
       align-self: center;
     }
   }
@@ -1029,13 +1002,8 @@
   }
   // .solution-slider__btn-wrapper
   &__btn-wrapper {
-    // width: 100%;
     display: flex;
-    // justify-content: space-between;
     margin: 0 -8px;
-    @media (min-width: $md4+px) {
-      // justify-content: flex-start;
-    }
   }
   // .solution-slider__btn
   &__btn {
@@ -1048,21 +1016,13 @@
   }
   // .solution-slider__pagination
   &__pagination {
+    // margin-right: -16px;
     position: relative;
-    // z-index: 3;
-    // position: absolute;
-    // left: 0;
-    // right: 0;
-    // bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // margin-bottom: 10px;
-    padding: 0 80px;
-    margin-left: 16px;
-    margin-right: 16px;
     width: 100%; //
-    height: 140px;
+    height: 95px;
     counter-reset: item;
     transition: all 0.3s linear;
     @media (min-width: $md5+px) {
@@ -1078,22 +1038,6 @@
       height: 4px;
       background-color: $white;
       transform: translateY(-50%);
-    }
-    @media (min-width: $md5+px) {
-      // margin-bottom: 15px;
-    }
-    @media (min-width: $md4+px) {
-      // margin-bottom: 20px;
-    }
-    @media (min-width: $md3+px) {
-      // margin-bottom: 25px;
-    }
-    @media (max-width: $md2+px) {
-      justify-content: flex-start;
-      padding: 0 50px;
-    }
-    @media (min-width: $md1+px) {
-      // margin-bottom: 40px;
     }
   }
   // .solution-slider__pagination-bullet

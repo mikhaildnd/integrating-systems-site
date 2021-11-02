@@ -183,6 +183,7 @@ burgerBtn.addEventListener('click', () => {
 const solutionSlider = new Swiper('.solution-swiper', {
   modules: [Pagination],
   // speed: 1000,
+  // spaceBetween: 100,
   slidesPerView: 1,
   pagination: {
     el: '.solution-slider__pagination',
