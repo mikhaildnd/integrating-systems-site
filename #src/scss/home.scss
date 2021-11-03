@@ -1,6 +1,4 @@
 .tip {
-  // display: flex;
-  // align-items: center;
   // .tip__image
   &__image {
   }
@@ -62,6 +60,16 @@
 .philosophy-section {
   position: relative;
   background: url('../img/philosophy-bg.jpg') 0 0 / cover no-repeat;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  @media (min-width: $md4+px) {
+    padding-top: 96px;
+    padding-bottom: 56px;
+  }
+  @media (min-width: $md1+px) {
+    padding-top: 118px;
+    padding-bottom: 160px;
+  }
   // // .philosophy__bg-container
   // &__bg-container {
   //   position: absolute;
@@ -81,20 +89,10 @@
   // }
   // .philosophy__content
   &__content {
-    max-width: calc(1440px + 64px);
-    margin: 0 auto;
-    // padding-top: 104px;
-    padding-left: 32px;
-    padding-right: 32px;
-    // padding-bottom: 40px;
-    // @media (min-width: $md4+px) {
-    //   padding-top: 96px;
-    //   padding-bottom: 56px;
-    // }
-    // @media (min-width: $md1+px) {
-    //   padding-top: 118px;
-    //   padding-bottom: 160px;
-    // }
+    // max-width: calc(1440px + 64px);
+    // margin: 0 auto;
+    // padding-left: 32px;
+    // padding-right: 32px;
   }
   // .philosophy__info
   &__info {
@@ -152,16 +150,10 @@
       margin-left: -5px;
     }
     @media (min-width: $md4+px) {
-      margin-top: -8px;
-      margin-right: -8px;
-      margin-bottom: -8px;
-      margin-left: -8px;
+      margin: -8px;
     }
     @media (min-width: $md1+px) {
-      margin-top: -20px;
-      margin-right: -20px;
-      margin-bottom: -20px;
-      margin-left: -20px;
+      margin: -20px;
     }
   }
   // .nav-philosophy__item
@@ -204,10 +196,7 @@
     @media (min-width: $md4+px) {
       flex-basis: calc(33.33% - 16px);
       height: 232px;
-      margin-top: 8px;
-      margin-right: 8px;
-      margin-bottom: 8px;
-      margin-left: 8px;
+      margin: 8px;
     }
     @media (min-width: $md2+px) {
       flex-basis: calc(25% - 16px);
@@ -215,10 +204,7 @@
     @media (min-width: $md1+px) {
       height: 328px;
       flex-basis: calc(25% - 40px);
-      margin-top: 20px;
-      margin-right: 20px;
-      margin-bottom: 20px;
-      margin-left: 20px;
+      margin: 20px;
     }
   }
   &__item.active .nav-philosophy__text-wrapper {
@@ -306,6 +292,20 @@
 }
 //========================================================================================================================================================
 .mission-section {
+  padding-top: 36px;
+  padding-bottom: 70px;
+  @media (min-width: $md4+px) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  @media (min-width: $md2+px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  @media (min-width: $md1+px) {
+    padding-top: 104px;
+    padding-bottom: 104px;
+  }
   // .mission__content
   &__content {
     @media (min-width: $md2+px) {

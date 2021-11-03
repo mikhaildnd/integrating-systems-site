@@ -44,102 +44,106 @@ const historySlider = new Swiper('.swiper-history', {
 });
 //========================================================================================================================================================
 
-// const historyPagination = new PaginationMove({
-//   sliderVar: historySlider, //переменная свайпер-слайдера
-//   paginationSelector: '.slider-history__pagination',
-//   step: 50,
-// });
+const historyPagination = new PaginationMove({
+  sliderVar: historySlider, //переменная свайпер-слайдера
+  paginationSelector: '.slider-history__pagination',
+  step: 50,
+});
 
-// historySlider.on('slideChange', () => {
-//   changeYear();
-//   historyPagination.move();
-// });
+historySlider.on('slideChange', () => {
+  changeYear();
+  historyPagination.move();
+});
 //========================================================================================================================================================
-// function changeYear() {
-//   const domElement = document.querySelector('.slider-history__heading');
+function changeYear() {
+  const domElement = document.querySelector('.slider-history__heading');
 
-//   let content = domElement.innerHTML;
-//   let isTargetNum = Number.isInteger(+content);
-//   let paginationTransform;
+  let content = domElement.innerHTML;
+  let isTargetNum = Number.isInteger(+content);
+  // let paginationTransform;
 
-//   if (!isTargetNum) return;
-//   // console.log(historySlider.previousIndex);
-//   if (historySlider.activeIndex > historySlider.previousIndex) {
-//     domElement.innerHTML =
-//       +domElement.innerHTML + +historySlider.activeIndex - +historySlider.previousIndex;
-//   } else if (historySlider.activeIndex < historySlider.previousIndex) {
-//     domElement.innerHTML =
-//       +domElement.innerHTML - +historySlider.previousIndex + +historySlider.activeIndex;
-//   }
-// }
+  if (!isTargetNum) return;
+  // console.log(historySlider.previousIndex);
+  if (historySlider.activeIndex > historySlider.previousIndex) {
+    domElement.innerHTML =
+      +domElement.innerHTML + +historySlider.activeIndex - +historySlider.previousIndex;
+  } else if (historySlider.activeIndex < historySlider.previousIndex) {
+    domElement.innerHTML =
+      +domElement.innerHTML - +historySlider.previousIndex + +historySlider.activeIndex;
+  }
+}
 //========================================================================================================================================================
-// const scroll = new Scroll();
+const scroll = new Scroll();
 
-// // function sliderEvents() {
-// const historySection = document.querySelector('.slider-history');
-// const historyBtn = document.querySelector('.slider-history__btn--skip ');
+// function sliderEvents() {
+const historySection = document.querySelector('.slider-history');
+const historyBtn = document.querySelector('.slider-history__btn.skip');
 
-// document.addEventListener('scroll', fixSlider);
+document.addEventListener('scroll', fixSlider);
 
-// historyBtn.addEventListener('click', skipSlider);
+if (historyBtn) {
+  historyBtn.addEventListener('click', skipSlider);
+}
 
-// function skipSlider(event) {
-//   // event.currentTarget.removeEventListener(event.type, fixSlider);
-//   // document.removeEventListener('scroll', fixSlider);
-//   document.body.style.overflowY = '';
-//   document.body.style.paddingRight = 0;
-//   historySlider.mousewheel.disable();
-//   const elementPosition = getCoords(historySection);
+function skipSlider(event) {
+  // event.currentTarget.removeEventListener(event.type, fixSlider);
+  // document.removeEventListener('scroll', fixSlider);
+  document.body.style.overflowY = '';
+  document.body.style.paddingRight = 0;
+  historySlider.mousewheel.disable();
+  const elementPosition = getCoords(historySection);
 
-//   let offsetPosition = scroll.isUp
-//     ? elementPosition.top - elementPosition.height
-//     : elementPosition.bottom;
+  let offsetPosition = scroll.isUp
+    ? elementPosition.top - elementPosition.height
+    : elementPosition.bottom;
 
-//   window.scrollBy({
-//     top: offsetPosition,
-//     behavior: 'smooth',
-//   });
-//   event.currentTarget.removeEventListener(event.type, skipSlider);
-//   setTimeout(() => {
-//     document.addEventListener('scroll', fixSlider);
-//   }, 500);
-// }
+  window.scrollBy({
+    top: offsetPosition,
+    behavior: 'smooth',
+  });
+  event.currentTarget.removeEventListener(event.type, skipSlider);
+  setTimeout(() => {
+    document.addEventListener('scroll', fixSlider);
+  }, 500);
+}
 
-// function fixSlider(event) {
-//   const elemCoords = getCoords(historySection);
-//   // console.log(elemCoords.top);
+function fixSlider(event) {
+  const elemCoords = getCoords(historySection);
+  // console.log(elemCoords.top);
+  if (!elemCoords) return;
+  if (elemCoords.top >= -50 && elemCoords.top <= 50) {
+    historySection.scrollIntoView();
+    // window.scrollBy({
+    //   top: elemCoords.top,
+    //   behavior: 'smooth',
+    // });
 
-//   if (elemCoords.top >= -50 && elemCoords.top <= 50) {
-//     historySection.scrollIntoView();
-//     // window.scrollBy({
-//     //   top: elemCoords.top,
-//     //   behavior: 'smooth',
-//     // });
+    // setTimeout(() => {
+    document.body.style.paddingRight = scrollWidthCalc() + 'px';
+    document.body.style.overflowY = 'hidden';
+    historySlider.mousewheel.enable();
+    historySlider.on('touchmove', () => {
+      console.log('hey');
+    });
+    // }, 500);
+    event.currentTarget.removeEventListener(event.type, fixSlider);
+    historyBtn.addEventListener('click', skipSlider);
+  }
+}
+// получаем координаты элемента в контексте документа
+function getCoords(elem) {
+  if (!elem) return;
 
-//     // setTimeout(() => {
-//     document.body.style.paddingRight = scrollWidthCalc() + 'px';
-//     document.body.style.overflowY = 'hidden';
-//     historySlider.mousewheel.enable();
-//     historySlider.on('touchmove', () => {
-//       console.log('hey');
-//     });
-//     // }, 500);
-//     event.currentTarget.removeEventListener(event.type, fixSlider);
-//     historyBtn.addEventListener('click', skipSlider);
-//   }
-// }
-// // получаем координаты элемента в контексте документа
-// function getCoords(elem) {
-//   let box = elem.getBoundingClientRect();
+  let box = elem.getBoundingClientRect();
 
-//   return {
-//     top: box.top,
-//     right: box.right,
-//     bottom: box.bottom,
-//     left: box.left,
-//     height: box.height,
-//   };
-// }
+  return {
+    top: box.top,
+    right: box.right,
+    bottom: box.bottom,
+    left: box.left,
+    height: box.height,
+  };
+}
 //========================================================================================================================================================
 const sertificationSlider = new Swiper('.swiper-sertification', {
   modules: [Navigation],

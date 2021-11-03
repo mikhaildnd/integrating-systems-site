@@ -6,10 +6,11 @@ export class PaginationMove {
     this.paginationSelector = document.querySelector(paginationSelector);
     this.step = step;
 
-    this.startPos = parseFloat(this.styles(this.paginationSelector).left);
+    // this.startPos = parseFloat(this.styles(this.paginationSelector).left);
   }
 
   styles(selector) {
+    if (!selector) return;
     return getComputedStyle(selector);
   }
   move() {
@@ -28,7 +29,11 @@ export class PaginationMove {
     // this.paginationSelector.style.transform = `translateX(${leftPosition}px)`;
   }
   resetToStart() {
-    return (this.paginationSelector.style.left = this.startPos + 'px');
+    //нужно протестить мб не работает
+    const startPos = parseFloat(this.styles(this.paginationSelector).left);
+
+    if (!startPos) return;
+    return (this.paginationSelector.style.left = startPos + 'px');
   }
 }
 

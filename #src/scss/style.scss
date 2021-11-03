@@ -129,40 +129,8 @@ body {
     }
   }
   &__philosophy {
-    padding-top: 50px;
-    padding-bottom: 40px;
-    @media (min-width: $md7+px) {
-      margin-bottom: 56px;
-    }
-    @media (min-width: $md5+px) {
-      margin-bottom: 60px;
-    }
-    @media (min-width: $md4+px) {
-      padding-top: 96px;
-      padding-bottom: 56px;
-    }
-    @media (min-width: $md1+px) {
-      padding-top: 118px;
-      padding-bottom: 160px;
-    }
   }
   &__mission {
-    padding-top: 36px;
-    padding-bottom: 70px;
-    @media (min-width: $md4+px) {
-      padding-top: 48px;
-      padding-bottom: 48px;
-    }
-    @media (min-width: $md2+px) {
-      padding-top: 64px;
-      padding-bottom: 64px;
-      // max-width: 1000px;
-    }
-    @media (min-width: $md1+px) {
-      // max-width: 1200px;
-      padding-top: 104px;
-      padding-bottom: 104px;
-    }
   }
   &__sertification {
     padding-top: 104px;
