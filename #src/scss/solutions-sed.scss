@@ -1,69 +1,72 @@
 .solution-advantages {
   padding-top: 32px;
   padding-bottom: 40px;
-  @media (min-width: $md7+px) {
+  @media (min-width: $md7) {
     padding-bottom: 50px;
   }
-  @media (min-width: $md6+px) {
+  @media (min-width: $md6) {
   }
-  @media (min-width: $md5+px) {
+  @media (min-width: $md5) {
     padding-top: 38px;
   }
-  @media (min-width: $md4+px) {
+  @media (min-width: $md4) {
     padding-top: 44px;
     padding-bottom: 70px;
   }
-  @media (min-width: $md3+px) {
+  @media (min-width: $md3) {
     padding-top: 50px;
     padding-bottom: 80px;
   }
-  @media (min-width: $md2+px) {
+  @media (min-width: $md2) {
     padding-top: 58px;
   }
-  @media (min-width: $md1+px) {
+  @media (min-width: $md1) {
     padding-top: 80px;
   }
   &__term {
     margin-bottom: 16px;
-    @media (min-width: $md7+px) {
+    @media (min-width: $md7) {
       margin-bottom: 20px;
     }
-    @media (min-width: $md6+px) {
+    @media (min-width: $md6) {
       margin-bottom: 22px;
     }
-    @media (min-width: $md5+px) {
+    @media (min-width: $md5) {
       margin-bottom: 24px;
     }
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       margin-bottom: 28px;
     }
-    @media (min-width: $md3+px) {
+    @media (min-width: $md3) {
       margin-bottom: 32px;
     }
-    @media (min-width: $md1+px) {
+    @media (min-width: $md1) {
       margin-bottom: 38px;
     }
   }
   &__ref {
     margin-bottom: 40px;
-    @media (min-width: $md7+px) {
+    @media (min-width: $md7) {
       margin-bottom: 48px;
     }
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       margin-bottom: 58px;
     }
-    @media (min-width: $md3+px) {
+    @media (min-width: $md3) {
       margin-bottom: 80px;
     }
+    @media (min-width: $md1) {
+      margin-bottom: 130px;
+    }
     span {
-      @media (min-width: $md5+px) {
+      @media (min-width: $md5) {
         max-width: 580px;
       }
     }
   }
   &__benefits {
     margin-bottom: 50px;
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       margin-bottom: 100px;
     }
   }
@@ -75,13 +78,13 @@
   font-size: 16px;
   line-height: 1.2;
   font-weight: 400;
-  @media (min-width: $md5+px) {
+  @media (min-width: $md5) {
     font-size: 20px;
   }
-  @media (min-width: $md4+px) {
+  @media (min-width: $md4) {
     font-size: 24px;
   }
-  @media (min-width: $md1+px) {
+  @media (min-width: $md1) {
     font-size: 28px;
   }
 }
@@ -90,7 +93,7 @@
   font-size: 12px;
   font-weight: 400;
   color: lighten($black, 50%);
-  @media (min-width: $md5+px) {
+  @media (min-width: $md5) {
     font-size: 14px;
     line-height: 1.15;
   }
@@ -105,14 +108,14 @@
     width: 55px;
     height: 68px;
     margin-right: 10px;
-    @media (min-width: $md6+px) {
+    @media (min-width: $md6) {
       margin-right: 20px;
     }
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       width: 75px;
       height: 88px;
     }
-    @media (min-width: $md3+px) {
+    @media (min-width: $md3) {
       width: 83px;
       height: 98px;
     }
@@ -125,21 +128,28 @@
     background-image: url(../img/dome.svg);
     background-repeat: no-repeat;
     background-position: center 0;
-    background-size: contain;
+    background-size: cover;
+    @media (min-width: $md1) {
+      padding-top: 0;
+      background-position: center 45px;
+    }
   }
 
   &__list {
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       display: flex;
       flex-wrap: wrap;
     }
-    @media (min-width: $md1+px) {
+    @media (min-width: $md1) {
       display: grid;
+      row-gap: 100px;
       grid-template-columns: repeat(5, 20%);
       grid-template-rows: repeat(2, 1fr);
       grid-template-areas:
         '. create . eco .'
         'save heading heading heading control';
+      margin-left: -103px;
+      margin-right: -103px;
     }
   }
   &__list-heading {
@@ -149,16 +159,16 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 32px;
-    @media (min-width: $md7+px) {
+    @media (min-width: $md7) {
       font-size: 38px;
     }
-    @media (min-width: $md6+px) {
+    @media (min-width: $md6) {
       font-size: 40px;
     }
-    @media (min-width: $md5+px) {
+    @media (min-width: $md5) {
       font-size: 46px;
     }
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       font-size: 54px;
     }
   }
@@ -167,16 +177,16 @@
     max-width: 200px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       flex-basis: 33.333%;
       max-width: 33.333%;
     }
-    @media (min-width: $md1+px) {
+    @media (min-width: $md1) {
       width: 206px;
       height: 206px;
       max-width: none;
-      // background-color: $white;
-      background-color: rgb(0, 246, 123);
+      background-color: $white;
+      // background-color: rgb(0, 246, 123);
       border-radius: 50%;
     }
     &--save {
@@ -196,7 +206,7 @@
 .item-benefits {
   padding: 24px 0;
   text-align: center;
-  @media (min-width: $md4+px) {
+  @media (min-width: $md4) {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -220,13 +230,13 @@
   &__heading {
     text-align: center;
     margin-bottom: 28px;
-    @media (min-width: $md7+px) {
+    @media (min-width: $md7) {
       margin-bottom: 30px;
     }
-    @media (min-width: $md5+px) {
+    @media (min-width: $md5) {
       margin-bottom: 32px;
     }
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       margin-bottom: 80px;
       text-align: left;
     }
@@ -239,7 +249,7 @@
     ul {
       padding-left: 25px;
       border-left: 2px dashed rgb(214, 214, 214);
-      @media (min-width: $md4+px) {
+      @media (min-width: $md4) {
         flex-basis: 70%;
         margin-left: 16px;
         padding-left: 35px;
@@ -253,22 +263,22 @@
       padding-left: 10px;
       color: lighten($black, 30%);
       hyphens: auto;
-      @media (min-width: $md6+px) {
+      @media (min-width: $md6) {
         font-size: 16px;
       }
-      @media (min-width: $md5+px) {
+      @media (min-width: $md5) {
         font-size: 18px;
       }
-      @media (min-width: $md4+px) {
+      @media (min-width: $md4) {
         &:last-child {
           margin-bottom: 0;
         }
       }
-      @media (min-width: $md3+px) {
+      @media (min-width: $md3) {
         hyphens: none;
       }
     }
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       display: flex;
     }
     // &::after {
@@ -286,7 +296,7 @@
 }
 .item-instructions {
   margin-bottom: 25px;
-  @media (min-width: $md4+px) {
+  @media (min-width: $md4) {
     flex-basis: 30%;
     margin-right: 16px;
     margin-bottom: 0;
@@ -295,7 +305,7 @@
     width: 100px;
     height: 100px;
     margin: 0 auto 15px;
-    // @media (min-width: $md6+px) {
+    // @media (min-width: $md6) {
     //   width: 120px;
     //   height: 120px;
     // }
@@ -310,22 +320,27 @@
     font-weight: 700;
     text-align: center;
     line-height: 1.2;
-    @media (min-width: $md6+px) {
+    @media (min-width: $md6) {
       font-size: 20px;
     }
-    @media (min-width: $md5+px) {
+    @media (min-width: $md5) {
       font-size: 22px;
     }
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       font-size: 20px;
     }
   }
 }
 .solution-reviews {
+  padding-top: 78px;
+  padding-bottom: 24px;
+  @media (min-width: $md2) {
+    padding-bottom: 28px;
+  }
   &__heading {
     text-align: center;
     margin-bottom: 34px;
-    @media (min-width: $md4+px) {
+    @media (min-width: $md4) {
       text-align: left;
       margin-bottom: 0;
     }
@@ -336,12 +351,87 @@
     justify-content: flex-end;
     margin-bottom: 14px;
   }
+  &__button {
+    width: 41px;
+    height: 41px;
+  }
 }
 //========================================================================================================================================================
 .contacts {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  @media (min-width: $md2) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
   &__heading {
     margin-bottom: 36px;
   }
   &__form {
+  }
+}
+//========================================================================================================================================================
+.side-menu {
+  display: none;
+  @media (min-width: $md2) {
+    display: block;
+  }
+  // .side-menu__list
+  &__list {
+    position: relative;
+    width: 130px;
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 1px;
+      height: 100%;
+      background-color: $brand-low;
+    }
+  }
+  // .side-menu__item
+  &__item {
+    position: relative;
+    font-size: 12px;
+    line-height: 1.25;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.1s linear;
+    padding: 12px 10px;
+    // margin-bottom: 22px;
+    &:hover {
+      color: $accent;
+      &::before {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: $accent;
+      }
+    }
+    // &:last-child {
+    //   margin-bottom: 0;
+    // }
+    &.active {
+      font-weight: 700;
+      &::before {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: $accent;
+      }
+      &:hover {
+        color: inherit;
+      }
+    }
   }
 }

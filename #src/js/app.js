@@ -225,12 +225,15 @@ const solutionSlider = new Swiper('.solution-swiper', {
 //   listItem.classList.toggle('active');
 // });
 //========================================================================================================================================================
-const philosophyList = document.querySelector('.nav-philosophy__list');
 //from helpers.js
-toggleClass({
-  container: philosophyList,
+const philosophyToggler = toggleClass({
+  containerSelector: '.nav-philosophy__list',
   eTargetSelector: '.nav-philosophy__item',
   toggleClass: 'active',
+  additionalElement: '.modal-philosophy',
+  additionalClassName: 'modal-philosophy--close',
+  rmClasses: true,
+  // closeElement: '.modal-philosophy__button',
 });
 //========================================================================================================================================================
 const reviewsSlider = new Swiper('.solution-reviews__slider', {
@@ -260,4 +263,14 @@ const reviewsSlider = new Swiper('.solution-reviews__slider', {
 const accord = new Accordeon({
   blockSelector: '.accordeon',
   openingBlock: '.item-accordeon__top',
+});
+//========================================================================================================================================================
+//todo нужно подвязать к philosophyToggler
+toggleClass({
+  containerSelector: '.modal-philosophy',
+  eTargetSelector: '.modal-philosophy',
+  toggleClass: 'modal-philosophy--close',
+  // additionalElement: '.modal-philosophy',
+  // additionalClassName: 'modal-philosophy--close',
+  // rmClasses: true,
 });

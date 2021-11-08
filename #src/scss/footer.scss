@@ -20,7 +20,6 @@
     grid-template-rows: minmax(60px, 1fr) min-content min-content;
     grid-template-areas:
       'logo contacts'
-      // 'logo contacts'
       'privacy privacy'
       'rights rights ';
     row-gap: 18px;
@@ -30,16 +29,15 @@
       grid-template-rows: minmax(60px, 1fr) min-content;
       grid-template-areas:
         'logo contacts'
-        // 'logo contacts'
         'privacy rights';
     }
-    @media (min-width: $md3+px) {
+    @media (min-width: $md3) {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: minmax(80px, 1fr) min-content min-content;
       grid-template-areas:
-        'logo logo logo contacts'
-        'privacy privacy privacy privacy'
-        'rights rights rights rights';
+        'logo . . contacts'
+        '. privacy privacy .'
+        '. rights rights .';
       column-gap: 40px;
       row-gap: 0;
     }
@@ -60,7 +58,7 @@
     font-weight: 400;
     letter-spacing: 3%;
     color: darken($white, 40%);
-    @media (min-width: $md3+px) {
+    @media (min-width: $md3) {
       justify-self: center;
     }
   }
@@ -74,7 +72,7 @@
         color: $white;
       }
     }
-    @media (min-width: $md3+px) {
+    @media (min-width: $md3) {
       justify-self: center;
       margin-bottom: 5px;
     }
@@ -102,14 +100,14 @@
     'contacts';
   grid-template-columns: 1fr;
   row-gap: 32px;
-  @media (min-width: $md6+px) {
+  @media (min-width: $md6) {
     grid-template-areas:
       'solutions about'
       'blog contacts';
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10px;
   }
-  @media (min-width: $md3+px) {
+  @media (min-width: $md3) {
     grid-template-areas: 'solutions about blog contacts';
     grid-template-columns: repeat(4, 1fr);
     column-gap: 40px;
@@ -118,7 +116,7 @@
   &__item {
     display: flex;
     flex-direction: column;
-    @media (min-width: $md7+px) {
+    @media (min-width: $md7) {
       &--solutions {
         grid-area: solutions;
       }
@@ -143,7 +141,7 @@
     &:last-child {
       margin-bottom: 0;
     }
-    @media (min-width: $md7+px) {
+    @media (min-width: $md7) {
       font-size: 13px;
     }
     &--general {
@@ -156,6 +154,3 @@
     }
   }
 }
-//====================================================================================================
-
-//====================================================================================================

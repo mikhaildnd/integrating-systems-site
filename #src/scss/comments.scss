@@ -7,11 +7,11 @@
     margin-bottom: 34px;
     padding-left: 16px;
     padding-right: 16px;
-    @media (min-width: $md7+px) {
+    @media (min-width: $md7) {
       padding-left: 20px;
       padding-right: 20px;
     }
-    @media (min-width: $md3+px) {
+    @media (min-width: $md3) {
       max-width: 840px;
       margin-bottom: 26px;
     }
@@ -23,7 +23,7 @@
       font-weight: 500;
       color: $black;
       hyphens: auto;
-      @media (min-width: $md4+px) {
+      @media (min-width: $md4) {
         line-height: 1.5;
       }
     }
@@ -34,10 +34,10 @@
       font-weight: 400;
       color: lighten($black, 30%);
       hyphens: auto;
-      @media (min-width: $md7+px) {
+      @media (min-width: $md7) {
         font-size: 16px;
       }
-      @media (min-width: $md4+px) {
+      @media (min-width: $md4) {
         line-height: 1.5;
         hyphens: none;
       }
@@ -75,7 +75,7 @@
     height: 45px;
     object-fit: cover;
     margin-right: 14px;
-    @media (min-width: $md5+px) {
+    @media (min-width: $md5) {
       margin-right: 24px;
     }
     overflow: hidden;

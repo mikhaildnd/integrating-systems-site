@@ -6,7 +6,7 @@
       @@include('_header.html',{})
       <main class="page">
         <!-- HERO -->
-        <section class="page__hero hero-section hero-section--bg hero-section--bg-sed">
+        <section class="hero-section hero-section--bg hero-section--bg-sed">
           <div
             class="hero-section__content hero-section__content--solution _container _container--sm"
           >
@@ -75,7 +75,19 @@
             <div class="background-block__inner bg bg--cross-grid"></div>
           </div> -->
         </section>
-        <section class="page__advantages solution-advantages _container _container--sm">
+        <!-- <div class="page__group-container"> -->
+        <!-- <aside class="page__aside">
+            <nav class="side-menu">
+              <ul class="side-menu__list">
+                <li class="side-menu__item active">Выгоды использования</li>
+                <li class="side-menu__item">Как это работает</li>
+                <li class="side-menu__item">Функциональные возможности</li>
+                <li class="side-menu__item">Отзывы клиентов</li>
+                <li class="side-menu__item">Частые вопросы</li>
+              </ul>
+            </nav>
+          </aside> -->
+        <section class="solution-advantages _container _container--sm">
           <div class="solution-advantages__term term">
             <p>
               СЭД «СИНКОПА-ДОКУМЕНТ» - это готовое решение дляавтоматизации процессов
@@ -93,12 +105,12 @@
           <div class="solution-advantages__benefits benefits">
             <div class="benefits__inner">
               <!-- <div class="benefits__heading">
-                <h3>
-                  Выгоды
-                  <br />
-                  использования
-                </h3>
-              </div> -->
+                  <h3>
+                    Выгоды
+                    <br />
+                    использования
+                  </h3>
+                </div> -->
               <ul class="benefits__list">
                 <div class="benefits__list-heading">
                   <h3>
@@ -279,15 +291,15 @@
           </div>
         </section>
         <!-- PHILOSOPHY -->
-        <section class="page__philosophy philosophy-section">
+        <section class="philosophy-section">
           <!-- <div class="philosophy-section__bg-container">
-                    <div class="philosophy-section__bg"></div>
-                  </div> -->
-          <div class="philosophy-section__content">
+                      <div class="philosophy-section__bg"></div>
+                    </div> -->
+          <div class="philosophy-section__content _container">
             <div class="philosophy-section__info">
               <!-- <div class="philosophy-section__note">
-                <span>Философия и миссия</span>
-              </div> -->
+                  <span>Философия и миссия</span>
+                </div> -->
               <div class="philosophy-section__title">
                 <h2>Функциональные возможности решения</h2>
               </div>
@@ -424,14 +436,21 @@
           </div>
         </section>
         <!-- reviews -->
-        <div class="page__reviews solution-reviews _container _container--sm">
+        <div class="solution-reviews _container _container--sm">
           <h3 class="solution-reviews__heading _heading">Отзывы клиентов</h3>
           <div class="solution-reviews__slider swiper">
             <div class="solution-reviews__button-wrapper twin-button-wrapper">
-              <div class="solution-reviews__button--next twin-button twin-button--prev">
+              <div
+                class="
+                  solution-reviews__button solution-reviews__button--next
+                  twin-button twin-button--prev
+                "
+              >
                 <span></span>
               </div>
-              <div class="solution-reviews__button--prev twin-button"><span></span></div>
+              <div class="solution-reviews__button solution-reviews__button--prev twin-button">
+                <span></span>
+              </div>
             </div>
             <div class="swiper-wrapper">
               <div class="review-block swiper-slide">
@@ -508,7 +527,7 @@
           </div>
         </div>
         <!-- questions -->
-        <div class="page__questions questions _container _container--sm">
+        <div class="questions _container _container--sm">
           <h3 class="questions__heading _heading">Частые вопросы</h3>
           <div class="questions__accordeon accordeon">
             <div class="accordeon__item item-accordeon">
@@ -522,15 +541,17 @@
                 <div class="item-accordeon__icon"></div>
               </button>
               <div class="item-accordeon__bottom">
-                <div class="item-accordeon__text">
-                  <p>
-                    Существует несколько вариантов реализации системы: это может быть как вариант
-                    размещения на сервере Вашей организации, так и вариант размещения системы в
-                    облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
-                    Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
-                    2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской части
-                    необходим любой браузер или мобильное приложение.
-                  </p>
+                <div class="item-accordeon__bottom-inner">
+                  <div class="item-accordeon__text">
+                    <p>
+                      Существует несколько вариантов реализации системы: это может быть как вариант
+                      размещения на сервере Вашей организации, так и вариант размещения системы в
+                      облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
+                      Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
+                      2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской
+                      части необходим любой браузер или мобильное приложение.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -542,15 +563,17 @@
                 <div class="item-accordeon__icon"></div>
               </button>
               <div class="item-accordeon__bottom">
-                <div class="item-accordeon__text">
-                  <p>
-                    Существует несколько вариантов реализации системы: это может быть как вариант
-                    размещения на сервере Вашей организации, так и вариант размещения системы в
-                    облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
-                    Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
-                    2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской части
-                    необходим любой браузер или мобильное приложение.
-                  </p>
+                <div class="item-accordeon__bottom-inner">
+                  <div class="item-accordeon__text">
+                    <p>
+                      Существует несколько вариантов реализации системы: это может быть как вариант
+                      размещения на сервере Вашей организации, так и вариант размещения системы в
+                      облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
+                      Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
+                      2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской
+                      части необходим любой браузер или мобильное приложение.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -565,29 +588,31 @@
                 <div class="item-accordeon__icon"></div>
               </button>
               <div class="item-accordeon__bottom">
-                <div class="item-accordeon__text">
-                  <p>
-                    Существует несколько вариантов реализации системы: это может быть как вариант
-                    размещения на сервере Вашей организации, так и вариант размещения системы в
-                    облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
-                    Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
-                    2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской части
-                    необходим любой браузер или мобильное приложение.
-                  </p>
-                  <p>
-                    Существует несколько вариантов реализации системы: это может быть как вариант
-                    размещения на сервере Вашей организации, так и вариант размещения системы в
-                    облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
-                    Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
-                    2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской части
-                    необходим любой браузер или мобильное приложение.
-                  </p>
+                <div class="item-accordeon__bottom-inner">
+                  <div class="item-accordeon__text">
+                    <p>
+                      Существует несколько вариантов реализации системы: это может быть как вариант
+                      размещения на сервере Вашей организации, так и вариант размещения системы в
+                      облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
+                      Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
+                      2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской
+                      части необходим любой браузер или мобильное приложение.
+                    </p>
+                    <p>
+                      Существует несколько вариантов реализации системы: это может быть как вариант
+                      размещения на сервере Вашей организации, так и вариант размещения системы в
+                      облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
+                      Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
+                      2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской
+                      части необходим любой браузер или мобильное приложение.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="page__contacts contacts _container _container--sm">
+        <div class="contacts _container _container--sm">
           <h3 class="contacts__heading _heading">Связаться с нами</h3>
           <form class="contacts__form form" action="#" method="post">
             <div class="form__group form__group--name">
@@ -625,6 +650,7 @@
             </div>
           </form>
         </div>
+        <!-- </div> -->
       </main>
       @@include('_footer.html',{})
     </div>
