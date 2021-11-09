@@ -9,11 +9,11 @@
   transition: all 0.2s ease;
   transform: none;
 
-  & .contacts-menu {
-    @media (max-width: $md6) {
-      display: none;
-    }
-  }
+  // & .contacts-menu {
+  //   @media (max-width: $md6) {
+  //     display: none;
+  //   }
+  // }
 
   &--fixed {
     background-color: #fff;
@@ -83,11 +83,19 @@
   }
   // .header__logo
   &__logo {
-    // position: relative;
-    // z-index: 3;
+    svg {
+      height: 24px;
+      width: 88px;
+    }
     margin-right: 127px;
     @media (max-width: 1325px) {
       margin-right: 40px;
+    }
+    @media (min-width: $md3) {
+      svg {
+        height: 32px;
+        width: 120px;
+      }
     }
     @media (max-width: $md2) {
       position: relative;
@@ -121,8 +129,6 @@
       right: 0;
       left: 0;
       bottom: 0;
-      // width: 100%;
-      // height: 100%;
       background-color: rgba(0, 0, 0, 0.609);
       &.active {
         display: block;
@@ -131,6 +137,9 @@
     // .header__dropdown .header-nav
     & .header-nav {
       display: flex;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
       // .header__dropdown .header-nav__list
       &__list {
         @media (max-width: $md2) {
@@ -143,32 +152,43 @@
       }
       // .header__dropdown .header-nav__item
       &__item {
+        font-size: 16px;
+        line-height: 1.25;
+        padding: 0;
         color: $white;
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
         &:hover {
           color: darken($white, 20%);
         }
-        @media (max-width: $md2) {
-          font-size: 16px;
-          line-height: 20px;
-          padding: 17px 0;
-        }
+        // @media (max-width: $md2) {
+        //   font-size: 16px;
+        //   line-height: 20px;
+        //   padding: 17px 0;
+        // }
       }
     }
     // .header__dropdown .contacts-menu
     & .contacts-menu {
-      @media (min-width: $md4) {
-        display: none;
-      }
+      display: block;
+      // @media (min-width: $md4) {
+      //   display: none;
+      // }
       // .header__dropdown .contacts-menu__list
       &__list {
-        @media (max-width: $md4) {
-          flex-direction: column;
-          align-items: flex-start;
-        }
+        display: block;
+        // @media (max-width: $md4) {
+        //   flex-direction: column;
+        //   align-items: flex-start;
+        // }
       }
       // .header__dropdown .contacts-menu__item
       &__item {
         color: $white;
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
         &:hover {
           color: darken($white, 20%);
         }
@@ -186,16 +206,24 @@
     width: 100%;
     height: 100%;
     max-width: 392px;
-    padding: 80px 30px 0;
+    padding-top: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
     background-color: $brand;
     background-image: url('../img/hero-img-1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     // background-position: 0 0;
     background-position: center;
+    @media (min-width: $md5) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
   }
   // .header__dropdown-menu
   &__dropdown-menu {
+    // padding-top: 20px;
+    padding-bottom: 20px;
     height: 100%;
     overflow-y: auto;
   }
@@ -311,6 +339,10 @@
 //========================================================================================================================================================
 //*Плашка с номером тел. и кнопкой попапа
 .contacts-menu {
+  display: none;
+  @media (min-width: 390px) {
+    display: block;
+  }
   // .contacts-menu__list
   &__list {
     display: flex;
@@ -320,6 +352,9 @@
       flex-direction: column;
       align-items: flex-start;
     }
+    @media (max-width: 1200px) {
+      margin: 0 -8px;
+    }
     @media (max-width: $md2) {
       flex-direction: row;
       justify-content: flex-start;
@@ -328,7 +363,7 @@
   }
   // .contacts-menu__item
   &__item {
-    padding: 0px 16px;
+    margin: 0px 16px;
     font-weight: 700;
     font-size: 13px;
     line-height: 16px;
@@ -341,7 +376,7 @@
       color: darken($white, 20%);
     }
     @media (max-width: 1200px) {
-      padding: 0 8px;
+      margin: 0 8px;
     }
     @media (max-width: 1080px) {
       &:first-child {

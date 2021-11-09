@@ -20,9 +20,9 @@
       background-color: $white;
     }
   }
-  &:focus {
-    box-shadow: 0px 0px 3px 1px $accent;
-  }
+  // &:focus {
+  //   box-shadow: 0px 0px 3px 1px $accent;
+  // }
   &--underline {
     &::after {
       content: '';

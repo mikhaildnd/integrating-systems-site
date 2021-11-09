@@ -1,15 +1,16 @@
 import gulp from 'gulp';
 // import logger from 'gulplog';
+// import webpCss from 'gulp-webpcss';
+// import webpHtml from 'gulp-webp-html';
+// import sourcemap from 'gulp-sourcemaps'; //не установлен
+// import debug from 'gulp-debug';
 import plumber from 'gulp-plumber';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
-import webpCss from 'gulp-webpcss';
 import groupMedia from 'gulp-group-css-media-queries';
-// import sourcemap from 'gulp-sourcemaps'; //не установлен
 import gulpIf from 'gulp-if';
 import del from 'del';
-// import debug from 'gulp-debug';
 import webpackStream from 'webpack-stream';
 import sync from 'browser-sync';
 import imagemin from 'gulp-imagemin';
@@ -18,7 +19,6 @@ import fileinclude from 'gulp-file-include';
 import cleanCss from 'gulp-clean-css';
 import newer from 'gulp-newer';
 import webp from 'imagemin-webp';
-import webpHtml from 'gulp-webp-html';
 import fonter from 'gulp-fonter';
 import ttf2woff from 'gulp-ttf2woff';
 import ttf2woff2 from 'gulp-ttf2woff2';
@@ -97,7 +97,6 @@ export const scripts = () => {
     //https://webpack.js.org/configuration/devtool/
     devtool: isDev ? 'eval-source-map' : false, //мб false в 5 вебпаке //upd: да
   };
-
   return gulp
     .src(_path.src.js)
     .pipe(plumber())
@@ -105,66 +104,6 @@ export const scripts = () => {
     .pipe(gulp.dest(_path.build.js))
     .pipe(sync.stream());
 };
-// export const scripts = (cb) => {
-//   let firstBuildReady = false;
-
-//   function done(err, stats) {
-//     firstBuildReady = true;
-
-//     if (err) {
-//       return;
-//     }
-
-//     logger[stats.hasErrors() ? 'error' : 'info'](
-//       stats.toString({
-//         colors: true,
-//       })
-//     );
-//   }
-
-//   //Webpack configuration
-//   const webPackConfig = {
-//     watch: isDev,
-//     entry: {
-//       app: './#src/js/app.js',
-//       app2: './#src/js/app2.js',
-//     },
-//     output: {
-//       filename: '[name].min.js',
-//       publicPath: '/js/',
-//     },
-//     module: {
-//       rules: [
-//         {
-//           test: /\.js$/,
-//           loader: 'babel-loader',
-//           include: path.join(__dirname, '#src'),
-//           // exclude: '/node_modules/',
-//         },
-//         {
-//           test: /\.css$/,
-//           use: ['style-loader', 'css-loader'],
-//           // use: 'style!css',
-//         },
-//       ],
-//     },
-//     mode: isDev ? 'development' : 'production',
-//     //https://webpack.js.org/configuration/devtool/
-//     devtool: isDev ? 'eval-source-map' : 'none', //мб false в 5 вебпаке
-//   };
-
-//   return gulp
-//     .src(_path.src.js)
-//     .pipe(plumber())
-//     .pipe(webpackStream(webPackConfig, null, done))
-//     .pipe(gulp.dest(_path.build.js))
-//     .on('data', () => {
-//       if (firstBuildReady) {
-//         cb();
-//       }
-//     })
-//     .pipe(sync.stream());
-// };
 
 // html
 export const html = () => {
@@ -174,7 +113,7 @@ export const html = () => {
       // .pipe(debug({ title: '1:' }))
       .pipe(plumber())
       .pipe(fileinclude())
-      .pipe(webpHtml())
+      // .pipe(webpHtml())
       .pipe(gulp.dest(_path.build.html))
       .pipe(sync.stream())
   );
@@ -182,33 +121,35 @@ export const html = () => {
 
 // Styles
 export const styles = () => {
-  return gulp
-    .src(_path.src.css)
-    .pipe(plumber())
-    .pipe(scss({ outputStyle: 'expanded' }).on('error', scss.logError))
-    .pipe(groupMedia())
-    .pipe(
-      autoprefixer({
-        grid: true,
-        overrideBrowserslist: ['last 5 versions'],
-        cascade: true,
-      })
-    )
-    .pipe(
-      webpCss({
-        webpClass: '._webp',
-        noWebpClass: '._no-webp',
-      })
-    )
-    .pipe(gulp.dest(_path.build.css))
-    .pipe(cleanCss())
-    .pipe(
-      rename({
-        extname: '.min.css',
-      })
-    )
-    .pipe(gulp.dest(_path.build.css))
-    .pipe(sync.stream());
+  return (
+    gulp
+      .src(_path.src.css)
+      .pipe(plumber())
+      .pipe(scss({ outputStyle: 'expanded' }).on('error', scss.logError))
+      .pipe(groupMedia())
+      .pipe(
+        autoprefixer({
+          grid: true,
+          overrideBrowserslist: ['last 5 versions'],
+          cascade: true,
+        })
+      )
+      // .pipe(
+      //   webpCss({
+      //     webpClass: '._webp',
+      //     noWebpClass: '._no-webp',
+      //   })
+      // )
+      .pipe(gulp.dest(_path.build.css))
+      .pipe(cleanCss())
+      .pipe(
+        rename({
+          extname: '.min.css',
+        })
+      )
+      .pipe(gulp.dest(_path.build.css))
+      .pipe(sync.stream())
+  );
 };
 
 // Images

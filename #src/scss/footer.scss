@@ -45,9 +45,14 @@
   // .footer__logo
   &__logo {
     grid-area: logo;
-    @media (max-width: 374.9px) {
+    svg {
+      height: 30px;
+      width: 111px;
+    }
+    @media (min-width: $md4) {
       svg {
-        max-width: 100px;
+        height: 32px;
+        width: 120px;
       }
     }
   }
