@@ -40,5 +40,9 @@
     "swiper": "^7.0.3",
     "webpack-stream": "^7.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ]
 }

@@ -30,21 +30,30 @@ import fs from 'fs';
 
 const scss = gulpSass(dartSass);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const project_name = path.basename(__dirname);
-const src_folder = '#src';
+// const project_name = path.basename(__dirname);
+const src_folder = 'src';
+const dist_folder = 'dist';
 
 let isDev = true; //false чтобы минифицировал js
 let isProd = !isDev;
 
 // Path
 const _path = {
+  // build: {
+  //   html: project_name + '/',
+  //   js: project_name + '/js/',
+  //   css: project_name + '/css/',
+  //   images: project_name + '/img/',
+  //   fonts: project_name + '/fonts/',
+  //   videos: project_name + '/videos/',
+  // },
   build: {
-    html: project_name + '/',
-    js: project_name + '/js/',
-    css: project_name + '/css/',
-    images: project_name + '/img/',
-    fonts: project_name + '/fonts/',
-    videos: project_name + '/videos/',
+    html: dist_folder + '/',
+    js: dist_folder + '/js/',
+    css: dist_folder + '/css/',
+    images: dist_folder + '/img/',
+    fonts: dist_folder + '/fonts/',
+    videos: dist_folder + '/videos/',
   },
   src: {
     favicon: src_folder + '/img/favicon.{jpg,png,svg,gif,ico,webp}',
@@ -61,7 +70,8 @@ const _path = {
     css: src_folder + '/scss/**/*.scss',
     images: src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
   },
-  clean: './' + project_name + '/',
+  clean: './' + dist_folder + '/',
+  // clean: './' + project_name + '/',
 };
 
 // Scripts
@@ -70,7 +80,7 @@ export const scripts = () => {
   const webPackConfig = {
     watch: false,
     entry: {
-      app: './#src/js/app.js',
+      app: './src/js/app.js',
       // vendors: './#src/js/vendors.js',
     },
     output: {
@@ -82,7 +92,7 @@ export const scripts = () => {
         {
           test: /\.js$/,
           loader: 'babel-loader',
-          include: path.join(__dirname, '#src/js'),
+          include: path.join(__dirname, 'src/js'),
           // include: path.join(__dirname, '#src'),
           // exclude: '/node_modules/',
         },
@@ -190,22 +200,21 @@ export const styles = () => {
     .pipe(
       autoprefixer({
         grid: true,
-        overrideBrowserslist: ['last 5 versions'],
         cascade: true,
-      })
+      }),
     )
     .pipe(
       webpCss({
         webpClass: '._webp',
         noWebpClass: '._no-webp',
-      })
+      }),
     )
     .pipe(gulp.dest(_path.build.css))
     .pipe(cleanCss())
     .pipe(
       rename({
         extname: '.min.css',
-      })
+      }),
     )
     .pipe(gulp.dest(_path.build.css))
     .pipe(sync.stream());
@@ -222,12 +231,12 @@ export const images = () => {
         webp({
           quality: 75,
         }),
-      ])
+      ]),
     )
     .pipe(
       rename({
         extname: '.webp',
-      })
+      }),
     )
     .pipe(gulp.dest(_path.build.images))
     .pipe(gulp.src(_path.src.images))
@@ -238,7 +247,7 @@ export const images = () => {
         svgoPlugins: [{ removeViewBox: false }],
         interlaced: true,
         optimizationLevel: 3, //0 to 7
-      })
+      }),
     )
     .pipe(gulp.dest(_path.build.images));
 };
@@ -256,7 +265,7 @@ export const fontsOtf2ttf = () => {
     .pipe(
       fonter({
         formats: ['ttf'],
-      })
+      }),
     )
     .pipe(gulp.dest('./' + src_folder + '/fonts/'));
 };
@@ -292,7 +301,7 @@ export const fontsInclude = (cb) => {
           fs.appendFile(
             fileContent,
             '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n',
-            cb
+            cb,
           );
         }
         c_fontname = fontname;
@@ -307,7 +316,8 @@ export const server = () => {
     ui: false,
     notify: false,
     server: {
-      baseDir: './' + project_name + '/',
+      baseDir: './' + dist_folder + '/',
+      // baseDir: './' + project_name + '/',
       // port: 3000,
     },
   });
@@ -326,7 +336,7 @@ export const build = gulp.series(
   gulp.parallel(html, styles, scripts, images),
   fontsOtf2ttf,
   fonts,
-  fontsInclude
+  fontsInclude,
 );
 
 export default gulp.series(build, gulp.parallel(server, watch));
