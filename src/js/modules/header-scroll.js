@@ -22,13 +22,10 @@ export class HeaderScroll {
   }
 
   init() {
-    // this.header = document.querySelector(this.headerSelector);
     this.container =
       this.container === document ? this.container : document.querySelector(this.container);
 
-    // this.disableOnPoint();
-
-    this.disableElements = this.getDisableHeaderElements();
+    this.disableElements = this.getDisableHeaderElements() || [];
 
     this.disableOtherMethods = false;
 
@@ -71,12 +68,20 @@ export class HeaderScroll {
   getEnableCoords() {
     if (typeof this.enableOnPoint === 'object') {
       const trigger = document.querySelector(this.enableOnPoint.triggerElementSelector);
-      this.coordsTriggerElement = trigger.getBoundingClientRect().bottom;
+
+      if (!trigger) {
+        this.coordsTriggerElement =
+          this.header.nextElementSibling.firstElementChild.getBoundingClientRect().bottom;
+      } else {
+        this.coordsTriggerElement = trigger.getBoundingClientRect().bottom;
+      }
+
       return this.coordsTriggerElement;
     } else if (typeof this.enableOnPoint === 'boolean') {
       if (this.enableOnPoint) {
         this.coordsTriggerElement =
           this.header.nextElementSibling.firstElementChild.getBoundingClientRect().bottom;
+
         return this.coordsTriggerElement;
       }
     } else throw new TypeError('Ошибка! enableOnPoint должен быть "boolean" или "object" типа');
@@ -84,6 +89,7 @@ export class HeaderScroll {
 
   getDisableHeaderElements() {
     let elements = this.elementsOnWhichDisable.map((selector) => document.querySelector(selector));
+    if (elements.includes(null)) return;
     return elements;
   }
 
@@ -106,8 +112,4 @@ export class HeaderScroll {
     this.header.classList.remove(this.classHide);
     return this;
   }
-
-  // scrollWidthCalc() {
-  //   return window.innerWidth - document.documentElement.clientWidth;
-  // }
 }
