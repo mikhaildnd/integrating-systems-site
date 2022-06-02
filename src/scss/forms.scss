@@ -9,8 +9,10 @@
   white-space: nowrap;
   overflow: hidden;
   cursor: pointer;
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: $accent;
+    outline: none;
   }
   &:active {
     background-color: darken($accent, 30%);
@@ -65,14 +67,15 @@
   &--bg-white {
     color: $brand;
     background-color: $white;
+    &:hover,
+    &:focus-visible {
+      color: $white;
+      &:after {
+        background-color: $white;
+      }
+    }
     &::after {
       background-color: $brand;
-    }
-    &:hover {
-      color: $white;
-    }
-    &:hover::after {
-      background-color: $white;
     }
   }
   &--bg-transparent {
@@ -81,10 +84,8 @@
     border-width: 1px;
     border-style: solid;
     border-color: $white;
-    // border: 1px solid $white;
-    // outline: 1px solid $white;
-    // outline-offset: -1px;
-    &:hover {
+    &:hover,
+    &:focus-visible {
       border-color: transparent;
     }
   }
@@ -99,6 +100,10 @@
   }
   &--border-brand {
     border: 1px solid $brand;
+    &:hover,
+    &:focus-visible {
+      border: 1px solid transparent;
+    }
   }
 }
 //========================================================================================================================================================
