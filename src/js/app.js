@@ -2,7 +2,7 @@ import { webpSupportTest } from './modules/webp-support-test.js';
 import { HeaderScroll } from './modules/header-scroll.js';
 import { historySliderControl } from './modules/history-slider-control.js';
 import { Accordeon } from './modules/toggle-accordeon.js';
-import { toggleClass, yearsCountChanger } from './modules/helpers.js';
+import { toggleCards, yearsCountChanger } from './modules/helpers.js';
 import { TabManager } from './modules/tabs-manager.js';
 
 import Swiper, {
@@ -21,12 +21,15 @@ import Swiper, {
 
 import 'swiper/css';
 import 'swiper/css/a11y';
-// import 'swiper/css/thumbs';
 import 'swiper/css/effect-fade';
-// import 'swiper/css/pagination';
 
-webpSupportTest();
+document.addEventListener('DOMContentLoaded', () => {
+  burgerMenuToggler();
+});
 
+webpSupportTest(); //todo убрать из хтмл
+
+/* Header "hide on scroll" controller*/
 const headerControl = new HeaderScroll('.header', {
   container: document,
   classHide: 'header--hide',
@@ -36,7 +39,8 @@ const headerControl = new HeaderScroll('.header', {
     triggerElementSelector: '.page__hero',
   },
 });
-//========================================================================================================================================================
+
+/* History section scripts */
 const historySliderPagination = new Swiper('.slider-history__pagination', {
   modules: [Mousewheel],
   mousewheel: true,
@@ -44,7 +48,11 @@ const historySliderPagination = new Swiper('.slider-history__pagination', {
 });
 
 const historySlider = new Swiper('.slider-history__slider', {
-  modules: [Mousewheel, Parallax, Navigation, Thumbs, Controller],
+  modules: [Mousewheel, Parallax, Navigation, Thumbs, Controller, Lazy],
+  lazy: {
+    loadPrevNext: true,
+  },
+  preloadImages: false,
   controller: {
     control: historySliderPagination,
   },
@@ -52,9 +60,6 @@ const historySlider = new Swiper('.slider-history__slider', {
     swiper: historySliderPagination,
   },
   mousewheel: true,
-  // mousewheel: {
-  //   forceToAxis: true,
-  // },
   speed: 1000,
   direction: 'vertical',
   parallax: false,
@@ -71,34 +76,23 @@ const historySlider = new Swiper('.slider-history__slider', {
   },
 });
 
-//Контроллер для слайдера секции "История",
-historySliderControl(historySlider, headerControl);
-//========================================================================================================================================================
+historySliderControl(historySlider, headerControl); //Контроллер для слайдера секции "История",
 
-// const historyPagination = new PaginationMove({
-//   sliderVar: historySlider, //переменная свайпер-слайдера
-//   paginationSelector: '.slider-history__pagination',
-//   step: 50,
-// });
-
-// historySlider.on('slideChange', () => {
-//   changeYear();
-//   historyPagination.move();
-// });
-
-//========================================================================================================================================================
+/* Sertification slider */
 const sertificationSlider = new Swiper('.swiper-sertification', {
-  modules: [Navigation],
+  modules: [Navigation, Lazy],
+  lazy: true,
+  preloadImages: false,
   speed: 1000,
   slidesPerView: 4,
   spaceBetween: 40,
   breakpoints: {
     320: {
-      slidesPerView: 2,
+      slidesPerView: 2.1,
       spaceBetween: 16,
     },
     768: {
-      slidesPerView: 3,
+      slidesPerView: 3.1,
       spaceBetween: 16,
     },
     992: {
@@ -114,18 +108,8 @@ const sertificationSlider = new Swiper('.swiper-sertification', {
     prevEl: '.sertification-section__btn--prev',
   },
 });
-//========================================================================================================================================================
-const burgerBtn = document.querySelector('.header__trigger');
-const burgerMenu = document.querySelector('.header__dropdown');
-const header = document.querySelector('.header');
 
-burgerBtn.addEventListener('click', () => {
-  burgerBtn.classList.toggle('active');
-  burgerMenu.classList.toggle('active');
-  header.classList.toggle('active');
-  document.body.classList.toggle('_lock');
-});
-//========================================================================================================================================================
+/* Solution section scripts */
 const solutionSliderPagination = new Swiper('.solution-slider__pagination .swiper', {
   slidesPerView: 2,
   slideToClickedSlide: true,
@@ -162,29 +146,7 @@ const solutionSlider = new Swiper('.solution-swiper', {
   slidesPerView: 1,
 });
 
-//todo переделать логику движения лайдера, сделать проверку на наличие/отсутствие переменных
-// const solutionPagination = new PaginationMove({
-//   sliderVar: solutionSlider, //переменная свайпер-слайдера
-//   paginationSelector: '.solution-slider__pagination',
-//   step: 100,
-// });
-
-// solutionSlider.on('slideChange', () => {
-//   solutionPagination.move();
-// });
-//========================================================================================================================================================
-// const philosophyList = document.querySelector('.nav-philosophy__list');
-
-// philosophyList.addEventListener('click', (e) => {
-//   let listItem = e.target.closest('.nav-philosophy__item');
-
-//   if (!listItem) return;
-
-//   if (!philosophyList.contains(listItem)) return;
-
-//   listItem.classList.toggle('active');
-// });
-//========================================================================================================================================================
+/* Review slider */
 const reviewsSlider = new Swiper('.solution-reviews__slider', {
   modules: [Navigation],
   speed: 1000,
@@ -208,74 +170,84 @@ const reviewsSlider = new Swiper('.solution-reviews__slider', {
     prevEl: '.solution-reviews__button--prev',
   },
 });
-//========================================================================================================================================================
-const accord = new Accordeon({
-  blockSelector: '.accordeon',
-  trigger: '.item-accordeon__top',
+
+/* Hero slider */
+const heroSlider = new Swiper('.hero-section__slider-inner', {
+  modules: [EffectFade, Lazy, Autoplay],
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+  preloadImages: false,
+  lazy: {
+    loadOnTransitionStart: true,
+    loadPrevNext: true,
+  },
+  autoplay: {
+    delay: 15000,
+    disableOnInteraction: false,
+    waitForTransition: false,
+  },
+  on: {
+    init() {
+      window.addEventListener('scroll', () => {
+        let sliderBottom = this.el.getBoundingClientRect().bottom;
+
+        if (sliderBottom)
+          if (sliderBottom <= 0 && this.autoplay.running) {
+            this.autoplay.stop();
+          } else if (sliderBottom > 0 && !this.autoplay.running) {
+            this.autoplay.start();
+          }
+      });
+    },
+    autoplayStop() {
+      this.slideTo(0);
+    },
+  },
 });
-//========================================================================================================================================================
-// //todo нужно подвязать к philosophyToggler
-// toggleClass({
-//   containerSelector: '.modal-philosophy',
-//   eTargetSelector: '.modal-philosophy',
-//   toggleClass: 'modal-philosophy--close',
-//   // additionalElement: '.modal-philosophy',
-//   // additionalClassName: 'modal-philosophy--close',
-//   // rmClasses: true,
-// });
 
-//========================================================================================================================================================
-// const heroSlider = new Swiper('.hero-section__slider-inner', {
-//   modules: [EffectFade, Lazy, Autoplay],
-//   effect: 'fade',
-//   fadeEffect: {
-//     crossFade: true,
-//   },
-//   preloadImages: false,
-//   lazy: {
-//     loadOnTransitionStart: true,
-//     loadPrevNext: true,
-//     // loadPrevNextAmount: 3,
-//   },
-//   autoplay: {
-//     delay: 15000,
-//     disableOnInteraction: false,
-//     waitForTransition: false,
-//   },
-//   on: {
-//     init() {
-//       window.addEventListener('scroll', () => {
-//         let sliderBottom = this.el.getBoundingClientRect().bottom;
-
-//         if (sliderBottom)
-//           if (sliderBottom <= 0 && this.autoplay.running) {
-//             this.autoplay.stop();
-//           } else if (sliderBottom > 0 && !this.autoplay.running) {
-//             this.autoplay.start();
-//           }
-//       });
-//     },
-//     autoplayStop() {
-//       this.slideTo(0);
-//     },
-//   },
-// });
-//========================================================================================================================================================
+/* Philosophy section scripts */
 const philosophyTabs = new TabManager('philosophy-tabs', {
   tabListSelector: '.nav-philosophy__list',
   tabBtnSelector: '.nav-philosophy__item',
   tabPanelSelector: '.modal-philosophy__item',
-
-  tabActiveClass: 'js-active-tab',
-  panelActiveClass: 'show',
+  tabParams: {
+    disableTabActiveClass: true,
+    tabActiveClass: 'js-active-tab',
+  },
+  panelParams: {
+    disablePanelActiveClass: false,
+    panelActiveClass: 'show',
+  },
+  keyboard: false,
 });
 
-//from helpers.js
-const philosophyToggler = toggleClass({
+const philosophyToggler = toggleCards({
   containerSelector: '.nav-philosophy__list',
   cardSelector: '.nav-philosophy__item',
   cardActiveClass: 'show',
   modalSelector: '.modal-philosophy',
   modalActiveClass: 'modal-philosophy--open',
   closeModalButtonSelector: '.modal-philosophy__button',
+});
+
+/* Burger menu toggler */
+const burgerMenuToggler = () => {
+  const burgerBtn = document.querySelector('.header__trigger');
+  const burgerMenu = document.querySelector('.header__dropdown');
+  const header = document.querySelector('.header');
+
+  burgerBtn.addEventListener('click', () => {
+    burgerBtn.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
+    header.classList.toggle('active');
+    document.body.classList.toggle('_lock');
+  });
+};
+
+/* Questions section accordeon */
+const questionsAccordeon = new Accordeon({
+  blockSelector: '.questions__accordeon',
+  openingBlock: '.item-accordeon__top',
 });
