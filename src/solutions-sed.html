@@ -11,11 +11,7 @@
             class="hero-section__content hero-section__content--solution _container _container--sm"
           >
             <div
-              class="
-                hero-section__text-wrapper
-                hero-section__text-wrapper--bg
-                hero-section__text-wrapper--bg-ag
-              "
+              class="hero-section__text-wrapper hero-section__text-wrapper--bg hero-section__text-wrapper--bg-ag"
             >
               <p class="hero-section__text">
                 Система электронного документооборота. Позволяет автоматизировать работу с
@@ -293,26 +289,207 @@
           </div>
         </section>
         <!-- PHILOSOPHY -->
-        <section class="philosophy-section">
+        <section class="page__philosophy philosophy-section" data-tabs="philosophy-tabs">
           <!-- <div class="philosophy-section__bg-container">
-                      <div class="philosophy-section__bg"></div>
-                    </div> -->
+            <div class="philosophy-section__bg"></div>
+          </div> -->
+          <div class="philosophy-section__modal modal-philosophy">
+            <div class="modal-philosophy__aside">
+              <button class="modal-philosophy__button">
+                <span></span>
+              </button>
+            </div>
+            <!-- <div class="modal-philosophy__content-wrapper"> -->
+            <div class="modal-philosophy__content">
+              <div class="modal-philosophy__item">
+                <h5 class="modal-philosophy__heading">Автоматизация делопроизводства</h5>
+                <ul class="modal-philosophy__list">
+                  <li class="modal-philosophy__list-item">
+                    Регистрация входящих и исходящих документов с автоматическим вычислением
+                    регистрационного номера согласно утвержденному шаблону
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Распечатка штрих-кода, соответствующего регистрационному номеру
+                  </li>
+                  <li class="modal-philosophy__list-item">Выдача заданий по документу</li>
+                  <li class="modal-philosophy__list-item">
+                    Потоковое сканирование документов и автоматическое закрепление файлов образов
+                    документов за регистрационными карточками
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Формирование подборок взаимосвязанных документов
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Поиск документа (и всех связанных с ним) по сочетанию любых атрибутов его
+                    регистрационной карточки и/или по атрибутам, характеризующим его движение
+                    (журнала заданий)
+                  </li>
+                  <li class="modal-philosophy__list-item">Формирование аналитической отчетности</li>
+                </ul>
+              </div>
+              <div class="modal-philosophy__item">
+                <h5 class="modal-philosophy__heading">Контроль исполнительской дисциплины</h5>
+                <ul class="modal-philosophy__list">
+                  <li class="modal-philosophy__list-item">
+                    Постановка задач одному или нескольким исполнителям
+                  </li>
+                  <li class="modal-philosophy__list-item">Назначение контролеров по документам</li>
+                  <li class="modal-philosophy__list-item">
+                    Уведомление о поступлении новых заданий, напоминание о приближении сроков
+                    исполнения
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Контроль сроков и качества исполнения заданий
+                  </li>
+                  <li class="modal-philosophy__list-item">Календарь текущих задач и мероприятий</li>
+                  <li class="modal-philosophy__list-item">
+                    Возможность прикрепления файлов при постановке задач
+                  </li>
+                  <li class="modal-philosophy__list-item">Формирование аналитической отчетности</li>
+                </ul>
+              </div>
+              <div class="modal-philosophy__item">
+                <h5 class="modal-philosophy__heading">Мобильный клиент</h5>
+                <ul class="modal-philosophy__list">
+                  <li class="modal-philosophy__list-item">
+                    Получение оперативной информации для повышения качества управленческих решений и
+                    процессов
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Выполнение поручений и получение отчетов о выполнении
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Выдача поручений по документам, создание инициативных поручений
+                  </li>
+                  <li class="modal-philosophy__list-item">Согласование документов</li>
+                  <li class="modal-philosophy__list-item">
+                    Поиск документа (и всех связанных с ним) по сочетанию любых атрибутов его
+                    регистрационной карточки и/или по атрибутам, характеризующим его движение
+                    (журнала заданий
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-philosophy__item">
+                <h5 class="modal-philosophy__heading">Управление совещаниями</h5>
+                <ul class="modal-philosophy__list">
+                  <li class="modal-philosophy__list-item">
+                    Планирование совещаний: назначение места и времени проведения встречи (события),
+                    председателя, участников совещаний, повестки обсуждаемых вопросов
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Автоматическая рассылка всем участникам уведомления о запланированном совещании
+                    и необходимости подготовить информацию
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Автоматическое формирование протокола совещания на основе протокольных решений
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Контроль исполнения протокольных поручений
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Формирование отчетов и диаграмм по исполнению решений
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-philosophy__item">
+                <h5 class="modal-philosophy__heading">Подписание документов ЭП</h5>
+                <ul class="modal-philosophy__list">
+                  <li class="modal-philosophy__list-item">
+                    Возможность подписания внутренних документов организации посредством простой
+                    электронной подписи, реализованной средствами системы электронного
+                    документооборота может быть широко использовано в процессе согласования проектов
+                    документов и документов внутренней переписки
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Возможность подписания документов квалифицированной электронной подписью
+                    позволяет приравнивать документы, подписанные в СЭД, к документам, подписанным
+                    собственноручной подписью
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-philosophy__item">
+                <h5 class="modal-philosophy__heading">Интеграция</h5>
+                <ul class="modal-philosophy__list">
+                  <li class="modal-philosophy__list-item">
+                    Интеграция СЭД возможна с любыми системами, в зависимости от потребностей
+                    Заказчика, для этого разработано API
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Реализована интеграция с РРО КП ССТУ.РФ: предоставляет возможность ежемесячного
+                    формирования в электронном виде информации о результатах рассмотрения обращений
+                    граждан и организаций, а также о мерах, принятых по таким обращениям и
+                    отправлять ее в Администрацию Президента Российской Федерации
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Интеграция с СЭД «Обращения граждан» Администрации Краснодарского края
+                    обеспечивает оперативный обмен обращениями и информацией об их рассмотрении
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Интеграция с разделом сайта «Виртуальная приемная» обеспечивает альтернативную
+                    возможность обращения граждан в организацию. Обращения автоматически
+                    направляются в систему электронного документооборота, информация о ходе
+                    рассмотрения и исполнения обращения отображается гражданину на сайте
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Интеграция с сервисами электронной почты позволяет сохранять пришедшие письма и
+                    их вложения как документы СЭД «СИНКОПА-ДОКУМЕНТ», отправлять документы
+                    контактным лицам из справочника адресатов, в том числе по шаблонам списков
+                    рассылки
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Интеграция с разделом сайта «Публикация нормативных правовых актов» реализована
+                    для сокращения времени публикации документов
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-philosophy__item">
+                <h5 class="modal-philosophy__heading">Управление договорной работой</h5>
+                <ul class="modal-philosophy__list">
+                  <li class="modal-philosophy__list-item">
+                    Ведение базы контрагентов и первичных документов (возможна интеграция с учетной
+                    системой)
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Регистрация договоров, электронное согласование и подписание ЭП
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Связывание договоров, актов, счетов и сопроводительных документов в единый
+                    комплект
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Оповещение о сроках исполнения этапов договоров
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Контроль исполнения договоров и отдельных его этапов
+                  </li>
+                  <li class="modal-philosophy__list-item">
+                    Формирование истории работы с контрагентом: удобная форма просмотра контактов,
+                    переписки, отправленных и полученных документов
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
           <div class="philosophy-section__content _container">
             <div class="philosophy-section__info">
-              <!-- <div class="philosophy-section__note">
-                  <span>Философия и миссия</span>
-                </div> -->
+              <div class="philosophy-section__note">
+                <span>Философия и миссия</span>
+              </div>
               <div class="philosophy-section__title">
-                <h2>Функциональные возможности решения</h2>
+                <h2>
+                  Тело синхронно. Не только в вакууме, но и в любой нейтральной среде относительно
+                  низкой плотности силового поля
+                </h2>
               </div>
             </div>
             <div class="philosophy-section__nav nav-philosophy">
               <ul class="nav-philosophy__list">
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <div class="nav-philosophy__button">
+                    <button class="nav-philosophy__button">
                       <span></span>
-                    </div>
+                    </button>
                   </div>
                   <div class="nav-philosophy__text-wrapper">
                     <div class="nav-philosophy__title">
@@ -328,9 +505,9 @@
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <div class="nav-philosophy__button">
+                    <button class="nav-philosophy__button">
                       <span></span>
-                    </div>
+                    </button>
                   </div>
                   <div class="nav-philosophy__text-wrapper">
                     <div class="nav-philosophy__title">
@@ -339,15 +516,16 @@
                     <div class="nav-philosophy__text">
                       <p>
                         Компания к сотрудникам, сотрудники к компании, компания к партнерам Компания
+                        к сотрудникам, сотрудники к компании, компания к партнерам
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <div class="nav-philosophy__button">
+                    <button class="nav-philosophy__button">
                       <span></span>
-                    </div>
+                    </button>
                   </div>
                   <div class="nav-philosophy__text-wrapper">
                     <div class="nav-philosophy__title">
@@ -363,9 +541,9 @@
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <div class="nav-philosophy__button">
+                    <button class="nav-philosophy__button">
                       <span></span>
-                    </div>
+                    </button>
                   </div>
                   <div class="nav-philosophy__text-wrapper">
                     <div class="nav-philosophy__title">
@@ -381,27 +559,9 @@
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <div class="nav-philosophy__button">
+                    <button class="nav-philosophy__button">
                       <span></span>
-                    </div>
-                  </div>
-                  <div class="nav-philosophy__text-wrapper">
-                    <div class="nav-philosophy__title">
-                      <h3>Интеграция</h3>
-                    </div>
-                    <div class="nav-philosophy__text">
-                      <p>
-                        Компания к сотрудникам, сотрудники к компании, компания к партнерам Компания
-                        к сотрудникам, сотрудники к компании, компания к партнерам
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="nav-philosophy__item">
-                  <div class="nav-philosophy__button-wrapper">
-                    <div class="nav-philosophy__button">
-                      <span></span>
-                    </div>
+                    </button>
                   </div>
                   <div class="nav-philosophy__text-wrapper">
                     <div class="nav-philosophy__title">
@@ -417,9 +577,27 @@
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <div class="nav-philosophy__button">
+                    <button class="nav-philosophy__button">
                       <span></span>
+                    </button>
+                  </div>
+                  <div class="nav-philosophy__text-wrapper">
+                    <div class="nav-philosophy__title">
+                      <h3>Интеграция</h3>
                     </div>
+                    <div class="nav-philosophy__text">
+                      <p>
+                        Компания к сотрудникам, сотрудники к компании, компания к партнерам Компания
+                        к сотрудникам, сотрудники к компании, компания к партнерам
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-philosophy__item">
+                  <div class="nav-philosophy__button-wrapper">
+                    <button class="nav-philosophy__button">
+                      <span></span>
+                    </button>
                   </div>
                   <div class="nav-philosophy__text-wrapper">
                     <div class="nav-philosophy__title">
@@ -443,10 +621,7 @@
           <div class="solution-reviews__slider swiper">
             <div class="solution-reviews__button-wrapper twin-button-wrapper">
               <div
-                class="
-                  solution-reviews__button solution-reviews__button--next
-                  twin-button twin-button--prev
-                "
+                class="solution-reviews__button solution-reviews__button--next twin-button twin-button--prev"
               >
                 <span></span>
               </div>
