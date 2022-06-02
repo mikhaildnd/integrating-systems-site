@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerMenuToggler();
 });
 
+console.log('test');
+
 webpSupportTest(); //todo убрать из хтмл
 
 /* Header "hide on scroll" controller*/
