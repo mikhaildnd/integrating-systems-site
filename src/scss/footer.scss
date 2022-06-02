@@ -121,6 +121,7 @@
   &__item {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     @media (min-width: $md7) {
       &--solutions {
         grid-area: solutions;
@@ -148,6 +149,12 @@
     }
     @media (min-width: $md7) {
       font-size: 13px;
+    }
+    @media (min-width: $md2) {
+      &:focus-visible {
+        outline: 3px solid $accent;
+        outline-offset: 2px;
+      }
     }
     &--general {
       position: relative;

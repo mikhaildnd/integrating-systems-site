@@ -1,5 +1,5 @@
 const helpers = {
-  toggleClass: function (options = {}) {
+  toggleCards: function (options = {}) {
     const {
       containerSelector,
       cardSelector,
@@ -29,23 +29,29 @@ const helpers = {
 
       if (!container.contains(target)) return;
 
-      if (!target.classList.contains(cardActiveClass) && isOpenModal(modal, modalActiveClass)) {
+      const changeIfAllOpenCondition =
+        !target.classList.contains(cardActiveClass) && isOpenModal(modal, modalActiveClass);
+      const openIfAllHideCondition =
+        !target.classList.contains(cardActiveClass) && !isOpenModal(modal, modalActiveClass);
+
+      if (changeIfAllOpenCondition) {
+        //change if modal & card are open
         deactivateAllCards(allCards, cardActiveClass);
         activateCard(target, cardActiveClass);
-      } else if (
-        !target.classList.contains(cardActiveClass) &&
-        !isOpenModal(modal, modalActiveClass)
-      ) {
+      } else if (openIfAllHideCondition) {
+        //open if all hide
         deactivateAllCards(allCards, cardActiveClass);
         bodyLock();
         activateCard(target, cardActiveClass);
         openModal(modal, modalActiveClass);
       } else {
+        //close if click on card
         deactivateCard(target, cardActiveClass);
         closeModal(modal, modalActiveClass);
         bodyUnlock();
       }
 
+      //close if click on modal
       if (isOpenModal(modal, modalActiveClass)) {
         closeModalButton.addEventListener('click', () => {
           closeModal(modal, modalActiveClass);
@@ -100,7 +106,7 @@ const helpers = {
               },
               {
                 once: true,
-              }
+              },
             );
           });
         }
@@ -140,28 +146,7 @@ const helpers = {
         el.classList.remove(className);
       });
     }
-
-    // let prevIdx = null;
-
-    // function removeActiveClasses(target) {
-    //   let idx = [...target.parentElement.children].indexOf(target);
-    //   // console.log(idx);
-    //   // console.log(prevIdx);
-
-    //   if (prevIdx != null) {
-    //     let prevTarget = [...target.parentElement.children][prevIdx];
-
-    //     console.log('idx: ' + idx, ' prevIdx: ' + prevIdx);
-    //     // console.log(idx !== prevIdx);
-    //     // if (idx !== prevIdx) {
-    //     //   prevTarget.classList.remove(toggleClass);
-    //     // }
-    //   }
-
-    //   prevIdx = idx;
-    // }
   },
-  // получаем координаты элемента в контексте документа
   getCoords: function (elem) {
     if (!elem) return;
 
@@ -195,6 +180,6 @@ const helpers = {
   },
 };
 
-export const toggleClass = helpers.toggleClass;
+export const toggleCards = helpers.toggleCards;
 export const getCoords = helpers.getCoords;
 export const yearsCountChanger = helpers.yearsCountChanger;

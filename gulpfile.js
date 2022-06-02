@@ -39,14 +39,6 @@ let isProd = !isDev;
 
 // Path
 const _path = {
-  // build: {
-  //   html: project_name + '/',
-  //   js: project_name + '/js/',
-  //   css: project_name + '/css/',
-  //   images: project_name + '/img/',
-  //   fonts: project_name + '/fonts/',
-  //   videos: project_name + '/videos/',
-  // },
   build: {
     html: dist_folder + '/',
     js: dist_folder + '/js/',
@@ -71,43 +63,38 @@ const _path = {
     images: src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
   },
   clean: './' + dist_folder + '/',
-  // clean: './' + project_name + '/',
+};
+
+//Webpack configuration
+const webPackConfig = {
+  watch: false,
+  entry: {
+    app: './src/js/app.js',
+  },
+  output: {
+    filename: '[name].min.js',
+    publicPath: '/js/',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: path.join(__dirname, 'src/js'),
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  mode: isDev ? 'development' : 'production',
+  //https://webpack.js.org/configuration/devtool/
+  devtool: isDev ? 'eval-source-map' : false,
 };
 
 // Scripts
 export const scripts = () => {
-  //Webpack configuration
-  const webPackConfig = {
-    watch: false,
-    entry: {
-      app: './src/js/app.js',
-      // vendors: './#src/js/vendors.js',
-    },
-    output: {
-      filename: '[name].min.js',
-      publicPath: '/js/',
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          loader: 'babel-loader',
-          include: path.join(__dirname, 'src/js'),
-          // include: path.join(__dirname, '#src'),
-          // exclude: '/node_modules/',
-        },
-        {
-          test: /\.css$/,
-          use: ['style-loader', 'css-loader'],
-          // use: 'style!css',
-        },
-      ],
-    },
-    mode: isDev ? 'development' : 'production',
-    //https://webpack.js.org/configuration/devtool/
-    devtool: isDev ? 'eval-source-map' : false, //мб false в 5 вебпаке //upd: да
-  };
-
   return gulp
     .src(_path.src.js)
     .pipe(plumber())
@@ -115,66 +102,6 @@ export const scripts = () => {
     .pipe(gulp.dest(_path.build.js))
     .pipe(sync.stream());
 };
-// export const scripts = (cb) => {
-//   let firstBuildReady = false;
-
-//   function done(err, stats) {
-//     firstBuildReady = true;
-
-//     if (err) {
-//       return;
-//     }
-
-//     logger[stats.hasErrors() ? 'error' : 'info'](
-//       stats.toString({
-//         colors: true,
-//       })
-//     );
-//   }
-
-//   //Webpack configuration
-//   const webPackConfig = {
-//     watch: isDev,
-//     entry: {
-//       app: './#src/js/app.js',
-//       app2: './#src/js/app2.js',
-//     },
-//     output: {
-//       filename: '[name].min.js',
-//       publicPath: '/js/',
-//     },
-//     module: {
-//       rules: [
-//         {
-//           test: /\.js$/,
-//           loader: 'babel-loader',
-//           include: path.join(__dirname, '#src'),
-//           // exclude: '/node_modules/',
-//         },
-//         {
-//           test: /\.css$/,
-//           use: ['style-loader', 'css-loader'],
-//           // use: 'style!css',
-//         },
-//       ],
-//     },
-//     mode: isDev ? 'development' : 'production',
-//     //https://webpack.js.org/configuration/devtool/
-//     devtool: isDev ? 'eval-source-map' : 'none', //мб false в 5 вебпаке
-//   };
-
-//   return gulp
-//     .src(_path.src.js)
-//     .pipe(plumber())
-//     .pipe(webpackStream(webPackConfig, null, done))
-//     .pipe(gulp.dest(_path.build.js))
-//     .on('data', () => {
-//       if (firstBuildReady) {
-//         cb();
-//       }
-//     })
-//     .pipe(sync.stream());
-// };
 
 // html
 export const html = () => {
@@ -317,8 +244,6 @@ export const server = () => {
     notify: false,
     server: {
       baseDir: './' + dist_folder + '/',
-      // baseDir: './' + project_name + '/',
-      // port: 3000,
     },
   });
 };
