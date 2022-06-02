@@ -43,6 +43,8 @@
       }
     }
   }
+
+  // .review-block__blockquote
   &__blockquote {
     &::before,
     &::after {
@@ -60,12 +62,14 @@
       bottom: 10px;
     }
   }
+
   // .review-block__autor
   &__autor {
     align-items: center;
   }
 }
-//========================================================================================================================================================
+
+/* Autor-block */
 .autor-block {
   display: flex;
   // .autor-block__img
@@ -90,10 +94,12 @@
       object-fit: contain;
     }
   }
+
   // .autor-block__autor-info
   &__autor-info {
     flex-basis: 80%;
   }
+
   // .autor-block__name
   &__name {
     display: block;
@@ -102,6 +108,7 @@
     line-height: 1.2;
     max-width: 530px;
   }
+
   // .autor-block__position
   &__position {
     display: block;
@@ -110,4 +117,3 @@
     color: lighten($black, 50%);
   }
 }
-//========================================================================================================================================================
