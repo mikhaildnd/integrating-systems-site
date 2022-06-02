@@ -7,11 +7,13 @@ export class Accordeon {
 
     this.init();
   }
+
   init() {
     this.accordeon = document.querySelector(this.blockSelector);
     if (!this.accordeon) return;
     this.accordeon.addEventListener('click', (e) => this.toggle(e));
   }
+
   toggle(e) {
     let openingPart = e.target.closest(this.openingBlock);
 
@@ -26,8 +28,3 @@ export class Accordeon {
       : (panel.style.maxHeight = panel.scrollHeight + 'px');
   }
 }
-
-// const acoordeon = new Accordeon({
-//   blockSelector: '.accordeon(Селектор аккордеона)',
-//   openingBlock: '.item-accordeon__top(Верхний(который будет открываться)) блок аккордеона'
-// })
