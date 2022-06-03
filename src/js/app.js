@@ -6,7 +6,6 @@ import { toggleCards, yearsCountChanger } from './modules/helpers.js';
 import { TabManager } from './modules/tabs-manager.js';
 
 import Swiper, {
-  Pagination,
   Navigation,
   Mousewheel,
   Parallax,
@@ -20,16 +19,27 @@ import Swiper, {
 } from 'swiper';
 
 import 'swiper/css';
+import 'swiper/css/lazy';
 import 'swiper/css/a11y';
 import 'swiper/css/effect-fade';
+
+/* Burger menu toggler */
+const burgerMenuToggler = () => {
+  const burgerBtn = document.querySelector('.header__trigger');
+  const burgerMenu = document.querySelector('.header__dropdown');
+  const header = document.querySelector('.header');
+
+  burgerBtn.addEventListener('click', () => {
+    burgerBtn.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
+    header.classList.toggle('active');
+    document.body.classList.toggle('_lock');
+  });
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   burgerMenuToggler();
 });
-
-console.log('test');
-
-webpSupportTest(); //todo убрать из хтмл
 
 /* Header "hide on scroll" controller*/
 const headerControl = new HeaderScroll('.header', {
@@ -40,6 +50,104 @@ const headerControl = new HeaderScroll('.header', {
   enableOnPoint: {
     triggerElementSelector: '.page__hero',
   },
+});
+
+/* Hero slider */
+// const heroSlider = new Swiper('.hero-section__slider-inner', {
+//   modules: [EffectFade, Lazy, Autoplay],
+//   effect: 'fade',
+//   fadeEffect: {
+//     crossFade: true,
+//   },
+//   preloadImages: false,
+//   lazy: {
+//     loadOnTransitionStart: true,
+//     loadPrevNext: true,
+//   },
+//   autoplay: {
+//     delay: 15000,
+//     disableOnInteraction: false,
+//     waitForTransition: false,
+//   },
+//   on: {
+//     init() {
+//       window.addEventListener('scroll', () => {
+//         let sliderBottom = this.el.getBoundingClientRect().bottom;
+
+//         if (sliderBottom)
+//           if (sliderBottom <= 0 && this.autoplay.running) {
+//             this.autoplay.stop();
+//           } else if (sliderBottom > 0 && !this.autoplay.running) {
+//             this.autoplay.start();
+//           }
+//       });
+//     },
+//     autoplayStop() {
+//       this.slideTo(0);
+//     },
+//   },
+// });
+
+/* Solution section scripts */
+const solutionSliderPagination = new Swiper('.solution-slider__pagination .swiper', {
+  slidesPerView: 2,
+  slideToClickedSlide: true,
+  breakpoints: {
+    576: {
+      slidesPerView: 4,
+    },
+    1024: {
+      slidesPerView: 6,
+    },
+  },
+});
+
+const solutionSlider = new Swiper('.solution-swiper', {
+  modules: [Thumbs, EffectFade, Keyboard, A11y, Controller],
+  controller: {
+    control: solutionSliderPagination,
+  },
+  a11y: {
+    enabled: true,
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+  thumbs: {
+    swiper: solutionSliderPagination,
+  },
+  spaceBetween: 50,
+  slidesPerView: 1,
+});
+
+/* Philosophy section scripts */
+const philosophyTabs = new TabManager('philosophy-tabs', {
+  tabListSelector: '.nav-philosophy__list',
+  tabBtnSelector: '.nav-philosophy__item',
+  tabPanelSelector: '.modal-philosophy__item',
+  tabParams: {
+    disableTabActiveClass: true,
+    tabActiveClass: 'js-active-tab',
+  },
+  panelParams: {
+    disablePanelActiveClass: false,
+    panelActiveClass: 'show',
+  },
+  keyboard: false,
+});
+
+const philosophyToggler = toggleCards({
+  containerSelector: '.nav-philosophy__list',
+  cardSelector: '.nav-philosophy__item',
+  cardActiveClass: 'show',
+  modalSelector: '.modal-philosophy',
+  modalActiveClass: 'modal-philosophy--open',
+  closeModalButtonSelector: '.modal-philosophy__button',
 });
 
 /* History section scripts */
@@ -81,20 +189,21 @@ const historySlider = new Swiper('.slider-history__slider', {
 historySliderControl(historySlider, headerControl); //Контроллер для слайдера секции "История",
 
 /* Sertification slider */
-const sertificationSlider = new Swiper('.swiper-sertification', {
+const sertificationSlider = new Swiper('.sertification-section__slider', {
   modules: [Navigation, Lazy],
   lazy: true,
+  loadPrevNext: true,
   preloadImages: false,
   speed: 1000,
   slidesPerView: 4,
   spaceBetween: 40,
   breakpoints: {
     320: {
-      slidesPerView: 2.1,
+      slidesPerView: 2,
       spaceBetween: 16,
     },
     768: {
-      slidesPerView: 3.1,
+      slidesPerView: 3,
       spaceBetween: 16,
     },
     992: {
@@ -109,43 +218,6 @@ const sertificationSlider = new Swiper('.swiper-sertification', {
     nextEl: '.sertification-section__btn--next',
     prevEl: '.sertification-section__btn--prev',
   },
-});
-
-/* Solution section scripts */
-const solutionSliderPagination = new Swiper('.solution-slider__pagination .swiper', {
-  slidesPerView: 2,
-  slideToClickedSlide: true,
-  breakpoints: {
-    576: {
-      slidesPerView: 4,
-    },
-    1024: {
-      slidesPerView: 6,
-    },
-  },
-});
-
-const solutionSlider = new Swiper('.solution-swiper', {
-  modules: [Thumbs, EffectFade, Keyboard, A11y, Controller],
-  controller: {
-    control: solutionSliderPagination,
-  },
-  a11y: {
-    enabled: true,
-  },
-  keyboard: {
-    enabled: true,
-    onlyInViewport: false,
-  },
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-  thumbs: {
-    swiper: solutionSliderPagination,
-  },
-  spaceBetween: 50,
-  slidesPerView: 1,
 });
 
 /* Review slider */
@@ -172,81 +244,6 @@ const reviewsSlider = new Swiper('.solution-reviews__slider', {
     prevEl: '.solution-reviews__button--prev',
   },
 });
-
-/* Hero slider */
-const heroSlider = new Swiper('.hero-section__slider-inner', {
-  modules: [EffectFade, Lazy, Autoplay],
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-  preloadImages: false,
-  lazy: {
-    loadOnTransitionStart: true,
-    loadPrevNext: true,
-  },
-  autoplay: {
-    delay: 15000,
-    disableOnInteraction: false,
-    waitForTransition: false,
-  },
-  on: {
-    init() {
-      window.addEventListener('scroll', () => {
-        let sliderBottom = this.el.getBoundingClientRect().bottom;
-
-        if (sliderBottom)
-          if (sliderBottom <= 0 && this.autoplay.running) {
-            this.autoplay.stop();
-          } else if (sliderBottom > 0 && !this.autoplay.running) {
-            this.autoplay.start();
-          }
-      });
-    },
-    autoplayStop() {
-      this.slideTo(0);
-    },
-  },
-});
-
-/* Philosophy section scripts */
-const philosophyTabs = new TabManager('philosophy-tabs', {
-  tabListSelector: '.nav-philosophy__list',
-  tabBtnSelector: '.nav-philosophy__item',
-  tabPanelSelector: '.modal-philosophy__item',
-  tabParams: {
-    disableTabActiveClass: true,
-    tabActiveClass: 'js-active-tab',
-  },
-  panelParams: {
-    disablePanelActiveClass: false,
-    panelActiveClass: 'show',
-  },
-  keyboard: false,
-});
-
-const philosophyToggler = toggleCards({
-  containerSelector: '.nav-philosophy__list',
-  cardSelector: '.nav-philosophy__item',
-  cardActiveClass: 'show',
-  modalSelector: '.modal-philosophy',
-  modalActiveClass: 'modal-philosophy--open',
-  closeModalButtonSelector: '.modal-philosophy__button',
-});
-
-/* Burger menu toggler */
-const burgerMenuToggler = () => {
-  const burgerBtn = document.querySelector('.header__trigger');
-  const burgerMenu = document.querySelector('.header__dropdown');
-  const header = document.querySelector('.header');
-
-  burgerBtn.addEventListener('click', () => {
-    burgerBtn.classList.toggle('active');
-    burgerMenu.classList.toggle('active');
-    header.classList.toggle('active');
-    document.body.classList.toggle('_lock');
-  });
-};
 
 /* Questions section accordeon */
 const questionsAccordeon = new Accordeon({

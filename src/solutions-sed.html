@@ -28,52 +28,49 @@
               <a href="#" class="hero-section__btn btn btn--md btn--bg-transparent btn--underline">
                 Купить
               </a>
-              <!-- <div class="hero-section__tip tip">
-                <div class="tip__image">
-                  <svg
-                    class="mouse"
-                    width="23"
-                    height="40"
-                    viewBox="0 0 23 40"
+              <div class="hero-section__tip tip">
+                <svg
+                  class="tip__image mouse"
+                  width="23"
+                  height="40"
+                  viewBox="0 0 23 40"
+                  fill="none"
+                >
+                  <rect
+                    class="mouse-body"
+                    x="1"
+                    y="1"
+                    width="21"
+                    height="38"
+                    rx="10.5"
+                    stroke="none"
+                    stroke-width="2"
+                  />
+                  <rect
+                    class="mouse-track"
+                    opacity="none"
+                    x="9"
+                    y="8"
+                    width="5"
+                    height="18"
+                    rx="2.5"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      class="mouse__body"
-                      x="1"
-                      y="1"
-                      width="21"
-                      height="38"
-                      rx="10.5"
-                      stroke="white"
-                      stroke-width="2"
-                    />
-                    <rect
-                      class="mouse__track"
-                      opacity="0.5"
-                      x="9"
-                      y="8"
-                      width="5"
-                      height="18"
-                      rx="2.5"
-                      fill="white"
-                    />
-                    <circle class="mouse__handle" cx="11.5" cy="12.5" r="4.5" fill="white" />
-                  </svg>
-                </div>
+                  />
+                  <circle class="mouse-handle" cx="11.5" cy="12.5" r="4.5" fill="none" />
+                </svg>
                 <div class="tip__text">
                   Скрольте
                   <br />
                   вниз
                 </div>
-              </div> -->
+              </div>
             </div>
           </div>
-          <!-- <div class="background-block bg bg--grid">
-            <div class="background-block__inner bg bg--cross-grid"></div>
-          </div> -->
+          <div class="background-block bg bg--grid">
+            <!-- <div class="background-block__inner bg bg--cross-grid"></div> -->
+          </div>
         </section>
-        <!-- <div class="page__group-container"> -->
+        <!-- <div class="page__group-container"></div> -->
         <!-- <aside class="page__aside">
             <nav class="side-menu">
               <ul class="side-menu__list">
@@ -299,7 +296,6 @@
                 <span></span>
               </button>
             </div>
-            <!-- <div class="modal-philosophy__content-wrapper"> -->
             <div class="modal-philosophy__content">
               <div class="modal-philosophy__item">
                 <h5 class="modal-philosophy__heading">Автоматизация делопроизводства</h5>
@@ -469,7 +465,6 @@
                 </ul>
               </div>
             </div>
-            <!-- </div> -->
           </div>
           <div class="philosophy-section__content _container">
             <div class="philosophy-section__info">
@@ -615,19 +610,15 @@
             </div>
           </div>
         </section>
-        <!-- reviews -->
+        <!-- Reviews -->
         <div class="solution-reviews _container _container--sm">
           <h3 class="solution-reviews__heading _heading">Отзывы клиентов</h3>
           <div class="solution-reviews__slider swiper">
-            <div class="solution-reviews__button-wrapper twin-button-wrapper">
-              <div
-                class="solution-reviews__button solution-reviews__button--next twin-button twin-button--prev"
-              >
-                <span></span>
-              </div>
-              <div class="solution-reviews__button solution-reviews__button--prev twin-button">
-                <span></span>
-              </div>
+            <div class="solution-reviews__button-wrapper">
+              <button class="slider-arrow-button solution-reviews__button--next"></button>
+              <button
+                class="slider-arrow-button slider-arrow-button--next solution-reviews__button--prev"
+              ></button>
             </div>
             <div class="swiper-wrapper">
               <div class="review-block swiper-slide">
@@ -703,7 +694,7 @@
             </div>
           </div>
         </div>
-        <!-- questions -->
+        <!-- Questions -->
         <div class="questions _container _container--sm">
           <h3 class="questions__heading _heading">Частые вопросы</h3>
           <div class="questions__accordeon accordeon">

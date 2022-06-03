@@ -1,3 +1,4 @@
+/* Solution-advantages */
 .solution-advantages {
   padding-top: 32px;
   padding-bottom: 40px;
@@ -74,6 +75,7 @@
   }
 }
 
+/* Term */
 .term {
   font-size: 16px;
   line-height: 1.2;
@@ -88,6 +90,8 @@
     font-size: 28px;
   }
 }
+
+/* Ref */
 .ref {
   display: flex;
   font-size: 12px;
@@ -121,6 +125,8 @@
     }
   }
 }
+
+/* Benefits */
 .benefits {
   position: relative;
   &__inner {
@@ -203,6 +209,8 @@
     }
   }
 }
+
+/* Item-benefits */
 .item-benefits {
   padding: 24px 0;
   text-align: center;
@@ -226,6 +234,8 @@
     line-height: 1.25;
   }
 }
+
+/* Instructions */
 .instructions {
   &__heading {
     text-align: center;
@@ -294,6 +304,8 @@
     // }
   }
 }
+
+/* Item-insructions */
 .item-instructions {
   margin-bottom: 25px;
   @media (min-width: $md4) {
@@ -331,12 +343,17 @@
     }
   }
 }
+
+//*
+/* Solutions-reviews */
 .solution-reviews {
   padding-top: 78px;
   padding-bottom: 24px;
   @media (min-width: $md2) {
     padding-bottom: 28px;
   }
+
+  //solution-reviews__heading
   &__heading {
     text-align: center;
     margin-bottom: 34px;
@@ -345,18 +362,16 @@
       margin-bottom: 0;
     }
   }
-  &__slider {
-  }
+
+  //solution-reviews__button-wrapper
   &__button-wrapper {
+    display: flex;
     justify-content: flex-end;
     margin-bottom: 14px;
   }
-  &__button {
-    width: 41px;
-    height: 41px;
-  }
 }
-//========================================================================================================================================================
+
+/* Contacts */
 .contacts {
   padding-top: 24px;
   padding-bottom: 24px;
@@ -370,68 +385,70 @@
   &__form {
   }
 }
-//========================================================================================================================================================
-.side-menu {
-  display: none;
-  @media (min-width: $md2) {
-    display: block;
-  }
-  // .side-menu__list
-  &__list {
-    position: relative;
-    width: 130px;
-    &::before {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: '';
-      width: 1px;
-      height: 100%;
-      background-color: $brand-low;
-    }
-  }
-  // .side-menu__item
-  &__item {
-    position: relative;
-    font-size: 12px;
-    line-height: 1.25;
-    font-weight: 400;
-    cursor: pointer;
-    transition: color 0.1s linear;
-    padding: 12px 10px;
-    // margin-bottom: 22px;
-    &:hover {
-      color: $accent;
-      &::before {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: '';
-        width: 1px;
-        height: 100%;
-        background-color: $accent;
-      }
-    }
-    // &:last-child {
-    //   margin-bottom: 0;
-    // }
-    &.active {
-      font-weight: 700;
-      &::before {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: '';
-        width: 1px;
-        height: 100%;
-        background-color: $accent;
-      }
-      &:hover {
-        color: inherit;
-      }
-    }
-  }
-}
+
+// /* Side-menu */
+//Отключено, мб удалить
+// .side-menu {
+//   display: none;
+//   @media (min-width: $md2) {
+//     display: block;
+//   }
+//   // .side-menu__list
+//   &__list {
+//     position: relative;
+//     width: 130px;
+//     &::before {
+//       display: block;
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       content: '';
+//       width: 1px;
+//       height: 100%;
+//       background-color: $brand-low;
+//     }
+//   }
+//   // .side-menu__item
+//   &__item {
+//     position: relative;
+//     font-size: 12px;
+//     line-height: 1.25;
+//     font-weight: 400;
+//     cursor: pointer;
+//     transition: color 0.1s linear;
+//     padding: 12px 10px;
+//     // margin-bottom: 22px;
+//     &:hover {
+//       color: $accent;
+//       &::before {
+//         display: block;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         content: '';
+//         width: 1px;
+//         height: 100%;
+//         background-color: $accent;
+//       }
+//     }
+//     // &:last-child {
+//     //   margin-bottom: 0;
+//     // }
+//     &.active {
+//       font-weight: 700;
+//       &::before {
+//         display: block;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         content: '';
+//         width: 1px;
+//         height: 100%;
+//         background-color: $accent;
+//       }
+//       &:hover {
+//         color: inherit;
+//       }
+//     }
+//   }
+// }

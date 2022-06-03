@@ -1,8 +1,8 @@
 /* Variables */
-@import 'vars';
+@import '_vars';
 
 /* Mixins */
-@import 'mixins';
+@import '_mixins';
 
 /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Inter:300,regular,500,700&display=swap&subset=cyrillic-ext);
@@ -28,7 +28,7 @@ $md7: 375px;
 $mainColor: #000;
 
 /* Null */
-@import 'null';
+@import '_null';
 
 /* Body default settings */
 body {
@@ -62,20 +62,34 @@ body {
   }
 }
 
-/* Forms */
-@import 'forms';
+/* Components */
+@import '_tipography';
+@import './components/slider-button';
+@import './components/background-grid';
+@import './components/tip';
+@import './components/address';
+@import './components/requisites';
+@import './components/accordeon';
+@import './components/buttons';
+@import './components/forms';
 
 /* Blocks */
-@import 'header';
-@import 'footer';
-@import 'tipography';
-@import 'comments';
-@import 'questions';
-@import 'home';
-@import 'hero';
-@import 'solutions';
-@import 'solutions-sed';
-@import 'integrating';
+@import '_header';
+@import '_footer';
+@import './page-blocks/hero-block';
+@import './page-blocks/philosophy-block';
+@import './page-blocks/mission-block';
+@import './page-blocks/history-block';
+@import './page-blocks/philosophy-block';
+@import './page-blocks/solution-block';
+@import './page-blocks/sertification-block';
+@import './page-blocks/questions-block';
+@import './page-blocks/review-block';
+
+/* Pages */
+@import 'integrating-page';
+@import 'solutions-page';
+@import 'solution-page';
 
 /* Main block */
 .page {

@@ -6,9 +6,7 @@
       @@include('_header.html',{})
       <main class="page">
         <!-- HERO -->
-        <section
-          class="page__hero hero-section hero-section hero-section--bg hero-section--bg-integrating"
-        >
+        <section class="page__hero hero-section hero-section--bg hero-section--bg-integrating">
           <div class="hero-section__content _container _container--sm">
             <div class="hero-section__text-wrapper">
               <div class="hero-section__title">
@@ -20,38 +18,35 @@
                 Обсудить проект
               </a>
               <div class="hero-section__tip tip">
-                <div class="tip__image">
-                  <svg
-                    class="mouse"
-                    width="23"
-                    height="40"
-                    viewBox="0 0 23 40"
+                <svg
+                  class="tip__image mouse"
+                  width="23"
+                  height="40"
+                  viewBox="0 0 23 40"
+                  fill="none"
+                >
+                  <rect
+                    class="mouse-body"
+                    x="1"
+                    y="1"
+                    width="21"
+                    height="38"
+                    rx="10.5"
+                    stroke="none"
+                    stroke-width="2"
+                  />
+                  <rect
+                    class="mouse-track"
+                    opacity="none"
+                    x="9"
+                    y="8"
+                    width="5"
+                    height="18"
+                    rx="2.5"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      class="mouse__body"
-                      x="1"
-                      y="1"
-                      width="21"
-                      height="38"
-                      rx="10.5"
-                      stroke="white"
-                      stroke-width="2"
-                    />
-                    <rect
-                      class="mouse__track"
-                      opacity="0.5"
-                      x="9"
-                      y="8"
-                      width="5"
-                      height="18"
-                      rx="2.5"
-                      fill="white"
-                    />
-                    <circle class="mouse__handle" cx="11.5" cy="12.5" r="4.5" fill="white" />
-                  </svg>
-                </div>
+                  />
+                  <circle class="mouse-handle" cx="11.5" cy="12.5" r="4.5" fill="none" />
+                </svg>
                 <div class="tip__text">
                   Скрольте
                   <br />
@@ -60,9 +55,9 @@
               </div>
             </div>
           </div>
-          <!-- <div class="background-block bg bg--grid">
-            <div class="background-block__inner bg bg--cross-grid"></div>
-          </div> -->
+          <div class="background-block bg bg--grid">
+            <!-- <div class="background-block__inner bg bg--cross-grid"></div> -->
+          </div>
         </section>
         <!-- integrating -->
         <div class="integrating">
@@ -137,94 +132,85 @@
               <h3>Наши партнеры</h3>
             </div>
             <ul class="partners__list">
-              <li class="partners__item">
-                <div class="item-partners">
-                  <div class="item-partners__image">
-                    <img src="img/icons-partner/p-1.jpg" alt="" />
-                  </div>
-                  <div class="item-partners__name">
-                    <span>Администрация муниципальных образования Краснодарского края</span>
-                  </div>
+              <li class="item-partners">
+                <picture class="item-partners__image">
+                  <source srcset="img/icons-partner/p-1.webp" type="image/webp" />
+                  <img src="img/icons-partner/p-1.jpg" alt="" />
+                </picture>
+                <div class="item-partners__name">
+                  <span>Администрация муниципальных образования Краснодарского края</span>
                 </div>
               </li>
-              <li class="partners__item">
-                <div class="item-partners">
-                  <div class="item-partners__image">
-                    <img src="img/icons-partner/p-2.jpg" alt="" />
-                  </div>
-                  <div class="item-partners__name">
-                    <span>Администрация города-курорта Сочи</span>
-                  </div>
+              <li class="item-partners">
+                <picture class="item-partners__image">
+                  <source srcset="img/icons-partner/p-2.webp" type="image/webp" />
+                  <img src="img/icons-partner/p-2.jpg" alt="" />
+                </picture>
+                <div class="item-partners__name">
+                  <span>Администрация города-курорта Сочи</span>
                 </div>
               </li>
-              <li class="partners__item">
-                <div class="item-partners">
-                  <div class="item-partners__image">
-                    <img src="img/icons-partner/p-3.jpg" alt="" />
-                  </div>
-                  <div class="item-partners__name">
-                    <span>Законодательное собрание Краснодарского края</span>
-                  </div>
+              <li class="item-partners">
+                <picture class="item-partners__image">
+                  <source srcset="img/icons-partner/p-3.webp" type="image/webp" />
+                  <img src="img/icons-partner/p-3.jpg" alt="" />
+                </picture>
+                <div class="item-partners__name">
+                  <span>Законодательное собрание Краснодарского края</span>
                 </div>
               </li>
-              <li class="partners__item">
-                <div class="item-partners">
-                  <div class="item-partners__image">
-                    <img src="img/icons-partner/p-4.jpg" alt="" />
-                  </div>
-                  <div class="item-partners__name">
-                    <span>Крымская железная дорога</span>
-                  </div>
+              <li class="item-partners">
+                <picture class="item-partners__image">
+                  <source srcset="img/icons-partner/p-4.webp" type="image/webp" />
+                  <img src="img/icons-partner/p-4.jpg" alt="" />
+                </picture>
+                <div class="item-partners__name">
+                  <span>Крымская железная дорога</span>
                 </div>
               </li>
-              <li class="partners__item">
-                <div class="item-partners">
-                  <div class="item-partners__image">
-                    <img src="img/icons-partner/p-5.jpg" alt="" />
-                  </div>
-                  <div class="item-partners__name">
-                    <span>Министерство транспорта и дорожного хозяйства Краснодарского края</span>
-                  </div>
+              <li class="item-partners">
+                <picture class="item-partners__image">
+                  <source srcset="img/icons-partner/p-5.webp" type="image/webp" />
+                  <img src="img/icons-partner/p-5.jpg" alt="" />
+                </picture>
+                <div class="item-partners__name">
+                  <span>Министерство транспорта и дорожного хозяйства Краснодарского края</span>
                 </div>
               </li>
-              <li class="partners__item">
-                <div class="item-partners">
-                  <div class="item-partners__image">
-                    <img src="img/icons-partner/p-6.jpg" alt="" />
-                  </div>
-                  <div class="item-partners__name">
-                    <span>ОрелТрансСигнал</span>
-                  </div>
+              <li class="item-partners">
+                <picture class="item-partners__image">
+                  <source srcset="img/icons-partner/p-6.webp" type="image/webp" />
+                  <img src="img/icons-partner/p-6.jpg" alt="" />
+                </picture>
+                <div class="item-partners__name">
+                  <span>ОрелТрансСигнал</span>
                 </div>
               </li>
-              <li class="partners__item">
-                <div class="item-partners">
-                  <div class="item-partners__image">
-                    <img src="img/icons-partner/p-7.jpg" alt="" />
-                  </div>
-                  <div class="item-partners__name">
-                    <span>ПАО «Ростелеком»</span>
-                  </div>
+              <li class="item-partners">
+                <picture class="item-partners__image">
+                  <source srcset="img/icons-partner/p-7.webp" type="image/webp" />
+                  <img src="img/icons-partner/p-7.jpg" alt="" />
+                </picture>
+                <div class="item-partners__name">
+                  <span>ПАО «Ростелеком»</span>
                 </div>
               </li>
-              <li class="partners__item">
-                <div class="item-partners">
-                  <div class="item-partners__image">
-                    <img src="img/icons-partner/p-8.jpg" alt="" />
-                  </div>
-                  <div class="item-partners__name">
-                    <span>Транспортная дирекция</span>
-                  </div>
+              <li class="item-partners">
+                <picture class="item-partners__image">
+                  <source srcset="img/icons-partner/p-8.webp" type="image/webp" />
+                  <img src="img/icons-partner/p-8.jpg" alt="" />
+                </picture>
+                <div class="item-partners__name">
+                  <span>Транспортная дирекция</span>
                 </div>
               </li>
-              <li class="partners__item">
-                <div class="item-partners">
-                  <div class="item-partners__image">
-                    <img src="img/icons-partner/p-9.jpg" alt="" />
-                  </div>
-                  <div class="item-partners__name">
-                    <span>Кавказский заповедник</span>
-                  </div>
+              <li class="item-partners">
+                <picture class="item-partners__image">
+                  <source srcset="img/icons-partner/p-9.webp" type="image/webp" />
+                  <img src="img/icons-partner/p-9.jpg" alt="" />
+                </picture>
+                <div class="item-partners__name">
+                  <span>Кавказский заповедник</span>
                 </div>
               </li>
             </ul>

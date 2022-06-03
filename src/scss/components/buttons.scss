@@ -1,0 +1,105 @@
+/* Buttons */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0px 0px;
+  transition: all 0.1s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover,
+  &:focus-visible {
+    background-color: $accent;
+    outline: none;
+  }
+  &:active {
+    background-color: darken($accent, 30%);
+    color: $white;
+    outline: none;
+    &::after {
+      background-color: $white;
+    }
+  }
+  &--underline {
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 80%;
+      background-color: $white;
+      bottom: 10%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transition: background-color 0.1s ease;
+      @media (max-width: $md2) {
+        width: 90%;
+      }
+    }
+  }
+  &--xs {
+    padding: 16px 24px;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 700;
+  }
+  &--md {
+    padding: 20px 28px;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+  }
+  &--lg {
+    padding: 32px 40px;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+  &--bg-brand {
+    color: $white;
+    background-color: $brand;
+  }
+  &--bg-white {
+    color: $brand;
+    background-color: $white;
+    &:hover,
+    &:focus-visible {
+      color: $white;
+      &:after {
+        background-color: $white;
+      }
+    }
+    &::after {
+      background-color: $brand;
+    }
+  }
+  &--bg-transparent {
+    color: $white;
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $white;
+    &:hover,
+    &:focus-visible {
+      border-color: transparent;
+    }
+  }
+  &--bg-transparent-30p {
+    color: $white;
+    background-color: transparentize($white, 0.8);
+    outline: 1px solid $white;
+    outline-offset: -1px;
+    &:hover {
+      outline: none;
+    }
+  }
+  &--border-brand {
+    border: 1px solid $brand;
+    &:hover,
+    &:focus-visible {
+      border: 1px solid transparent;
+    }
+  }
+}

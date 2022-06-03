@@ -1,0 +1,24 @@
+/* Tip */
+.tip {
+  // .tip__image
+  &__image {
+    .mouse-body {
+      stroke: $white;
+    }
+    .mouse-track {
+      fill: $white;
+      opacity: 0.5;
+    }
+    .mouse-handle {
+      fill: $white;
+    }
+  }
+
+  // .tip__text
+  &__text {
+    color: $white;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 500;
+  }
+}

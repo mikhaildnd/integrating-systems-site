@@ -1,0 +1,405 @@
+.philosophy-section {
+  position: relative;
+  background: url('../img/philosophy-bg.jpg') 0 0 / cover no-repeat;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  @media (min-width: $md4) {
+    padding-top: 96px;
+    padding-bottom: 56px;
+  }
+  @media (min-width: $md1) {
+    padding-top: 118px;
+    padding-bottom: 160px;
+  }
+  // // .philosophy__bg-container
+  // &__bg-container {
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   z-index: -1;
+  //   background-color: #000;
+  // }
+  // // .philosophy__bg
+  // &__bg {
+  //   background: url('../img/philosophy-bg.jpg') 0 0 / cover no-repeat;
+  //   width: 100%;
+  //   height: 100%;
+  //   // animation: scale 20s linear 1 forwards;
+  // }
+
+  // .philosophy__modal
+  &__modal {
+  }
+
+  // .philosophy__content
+  &__content {
+    // max-width: calc(1440px + 64px);
+    // margin: 0 auto;
+    // padding-left: 32px;
+    // padding-right: 32px;
+  }
+  // .philosophy__info
+  &__info {
+    margin-bottom: 24px;
+    @media (min-width: $md4) {
+      margin-bottom: 40px;
+    }
+    @media (min-width: $md1) {
+      margin-bottom: 85px;
+    }
+  }
+  // .philosophy__note
+  &__note {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 2;
+    color: $white;
+    margin-bottom: 18px;
+    @media (min-width: $md1) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  // .philosophy__title
+  &__title {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $white;
+    @media (min-width: $md4) {
+      font-size: 32px;
+    }
+    @media (min-width: $md2) {
+      max-width: 720px;
+    }
+    @media (min-width: $md1) {
+      font-size: 48px;
+      max-width: 1070px;
+    }
+  }
+  // .philosophy__nav
+  &__nav {
+  }
+}
+
+.modal-philosophy {
+  display: flex;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 530px;
+  height: 100%;
+  background-color: $white;
+  transform: translateX(100%);
+  transition: transform 0.3s linear;
+  &--open {
+    transform: translateX(0%);
+  }
+  // .modal-philosophy__aside
+  &__aside {
+    flex-shrink: 0;
+    background-color: $brand;
+    width: 60px;
+    @media (min-width: $md5) {
+      width: 70px;
+    }
+    @media (min-width: $md4) {
+      width: 90px;
+    }
+  }
+  // .modal-philosophy__button
+  &__button {
+    margin: 24px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $white;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.1s linear;
+    &:hover {
+      border-color: darken($white, 30%);
+      span {
+        &::before,
+        &::after {
+          background-color: darken($white, 30%);
+        }
+      }
+    }
+    &:active {
+      border-color: $white;
+      span {
+        &::before,
+        &::after {
+          background-color: $white;
+        }
+      }
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 0;
+      // transition: width 0.3s linear;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+        transition: background-color 0.1s linear;
+      }
+      &::before {
+        top: -3px;
+        transform: translate(-50%, 3px) rotate(-135deg);
+      }
+      &::after {
+        top: 3px;
+        transform: translate(-50%, -3px) rotate(135deg);
+      }
+    }
+  }
+  // .modal-philosophy__content
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    max-width: calc(100% - 60px);
+    @media (min-width: $md6) {
+      margin-left: 10px;
+    }
+    @media (min-width: $md5) {
+      max-width: calc(100% - 70px);
+      margin-left: 20px;
+    }
+    @media (min-width: $md4) {
+      max-width: calc(100% - 90px);
+    }
+  }
+  // .modal-philosophy__item
+  &__item {
+    display: none;
+    width: 100%;
+    padding: 20px 15px;
+    &.show {
+      display: block;
+    }
+  }
+  // .modal-philosophy__heading
+  &__heading {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    @media (min-width: $md4) {
+      margin-bottom: 28px;
+    }
+  }
+  // .modal-philosophy__list
+  &__list {
+    padding-left: 15px;
+  }
+  // .modal-philosophy__list-item
+  &__list-item {
+    list-style-type: disc;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: lighten($black, 30%);
+    &:not(:last-child) {
+      margin-bottom: 10px;
+      @media (min-width: $md4) {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}
+
+.nav-philosophy {
+  // .nav-philosophy__list
+  &__list {
+    display: grid;
+    row-gap: 10px;
+    @media (min-width: $md5) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 10px;
+    }
+    @media (min-width: $md4) {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 16px;
+      column-gap: 16px;
+    }
+    @media (min-width: $md2) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (min-width: $md1) {
+      row-gap: 40px;
+      column-gap: 40px;
+    }
+  }
+
+  // .nav-philosophy__item
+  &__item {
+    z-index: 1;
+    position: relative;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    row-gap: 10px;
+    padding: 24px;
+    height: 230px;
+    border: 1px solid darken($white, 80%);
+    cursor: pointer;
+    @media (min-width: $md4) {
+      height: 232px;
+    }
+    @media (min-width: $md1) {
+      height: 328px;
+    }
+  }
+  &__item.show .nav-philosophy__button {
+    &::after {
+      opacity: 1;
+    }
+  }
+  &__item.show .nav-philosophy__text-wrapper {
+    transform: translateY(0%);
+  }
+  &__item.show .nav-philosophy__text {
+    display: block;
+  }
+  &__item.show .nav-philosophy__button {
+    span {
+      width: 20px;
+      &::before {
+        transform: translate(0px, 3px) rotate(-135deg);
+      }
+      &::after {
+        transform: translate(0px, -3px) rotate(135deg);
+      }
+    }
+  }
+  // .nav-philosophy__button-wrapper
+  &__button-wrapper {
+    // flex: 0 0 100%;
+    // margin-bottom: 10px;
+  }
+
+  // .nav-philosophy__button
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $white;
+    cursor: pointer;
+    user-select: none;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    &::after {
+      background-image: url(../img/grid.svg);
+      background-repeat: repeat;
+      background-position: 0 0;
+      background-color: #1e468a;
+      background-size: 40px;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+      opacity: 0;
+    }
+    &:focus-visible {
+      &::after {
+        opacity: 1;
+      }
+    }
+    &:focus-visible {
+      &::before {
+        outline: 3px solid $accent;
+      }
+    }
+    &:active {
+      border-color: darken($white, 30%);
+      span {
+        &::before,
+        &::after {
+          background-color: darken($white, 30%);
+        }
+      }
+    }
+    span {
+      position: relative;
+      display: flex;
+      width: 10px;
+      height: 0;
+      transition: width 0.3s linear;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+        transform-origin: 50% 50%;
+        transition: transform 0.3s linear;
+      }
+      &::before {
+        top: -3px;
+        transform: rotate(45deg);
+      }
+      &::after {
+        top: 3px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  // .nav-philosophy__text-wrapper
+  &__text-wrapper {
+    max-height: 100%;
+    overflow: hidden;
+    display: grid;
+    row-gap: 8px;
+    transform: translateY(10%);
+    align-self: end;
+    transition: all 0.3s linear;
+  }
+
+  // .nav-philosophy__title
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $white;
+    @media (min-width: $md1) {
+      font-size: 22px;
+    }
+  }
+
+  // .nav-philosophy__text
+  &__text {
+    display: none;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: darken($white, 30%);
+    @media (min-width: $md1) {
+      font-size: 14px;
+    }
+  }
+}

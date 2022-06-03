@@ -49,48 +49,39 @@
               </a>
             </div>
             <div class="hero-section__tip tip">
-              <div class="tip__image">
-                <svg
-                  class="mouse"
-                  width="23"
-                  height="40"
-                  viewBox="0 0 23 40"
+              <svg class="tip__image mouse" width="23" height="40" viewBox="0 0 23 40" fill="none">
+                <rect
+                  class="mouse-body"
+                  x="1"
+                  y="1"
+                  width="21"
+                  height="38"
+                  rx="10.5"
+                  stroke="none"
+                  stroke-width="2"
+                />
+                <rect
+                  class="mouse-track"
+                  opacity="none"
+                  x="9"
+                  y="8"
+                  width="5"
+                  height="18"
+                  rx="2.5"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    class="mouse__body"
-                    x="1"
-                    y="1"
-                    width="21"
-                    height="38"
-                    rx="10.5"
-                    stroke="white"
-                    stroke-width="2"
-                  />
-                  <rect
-                    class="mouse__track"
-                    opacity="0.5"
-                    x="9"
-                    y="8"
-                    width="5"
-                    height="18"
-                    rx="2.5"
-                    fill="white"
-                  />
-                  <circle class="mouse__handle" cx="11.5" cy="12.5" r="4.5" fill="white" />
-                </svg>
-              </div>
-              <div class="tip__text">
+                />
+                <circle class="mouse-handle" cx="11.5" cy="12.5" r="4.5" fill="none" />
+              </svg>
+              <div class="tip-text">
                 Скрольте
                 <br />
                 вниз
               </div>
             </div>
           </div>
-          <!-- <div class="background-block bg bg--grid">
+          <div class="background-block bg bg--grid">
             <div class="background-block__inner bg bg--cross-grid"></div>
-          </div> -->
+          </div>
         </section>
         <!-- SOLUTION -->
         <!-- swiper-no-swiping -->
@@ -381,7 +372,6 @@
                 <span></span>
               </button>
             </div>
-            <!-- <div class="modal-philosophy__content-wrapper"> -->
             <div class="modal-philosophy__content">
               <div class="modal-philosophy__item">
                 <h5 class="modal-philosophy__heading">Автоматизация делопроизводства</h5>
@@ -551,7 +541,6 @@
                 </ul>
               </div>
             </div>
-            <!-- </div> -->
           </div>
           <div class="philosophy-section__content _container">
             <div class="philosophy-section__info">
@@ -729,9 +718,11 @@
                 </blockquote>
               </div>
               <div class="review-block__autor autor-block">
-                <!-- ?При разделении атрибутов на несколько строк gulp-webp-css ругается, хз поч -->
                 <div class="autor-block__img autor-block__img--round">
-                  <img src="img/icons/autor-avatar.jpg" alt="" />
+                  <picture>
+                    <source srcset="img/icons/autor-avatar.webp" type="image/webp" />
+                    <img src="img/icons/autor-avatar.jpg" alt="аватар технического директора" />
+                  </picture>
                 </div>
                 <div class="autor-block__autor-info">
                   <b class="autor-block__name">Венцеслав Новиков</b>
@@ -761,10 +752,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-1.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-1.jpg"
-                    data-srcset="img/bg-history-1.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -781,10 +772,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-2.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-2.jpg"
-                    data-srcset="img/bg-history-2.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -801,10 +792,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-3.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-3.jpg"
-                    data-srcset="img/bg-history-3.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -821,10 +812,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-1.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-1.jpg"
-                    data-srcset="img/bg-history-1.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -841,10 +832,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-2.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-2.jpg"
-                    data-srcset="img/bg-history-2.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -861,10 +852,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-3.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-3.jpg"
-                    data-srcset="img/bg-history-3.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -881,10 +872,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-1.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-1.jpg"
-                    data-srcset="img/bg-history-1.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -901,10 +892,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-2.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-2.jpg"
-                    data-srcset="img/bg-history-2.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -921,10 +912,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-3.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-3.jpg"
-                    data-srcset="img/bg-history-3.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -941,10 +932,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-1.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-1.jpg"
-                    data-srcset="img/bg-history-1.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -961,10 +952,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-2.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-2.jpg"
-                    data-srcset="img/bg-history-2.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -981,10 +972,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-3.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-3.jpg"
-                    data-srcset="img/bg-history-3.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -1001,10 +992,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-1.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-1.jpg"
-                    data-srcset="img/bg-history-1.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -1021,10 +1012,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-2.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-2.jpg"
-                    data-srcset="img/bg-history-2.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -1155,52 +1146,59 @@
               </h3>
             </div>
           </div>
-          <div class="sertification-section__slider swiper-sertification">
+          <div class="sertification-section__slider swiper">
             <div class="sertification-section__btn-wrapper">
-              <button class="sertification-section__btn sertification-section__btn--prev">
-                <!-- <span></span> -->
-              </button>
-              <button class="sertification-section__btn sertification-section__btn--next">
-                <!-- <span></span> -->
-              </button>
+              <button class="slider-arrow-button sertification-section__btn--prev"></button>
+              <button
+                class="slider-arrow-button slider-arrow-button--next sertification-section__btn--next"
+              ></button>
             </div>
-            <div class="sertification-section__slider-wrapper swiper-wrapper">
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="" />
+            <div class="swiper-wrapper">
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-1.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-2.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-1.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-2.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-1.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-2.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-1.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-2.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-1.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
+              </picture>
             </div>
           </div>
         </section>
