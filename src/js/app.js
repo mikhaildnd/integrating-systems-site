@@ -89,7 +89,7 @@ const headerControl = new HeaderScroll('.header', {
 // });
 
 /* Solution section scripts */
-const solutionSliderPagination = new Swiper('.solution-slider__pagination .swiper', {
+const solutionSliderPagination = new Swiper('.solutions__pagination-slider .swiper', {
   slidesPerView: 2,
   slideToClickedSlide: true,
   breakpoints: {
@@ -102,7 +102,7 @@ const solutionSliderPagination = new Swiper('.solution-slider__pagination .swipe
   },
 });
 
-const solutionSlider = new Swiper('.solution-swiper', {
+const solutionSlider = new Swiper('.solutions__slider', {
   modules: [Thumbs, EffectFade, Keyboard, A11y, Controller],
   controller: {
     control: solutionSliderPagination,

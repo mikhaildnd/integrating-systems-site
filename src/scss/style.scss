@@ -48,7 +48,7 @@ body {
 }
 
 /* Container */
-._container {
+.container {
   max-width: $maxWidthContainer;
   margin: 0 auto;
   padding-left: 16px;
@@ -81,14 +81,14 @@ body {
 @import './page-blocks/mission-block';
 @import './page-blocks/history-block';
 @import './page-blocks/philosophy-block';
-@import './page-blocks/solution-block';
+@import './page-blocks/solutions-main-block';
 @import './page-blocks/sertification-block';
 @import './page-blocks/questions-block';
 @import './page-blocks/review-block';
+@import './page-blocks/select-solution-menu-block';
 
 /* Pages */
 @import 'integrating-page';
-@import 'solutions-page';
 @import 'solution-page';
 
 /* Main block */

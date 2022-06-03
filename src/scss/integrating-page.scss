@@ -1,6 +1,7 @@
 .integrating {
   // .integrating__item
   &__item {
+    position: relative;
     background-color: $brand;
     @media (min-width: $md4) {
       padding-top: 95px;
@@ -51,12 +52,9 @@
         right: 32px;
         height: 454px;
         width: 351px;
-        // width: 50%;
-        // height: 66%;
         background-position: center right;
       }
       @media (min-width: $md2) {
-        // height: 80%;
         height: 507px;
         width: 392px;
       }
@@ -122,10 +120,6 @@
       font-size: 48px;
       line-height: 1.15;
     }
-  }
-
-  // .integrating__text
-  &__text {
   }
 }
 
@@ -199,10 +193,6 @@
     padding-bottom: 83px;
   }
 
-  // .partners__content
-  &__content {
-  }
-
   // .partners__title
   &__title {
     font-size: 32px;
@@ -244,6 +234,7 @@
 .item-partners {
   padding: 10px 8px;
   text-align: center;
+
   // .item-partners__image
   &__image {
     position: relative;

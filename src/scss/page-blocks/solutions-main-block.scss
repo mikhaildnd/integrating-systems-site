@@ -1,18 +1,15 @@
-.solution-slider {
+/* Solutions */
+.solutions {
   position: relative; //для грида
   z-index: 1;
   background-color: $brand;
-  &__content {
-    overflow: hidden;
-  }
-  // .solution-slider__wrapper
-  &__slides-wrapper {
+  &__slider {
     margin-bottom: 24px;
   }
-  // .solution-slider__slide
+  // .solutions__slide
   &__slide {
   }
-  // .solution-slider__content
+  // .solutions__content
   &__slide-content {
     z-index: 2;
     position: relative;
@@ -23,11 +20,6 @@
       flex-direction: row;
       justify-content: space-between;
     }
-    // @media (min-width: $md1) {
-    //   max-width: calc(1440px + 64px);
-    //   margin: 0 auto;
-    // }
-
     &::before {
       content: '';
       align-self: center;
@@ -38,25 +30,16 @@
       height: 340px;
       margin-bottom: -30px;
       @media (min-width: $md6) {
-        // width: 400px;
         height: 485px;
-      }
-      @media (min-width: $md4) {
-        // width: 530px;
-        // height: 500px;
       }
       @media (min-width: $md3) {
         order: 2;
         margin-bottom: 0;
-        // width: 400px;
-        // height: 485px;
       }
       @media (min-width: $md1) {
-        // width: 460px;
         height: 555px;
       }
       @media (min-width: 1920px) {
-        // width: 560px;
         height: 680px;
       }
     }
@@ -81,14 +64,16 @@
       }
     }
   }
-  // .solution-slider__promo
+
+  // .solutions__promo
   &__promo {
     flex-shrink: 0;
     @media (min-width: $md3) {
       align-self: center;
     }
   }
-  // .solution-slider__text-wrapper
+
+  // .solutions__text-wrapper
   &__text-wrapper {
     margin-bottom: 24px;
     @media (min-width: $md6) {
@@ -107,7 +92,8 @@
       max-width: 580px;
     }
   }
-  // .solution-slider__title
+
+  // .solutions__title
   &__title {
     font-size: 21px;
     font-weight: 700;
@@ -133,7 +119,8 @@
       font-size: 48px;
     }
   }
-  // .solution-slider__text
+
+  // .solutions__text
   &__text {
     display: none;
     @media (min-width: $md5) {
@@ -147,12 +134,14 @@
       font-size: 16px;
     }
   }
-  // .solution-slider__btn-wrapper
+
+  // .solutions__btn-wrapper
   &__btn-wrapper {
     display: flex;
     margin: 0 -8px;
   }
-  // .solution-slider__btn
+
+  // .solutions__btn
   &__btn {
     flex-basis: 100%;
     margin: 0 8px;
@@ -161,31 +150,12 @@
       max-width: 140px;
     }
   }
-  // .solution-slider__pagination
-  &__pagination {
+
+  // .solutions__pagination-slider
+  &__pagination-slider {
     margin-right: -16px;
     position: relative;
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
-    // width: 100%; //
-    // height: 95px;
     counter-reset: item;
-    // transition: all 0.3s linear;
-    // @media (min-width: $md5) {
-    //   padding-left: 32px;
-    //   padding-right: 32px;
-    // }
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 4px;
-    //   background-color: $white;
-    //   transform: translateY(-50%);
-    // }
     @media (min-width: $md5) {
       margin-right: -32px;
     }
@@ -194,22 +164,17 @@
     }
 
     & .swiper-slide-thumb-active {
-      // max-width: 150px;
-      & .solution-slider__pagination-bullet {
+      & .solutions__pagination-bullet {
         border: 2px solid darken($white, 30%);
       }
     }
   }
 
-  // .solution-slider__pagination-slide
-  &__pagination-slide {
-  }
-
-  // .solution-slider__pagination-slide-content
+  // .solutions__pagination-slide-content
   &__pagination-slide-content {
     position: relative;
     display: grid;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
     row-gap: 10px;
     height: 100%;
@@ -228,12 +193,8 @@
       content: '';
       display: inline-grid;
       justify-content: center;
-      // position: absolute;
-      // top: -25px;
-      // left: 50%;
       counter-increment: item;
       content: '0' counter(item);
-      // transform: translateX(-50%);
       color: darken($white, 50%);
       line-height: 1;
       font-size: 10px;
@@ -241,7 +202,7 @@
     }
   }
 
-  // .solution-slider__pagination-slide-text
+  // .solutions__pagination-slide-text
   &__pagination-slide-text {
     color: $white;
     font-size: 16px;
@@ -250,13 +211,8 @@
     white-space: nowrap;
   }
 
-  // .solution-slider__pagination-bullet-container
-  &__pagination-bullet-container {
-  }
-
-  // .solution-slider__pagination-bullet
+  // .solutions__pagination-bullet
   &__pagination-bullet {
-    flex-shrink: 0;
     position: relative;
     display: block;
     width: 40px;
@@ -266,21 +222,6 @@
     transition: border-color 0.3s ease 0s;
     border: 2px solid transparent;
     cursor: pointer;
-
-    // //*counter
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   top: -25px;
-    //   left: 50%;
-    //   counter-increment: item;
-    //   content: '0' counter(item);
-    //   transform: translateX(-50%);
-    //   color: darken($white, 50%);
-    //   font-size: 10px;
-    //   font-weight: 700;
-    // }
-
     &::after {
       content: '';
       position: absolute;
@@ -292,80 +233,5 @@
       border-radius: 50%;
       transform: translate(-50%, -50%);
     }
-
-    // //*solutions name-list
-    // &::after {
-    //   position: absolute;
-    //   bottom: -40px;
-    //   left: 50%;
-    //   transform: translateX(-50%);
-    //   color: $white;
-    //   font-size: 16px;
-    //   line-height: 2.5;
-    //   font-weight: 700;
-    //   white-space: nowrap;
-    //   @media (max-width: $md2) {
-    //     display: flex;
-    //     align-items: flex-start;
-    //     height: 30px;
-    //     font-size: 12px;
-    //     line-height: 1.3;
-    //     white-space: normal;
-    //   }
-    // }
-    // &:nth-child(1n) {
-    //   &::after {
-    //     content: 'СЭД';
-    //   }
-    // }
-    // &:nth-child(2n) {
-    //   &::after {
-    //     content: 'Мониторинг транспорта';
-    //   }
-    // }
-    // &:nth-child(3n) {
-    //   &::after {
-    //     content: 'Такси';
-    //   }
-    // }
-    // &:nth-child(4n) {
-    //   &::after {
-    //     content: 'Активный гражданин';
-    //   }
-    // }
-    // &:nth-child(5n) {
-    //   &::after {
-    //     content: 'ГБО';
-    //   }
-    // }
-    // &:nth-child(6n) {
-    //   &::after {
-    //     content: 'ДРСУ';
-    //   }
-    // }
-
-    //*точка в круге
-    // span {
-    //   &::before {
-    //     content: '';
-    //     position: absolute;
-    //     top: 50%;
-    //     left: 50%;
-    //     width: 8px;
-    //     height: 8px;
-    //     background-color: $white;
-    //     border-radius: 50%;
-    //     transform: translate(-50%, -50%);
-    //   }
-    // }
-    &-active {
-      border: 2px solid darken($white, 30%);
-    }
-    // @media (max-width: $md2) {
-    //   margin-right: 120px;
-    //   &:last-child {
-    //     margin-right: 0;
-    //   }
-    // }
   }
 }
