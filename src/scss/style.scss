@@ -63,7 +63,7 @@ body {
 }
 
 /* Components */
-@import '_tipography';
+@import './components/heading';
 @import './components/slider-button';
 @import './components/background-grid';
 @import './components/tip';
