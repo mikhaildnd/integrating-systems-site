@@ -63,6 +63,7 @@ body {
 }
 
 /* Components */
+@import './components/logo';
 @import './components/heading';
 @import './components/slider-button';
 @import './components/background-grid';
@@ -77,7 +78,6 @@ body {
 @import '_header';
 @import '_footer';
 @import './page-blocks/hero-block';
-@import './page-blocks/philosophy-block';
 @import './page-blocks/mission-block';
 @import './page-blocks/history-block';
 @import './page-blocks/philosophy-block';
@@ -101,11 +101,7 @@ body {
       padding-top: 120px;
       padding-bottom: 36px;
     }
-    // @media (min-width: $md3) {
-    //   padding-bottom: 160px;
-    // }
     @media (min-width: $md1) {
-      // padding-bottom: 200px;
       padding-bottom: 84px;
     }
   }

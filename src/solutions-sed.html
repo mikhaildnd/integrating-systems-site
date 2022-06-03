@@ -460,7 +460,7 @@
                 </h2>
               </div>
             </div>
-            <div class="philosophy-section__nav nav-philosophy">
+            <div class="nav-philosophy">
               <ul class="nav-philosophy__list">
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
@@ -766,17 +766,24 @@
           <h3 class="contacts__heading heading">Связаться с нами</h3>
           <form class="form" action="#" method="post">
             <div class="form__group form__group--name">
-              <input class="form__input" placeholder=" " type="text" id="name" name="user_name" />
+              <input class="form__input" placeholder="" type="text" id="name" name="user_name" />
               <label class="form__label" for="name">Ваше имя</label>
             </div>
             <div class="form__group form__group--phone">
-              <input class="form__input" placeholder=" " type="tel" id="phone" name="user_mail" />
+              <input
+                class="form__input"
+                placeholder=""
+                type="tel"
+                id="phone"
+                name="user_mail"
+                required
+              />
               <label class="form__label" for="phone">Телефон</label>
             </div>
             <div class="form__group form__group--textarea">
               <textarea
                 class="form__textarea"
-                placeholder=" "
+                placeholder=""
                 id="msg"
                 name="user_message"
               ></textarea>
@@ -802,7 +809,6 @@
             </div>
           </form>
         </div>
-        <!-- </div> -->
       </main>
       @@include('_footer.html',{})
     </div>

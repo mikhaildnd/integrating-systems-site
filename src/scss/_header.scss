@@ -60,7 +60,7 @@
 
   // .header__logo
   &__logo {
-    svg {
+    .logo__img {
       height: 24px;
       width: 88px;
     }
@@ -69,7 +69,7 @@
       margin-right: 40px;
     }
     @media (min-width: $md3) {
-      svg {
+      .logo__img {
         height: 32px;
         width: 120px;
       }
@@ -263,29 +263,6 @@
     @media (min-width: $md5) {
       width: 34px;
     }
-  }
-}
-
-/* Logo */
-.logo {
-  // .logo__img//todo мб удалить
-  &__img {
-  }
-
-  // .logo__link//todo мб удалить
-  &__link {
-    display: inline-block;
-    @media (min-width: $md2) {
-      &:focus-visible {
-        outline: 3px solid $accent;
-        outline-offset: 3px;
-      }
-    }
-  }
-
-  path {
-    transition: fill 0.2s ease;
-    fill: white;
   }
 }
 //========================================================================================================================================================

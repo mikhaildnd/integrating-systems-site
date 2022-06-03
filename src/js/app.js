@@ -145,8 +145,8 @@ const philosophyToggler = toggleCards({
   containerSelector: '.nav-philosophy__list',
   cardSelector: '.nav-philosophy__item',
   cardActiveClass: 'show',
-  modalSelector: '.modal-philosophy',
-  modalActiveClass: 'modal-philosophy--open',
+  modalSelector: '.philosophy-section__modal',
+  modalActiveClass: 'open',
   closeModalButtonSelector: '.modal-philosophy__button',
 });
 

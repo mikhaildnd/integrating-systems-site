@@ -45,12 +45,12 @@
   // .footer__logo
   &__logo {
     grid-area: logo;
-    svg {
+    .logo__img {
       height: 30px;
       width: 111px;
     }
     @media (min-width: $md4) {
-      svg {
+      .logo__img {
         height: 32px;
         width: 120px;
       }
