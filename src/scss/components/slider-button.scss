@@ -14,7 +14,7 @@
     opacity: 0.5;
   }
   &:first-child {
-    border-right: 1px solid transparent;
+    margin-right: -1px;
   }
   &--next {
     transform: rotate(180deg);
