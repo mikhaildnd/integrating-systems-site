@@ -48,5 +48,4 @@ Thumbs.db
 *.wmv
 
 #My
-dist/
 /.vscode
