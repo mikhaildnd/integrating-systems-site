@@ -121,14 +121,15 @@
 
   // .slider-history__pagination-slide
   &__pagination-slide {
-    max-width: 120px;
     position: relative;
+    max-width: 120px;
+    padding-top: 35px;
     //*counter(year)
     &::before {
       z-index: 2;
       position: absolute;
       left: 0;
-      top: -35px;
+      top: 0;
       content: counter(year);
       display: inline-block;
       padding: 2px 3px;
