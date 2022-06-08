@@ -1,4 +1,3 @@
-import { webpSupportTest } from './modules/webp-support-test.js';
 import { HeaderScroll } from './modules/header-scroll.js';
 import { historySliderControl } from './modules/history-slider-control.js';
 import { Accordeon } from './modules/toggle-accordeon.js';
