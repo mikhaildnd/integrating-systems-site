@@ -1,77 +1,88 @@
-//====================================================================================================
 .popup {
-  -webkit-overflow-scrolling: touch;
-  z-index: 100;
-  padding: 30px 10px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
   position: fixed;
-  top: 0px;
-  left: 0;
   width: 100%;
   height: 100%;
-  transition: visibility 0.8s ease 0s;
-  visibility: hidden;
-  &::before {
-    content: '';
-    background-color: rgba(0, 0, 0, 0.9);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.8s ease 0s;
-  }
-  &.show {
-    visibility: visible;
-    overflow: auto;
-    &::before {
-      opacity: 1;
-    }
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.582);
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  &.open {
+    pointer-events: all;
+    z-index: 1000;
+    opacity: 1;
     .popup__body {
-      transform: scale(1);
+      transform: translateY(0%);
     }
   }
-  &._active {
-    overflow: auto;
-    visibility: visible;
-    &::before {
-      opacity: 1;
+  // .popup__body
+  &__body {
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-150%);
+    transition: transform 0.2s ease-in-out;
+    @media (min-width: $md6) {
+      padding-left: 32px;
+      padding-right: 32px;
     }
-    .popup__body {
-      transition: all 0.3s ease 0.2s;
-      transform: scale(1);
+    @media (min-width: $md4) {
+      max-width: 900px;
+    }
+  }
+  // .popup__inner
+  &__inner {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    overflow: hidden;
+    background-color: $white;
+    @media (min-width: $md4) {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 70px;
     }
   }
   // .popup__content
   &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100%;
-    flex: 1 1 auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
+    position: relative;
+    // max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: $md3) {
+      padding: 40px;
+    }
   }
-  // .popup__body
-  &__body {
-    transform: scale(0);
-    transition: all 0.3s ease 0s;
-    background-color: #fff;
-    padding: 50px;
-    width: 100%;
-    max-width: 800px;
+  // .popup__heading
+  &__heading {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    @media (min-width: $md6) {
+      font-size: 24px;
+    }
+    @media (min-width: $md4) {
+      font-size: 26px;
+    }
   }
   // .popup__close
   &__close {
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    cursor: pointer;
-    z-index: 30;
-    background: url('../img/icons/close.svg') 0 0 no-repeat;
+    order: -1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 54px;
+    padding: 0 16px;
+    @media (min-width: $md4) {
+      order: initial;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 0;
+      height: 100%;
+    }
   }
 }
