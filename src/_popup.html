@@ -1,22 +1,52 @@
-<div class="popup popup_popup">
-	<div class="popup__content">
-		<div class="popup__body">
-			<div class="popup__close"></div>
-		</div>
-	</div>
-</div>
-<div class="popup popup_massagename-message">
-	<div class="popup__content">
-		<div class="popup__body">
-			<div class="popup__close"></div>
-		</div>
-	</div>
-</div>
-<div class="popup popup_video">
-	<div class="popup__content">
-		<div class="popup__body">
-			<div class="popup__close popup__close_video"></div>
-			<div class="popup__video _video"></div>
-		</div>
-	</div>
+<div id="main-popup" class="popup">
+  <div class="popup__body">
+    <div class="popup__inner">
+      <div class="popup__content">
+        <h3 class="popup__heading">Отправьте нам свое сообщение</h3>
+        <form class="form" action="#" method="post">
+          <div class="form__group form__group--name">
+            <input class="form__input" placeholder="" type="text" id="name" name="user_name" />
+            <label class="form__label" for="name">Ваше имя</label>
+          </div>
+          <div class="form__group form__group--phone">
+            <input class="form__input" placeholder="" type="tel" id="phone" name="user_mail" />
+            <label class="form__label" for="phone">Телефон</label>
+          </div>
+          <div class="form__group form__group--textarea">
+            <textarea
+              class="form__textarea"
+              required
+              placeholder=""
+              id="msg"
+              name="user_message"
+            ></textarea>
+            <label class="form__label form__label--textarea" for="msg">Комментарий</label>
+          </div>
+          <div class="form__group form__group--submit">
+            <div class="form__label-checkbox checkbox-label">
+              <label class="checkbox-label__container">
+                <div class="checkbox-label__input">
+                  <input class="checkbox-label__input" type="checkbox" />
+                </div>
+                <div class="checkbox-label__text">
+                  <span>
+                    Я выражаю свое согласие с Политикой конфиденциальности и разрешаю обработку
+                    своих персональных данных
+                  </span>
+                </div>
+              </label>
+            </div>
+            <button class="form__btn btn btn--md btn--bg-brand btn--underline" type="submit">
+              Отправить
+            </button>
+          </div>
+        </form>
+      </div>
+      <button class="popup__close modal-button">
+        <span class="modal-button__icon">
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </div>
 </div>
