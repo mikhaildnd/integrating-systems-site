@@ -1,4 +1,4 @@
-/* Buttons */
+/* Main-button */
 .btn {
   display: inline-flex;
   justify-content: center;
@@ -100,6 +100,94 @@
     &:hover,
     &:focus-visible {
       border: 1px solid transparent;
+    }
+  }
+}
+
+/* Modal-button */
+.modal-button {
+  background-color: $brand;
+  transition: background-color 0.1s linear;
+  outline: none;
+  &:hover,
+  &:focus-visible {
+    background-color: $accent;
+    .modal-button__icon {
+      box-shadow: 0 0 5px 3px #ffffff54;
+      span {
+        &::before,
+        &::after {
+          box-shadow: 0 0 5px 3px #ffffff12;
+        }
+      }
+    }
+  }
+  &:active {
+    background-color: darken($accent, 10%);
+    .modal-button__icon {
+      box-shadow: none;
+      span {
+        &::before,
+        &::after {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  // .modal-button__icon
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $white;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.1s linear, box-shadow 0.1s linear;
+    &:hover {
+      box-shadow: 0 0 5px 3px #ffffff54;
+      span {
+        &::before,
+        &::after {
+          box-shadow: 0 0 5px 3px #ffffff12;
+        }
+      }
+    }
+    &:active {
+      border-color: $white;
+      span {
+        &::before,
+        &::after {
+          background-color: $white;
+        }
+      }
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 0;
+      transition: box-shadow 0.1s linear;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+        transition: background-color 0.1s linear;
+      }
+      &::before {
+        top: -3px;
+        transform: translate(-50%, 3px) rotate(-135deg);
+      }
+      &::after {
+        top: 3px;
+        transform: translate(-50%, -3px) rotate(135deg);
+      }
     }
   }
 }
