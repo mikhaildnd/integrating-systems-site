@@ -3,6 +3,7 @@ import { historySliderControl } from './modules/history-slider-control.js';
 import { Accordeon } from './modules/toggle-accordeon.js';
 import { toggleCards, yearsCountChanger } from './modules/helpers.js';
 import { TabManager } from './modules/tabs-manager.js';
+import { Popup } from './modules/popup.js';
 
 import Swiper, {
   Navigation,
@@ -21,6 +22,20 @@ import 'swiper/css';
 import 'swiper/css/lazy';
 import 'swiper/css/a11y';
 import 'swiper/css/effect-fade';
+
+/* Popup */
+const mainPopup = new Popup({
+  popupId: 'main-popup', //id попапа
+  triggerAttributeName: 'trigger-for',
+  popupSelector: '.popup',
+  popupCloseSelector: '.popup__close',
+  popupOutsideAreaSelector: '.popup__inner',
+  openSelector: 'open',
+  lockPaddingSelector: '.lock-padding',
+  //должен быть равен скорости анимации
+  timeout: 200,
+  // isChanged: (qqq) => {},
+});
 
 /* Burger menu toggler */
 const burgerMenuToggler = () => {
