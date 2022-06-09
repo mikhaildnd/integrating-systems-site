@@ -3,6 +3,9 @@
   &__group {
     position: relative;
     margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     &--name {
       flex-basis: 50%;
     }
