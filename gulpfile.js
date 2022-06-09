@@ -12,6 +12,7 @@ import imagemin from 'gulp-imagemin';
 import rename from 'gulp-rename';
 import fileinclude from 'gulp-file-include';
 import cleanCss from 'gulp-clean-css';
+import htmlmin from 'gulp-htmlmin';
 import newer from 'gulp-newer';
 import webp from 'imagemin-webp';
 import fonter from 'gulp-fonter';
@@ -21,15 +22,13 @@ import ttf2woff2 from 'gulp-ttf2woff2';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import fs from 'fs';
+const isBuild = process.argv.includes('--build');
+const isDev = !process.argv.includes('--build');
 
 const scss = gulpSass(dartSass);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const src_folder = 'src';
 const dist_folder = 'dist';
-
-let isDev = true; //false чтобы минифицировал js
-let isProd = !isDev;
 
 // Path
 const _path = {
@@ -103,6 +102,15 @@ export const html = () => {
     .src(_path.src.html, {})
     .pipe(plumber())
     .pipe(fileinclude())
+    .pipe(
+      gulpIf(
+        isBuild,
+        htmlmin({
+          removeComments: true,
+          collapseWhitespace: true,
+        }),
+      ),
+    )
     .pipe(gulp.dest(_path.build.html))
     .pipe(sync.stream());
 };
