@@ -5,7 +5,7 @@ import { scrollWidthCalc } from './calc-scroll-width.js';
 const scroll = new ScrollDirectionWatcher();
 
 //Принимает переменную свайпер-слайдера, для возможности вызывать его методы
-export function historySliderControl(transferredSlider, headerControl) {
+export function historySliderControl() {
   const historySection = document.querySelector('.slider-history');
   const historyBtn = document.querySelector('.slider-history__btn.skip');
 
@@ -16,23 +16,16 @@ export function historySliderControl(transferredSlider, headerControl) {
   }
 
   function skipSlider(event) {
-    // historyPagination.resetToStart();
     event.currentTarget.removeEventListener(event.type, fixSlider);
     document.removeEventListener('scroll', fixSlider);
 
     document.body.style.overflowY = '';
     document.body.style.paddingRight = 0;
 
-    //Передаваемый параметром снаружи слайдер
-    //не работает скролл из-за z-index
-    // transferredSlider.mousewheel.disable();
-    // historySlider.mousewheel.disable();
-
     const elemCoords = getCoords(historySection);
 
     if (!elemCoords) return;
 
-    // let offsetPosition = scroll.isUp ? elemCoords.top - elemCoords.height : elemCoords.bottom;
     let offsetPosition;
 
     if (scroll.isUp) {
@@ -61,18 +54,8 @@ export function historySliderControl(transferredSlider, headerControl) {
     if (elemCoords.top >= -100 && elemCoords.top <= 100) {
       historySection.scrollIntoView();
 
-      // console.log(headerControl.close());
-      // headerControl.unfixHeader().closeHeader();
-
-      // window.scrollTo({
-      //   top: elemCoords.top,
-      //   behavior: 'smooth',
-      // });
-
       document.body.style.paddingRight = scrollWidthCalc() + 'px';
       document.body.style.overflowY = 'hidden';
-      //Передаваемый параметром снаружи слайдер
-      // transferredSlider.mousewheel.enable();
 
       event.currentTarget.removeEventListener(event.type, fixSlider);
 
