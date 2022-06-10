@@ -20,7 +20,9 @@
     justify-content: space-between;
     padding: 10px 8px;
     cursor: pointer;
-
+    &:focus-visible {
+      outline: 3px solid $accent;
+    }
     @media (min-width: $md7) {
       padding: 12px 10px;
     }
