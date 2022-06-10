@@ -105,6 +105,12 @@
   // .footer__contacts
   &__contacts {
     grid-area: contacts;
+    & .contacts-menu__button {
+      color: $white;
+      &:hover {
+        color: darken($white, 20%);
+      }
+    }
   }
 }
 
