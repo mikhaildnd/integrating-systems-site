@@ -61,6 +61,8 @@ export class Popup {
         const currentPopup = document.getElementById(this.popupId);
 
         this.popupOpen(currentPopup);
+
+        currentPopup.querySelector('input').focus();
       });
     });
   }
@@ -122,9 +124,6 @@ export class Popup {
         const el = this.lockPadding[index];
         el.style.transition = 'none';
         el.style.paddingRight = this._scrollBarWidth(true);
-        // setTimeout(() => {
-        //   el.style.transition = 'none';
-        // }, this.timeout);
       }
     }
 
