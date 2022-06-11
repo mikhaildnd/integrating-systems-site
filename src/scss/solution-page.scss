@@ -109,7 +109,8 @@
   &::before {
     flex-shrink: 0;
     content: '';
-    background-image: url(../img/emblem.jpg);
+    background-image: url('../img/emblem.jpg');
+    background-image: image-set('../img/emblem.webp' type('image/webp'));
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

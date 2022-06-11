@@ -198,6 +198,7 @@
     padding-right: 16px;
     background-color: $brand;
     background-image: url('../img/hero-img-1.jpg');
+    background-image: image-set('../img/hero-img-1.webp' type('image/webp'));
     filter: grayscale(1);
     background-repeat: no-repeat;
     background-size: cover;
