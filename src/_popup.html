@@ -5,29 +5,44 @@
         <h3 class="popup__heading">Отправьте нам свое сообщение</h3>
         <form class="form" action="#" method="post">
           <div class="form__group form__group--name">
-            <input class="form__input" placeholder="" type="text" id="name" name="user_name" />
-            <label class="form__label" for="name">Ваше имя</label>
+            <input
+              class="form__input"
+              placeholder=""
+              type="text"
+              id="popup-name"
+              name="user_name"
+            />
+            <label class="form__label" for="popup-name">Ваше имя</label>
           </div>
           <div class="form__group form__group--phone">
-            <input class="form__input" placeholder="" type="email" id="phone" name="user_mail" />
-            <label class="form__label" for="phone">Телефон</label>
+            <input
+              class="form__input"
+              placeholder=""
+              type="email"
+              id="popup-phone"
+              name="user_mail"
+            />
+            <label class="form__label" for="popup-phone">Телефон</label>
           </div>
           <div class="form__group form__group--textarea">
-            <textarea class="form__textarea" placeholder="" id="msg" name="user_message"></textarea>
-            <label class="form__label form__label--textarea" for="msg">Комментарий</label>
+            <textarea
+              class="form__textarea"
+              placeholder=""
+              id="popup-msg"
+              name="user_message"
+            ></textarea>
+            <label class="form__label form__label--textarea" for="popup-msg">Комментарий</label>
           </div>
           <div class="form__group form__group--submit">
             <div class="form__label-checkbox checkbox-label">
               <label class="checkbox-label__container">
-                <div class="checkbox-label__input">
+                <span class="checkbox-label__input">
                   <input class="checkbox-label__input" type="checkbox" />
-                </div>
-                <div class="checkbox-label__text">
-                  <span>
-                    Я выражаю свое согласие с Политикой конфиденциальности и разрешаю обработку
-                    своих персональных данных
-                  </span>
-                </div>
+                </span>
+                <span class="checkbox-label__text">
+                  Я выражаю свое согласие с Политикой конфиденциальности и разрешаю обработку своих
+                  персональных данных
+                </span>
               </label>
             </div>
             <button class="form__btn btn btn--md btn--bg-brand btn--underline" type="submit">
