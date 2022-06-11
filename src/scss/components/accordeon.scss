@@ -1,19 +1,4 @@
-.questions {
-  padding-top: 24px;
-  padding-bottom: 24px;
-  @media (min-width: $md2) {
-    padding-top: 28px;
-    padding-bottom: 28px;
-  }
-  // .questions__heading
-  &__heading {
-    margin-bottom: 36px;
-  }
-  // .questions__accordeon
-  &__accordeon {
-  }
-}
-
+/* Accordeon */
 .accordeon {
   // .accordeon__item
   &__item {
@@ -24,6 +9,7 @@
   }
 }
 
+/* Item-accordeon */
 .item-accordeon {
   border: 1px solid #bcc8cf;
   // .item-accordeon__top
@@ -34,7 +20,9 @@
     justify-content: space-between;
     padding: 10px 8px;
     cursor: pointer;
-
+    &:focus-visible {
+      outline: 3px solid $accent;
+    }
     @media (min-width: $md7) {
       padding: 12px 10px;
     }
@@ -44,17 +32,11 @@
     @media (min-width: $md4) {
       padding: 24px 32px;
     }
-    // padding: 10px 14px;
-    // @media (min-width: $md4) {
-    //   padding: 24px 32px;
-    // }
-    //*для скрипта, при открытии таба
     &.show {
       .item-accordeon__heading {
         color: $black;
       }
       .item-accordeon__icon {
-        // transform: rotate(120deg);
         &::after {
           transform: translate(-50%, -50%) rotate(270deg);
         }
@@ -64,6 +46,7 @@
       }
     }
   }
+
   // .item-accordeon__heading
   &__heading {
     color: $brand;
@@ -89,10 +72,10 @@
       }
     }
   }
+
   // .item-accordeon__icon
   &__icon {
     flex: 0 0 20px;
-    // width: 40px;
     height: 20px;
     margin-left: 5px;
     position: relative;
@@ -120,12 +103,14 @@
       transition: transform 0.4s ease-in-out;
     }
   }
+
   // .item-accordeon__bottom
   &__bottom {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
   }
+
   // .item-accordeon__bottom-inner
   &__bottom-inner {
     padding: 0 8px 10px;
@@ -139,6 +124,7 @@
       padding: 0 32px 24px;
     }
   }
+
   // .item-accordeon__text
   &__text {
     font-size: 12px;

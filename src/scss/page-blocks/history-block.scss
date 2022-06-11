@@ -1,0 +1,290 @@
+.slider-history {
+  position: relative;
+  overflow: hidden;
+
+  // .slider-history__content
+  &__slider {
+    position: relative;
+    max-height: 100vh;
+    z-index: 0;
+  }
+
+  // .slider-history__static-block
+  &__static-block {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  // .slider-history__static-block-inner
+  &__static-block-inner {
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      '. .'
+      'year year'
+      'buttons buttons';
+    height: 100%;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @media (orientation: landscape) {
+      width: 50%;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        'year year'
+        'buttons .';
+      margin-left: 0;
+      overflow: hidden;
+    }
+    @media (min-width: $md5) {
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @media (orientation: landscape) and (min-height: $md5) {
+      padding-top: 100px;
+      width: 100%;
+      margin-left: auto;
+      overflow: visible;
+    }
+    @media (min-width: $md2) {
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        'year'
+        'buttons';
+    }
+    @media (min-width: $md1) {
+      max-width: 1112px;
+    }
+  }
+
+  // .slider-history__date-block
+  &__date-block {
+    grid-area: year;
+    position: relative;
+    width: 100%;
+    @media (orientation: landscape) {
+      align-self: start;
+    }
+    @media (orientation: portrait) {
+      align-self: center;
+    }
+  }
+
+  // .slider-history__heading
+  &__heading {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 700;
+    color: $white;
+    @media (orientation: portrait) and (min-width: $md7) {
+      font-size: 127px;
+    }
+    @media (orientation: portrait) and (min-width: $md5) {
+      font-size: 154px;
+    }
+    @media (orientation: landscape) and (min-width: $md4) and (min-height: 600px) {
+      font-size: 140px;
+    }
+    @media (orientation: landscape) and (min-width: $md2) and (min-height: 720px) {
+      font-size: 300px;
+    }
+    @media (orientation: landscape) and (min-width: $md1) and (min-height: 900px) {
+      font-size: 430px;
+    }
+  }
+
+  // .slider-history__pagination
+  &__pagination {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    counter-reset: year 1991;
+    &.swiper {
+      position: absolute;
+      left: 0;
+      bottom: -75px;
+      overflow: visible;
+    }
+    & .swiper-wrapper {
+      padding-top: 40px;
+    }
+  }
+
+  // .slider-history__pagination-slide
+  &__pagination-slide {
+    position: relative;
+    max-width: 120px;
+    padding-top: 35px;
+    //*counter(year)
+    &::before {
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: counter(year);
+      display: inline-block;
+      padding: 2px 3px;
+      counter-increment: year;
+      color: $white;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    &.swiper-slide-thumb-active {
+      &::before {
+        color: $brand;
+        box-shadow: 0px 0px 2px 2px $white;
+        background-color: $white;
+      }
+    }
+    @media (min-width: $md2) {
+      cursor: pointer;
+    }
+  }
+
+  // .slider-history__pagination-bullet
+  &__pagination-bullet {
+    border-top: 5px solid $white;
+    width: 100%;
+    &::after {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 16px;
+      background-color: $white;
+    }
+  }
+
+  // .slider-history__btn-wrapper
+  &__btn-wrapper {
+    grid-area: buttons;
+    display: flex;
+    align-self: end;
+  }
+
+  // .slider-history__btn
+  &__btn {
+    text-transform: uppercase;
+    flex-grow: 1;
+    height: 56px;
+    @media (orientation: landscape) and (max-width: 768px) {
+      padding: 10px 18px;
+      flex-grow: 0;
+    }
+    @media (min-width: $md4) {
+      flex-grow: 0;
+    }
+    @media (min-width: $md2) {
+      max-width: 150px;
+    }
+    @media (min-width: $md1) {
+      height: 60px;
+    }
+  }
+  .swiper-button-disabled path {
+    stroke: rgb(148, 148, 148);
+  }
+  .swiper-button-next svg {
+    transform: rotate(180deg);
+  }
+
+  // .slider-history__slide-wrapper
+  &__slide-wrapper {
+    position: relative;
+  }
+
+  // .slider-history__slide
+  &__slide {
+    background-color: $brand; //если картинка не загр. то будет видно белый текст
+    position: relative;
+    height: 100%;
+    @media (min-width: $md2) {
+      flex-direction: row;
+    }
+    &.swiper-slide {
+      display: grid;
+      @media (orientation: portrait) {
+        grid-template-rows: repeat(2, 50%);
+      }
+      @media (orientation: landscape) {
+        grid-auto-flow: column;
+        grid-template-columns: repeat(2, 50%);
+      }
+    }
+  }
+
+  // .slider-history__slide-image
+  &__slide-image {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    @media (min-width: $md2) {
+      order: 1;
+    }
+  }
+
+  // .slider-history__text-wrapepr
+  &__text-wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    @media (orientation: landscape) {
+      order: 2;
+    }
+    @media (orientation: portrait) and (max-width: 374.9px) {
+      margin-bottom: 30px;
+    }
+    @media (orientation: portrait) and (min-width: $md7) {
+      margin-bottom: 50px;
+    }
+    @media (orientation: portrait) and (min-width: $md5) {
+      margin-bottom: 58px;
+    }
+    @media (min-width: $md5) {
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @media (orientation: landscape) and (min-height: $md5) {
+      align-items: flex-end;
+    }
+    @media (min-width: $md2) {
+      justify-content: center;
+    }
+  }
+
+  // .slider-history__text
+  &__text {
+    max-height: 100%;
+    max-width: 450px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $white;
+    overflow: hidden;
+    @media (min-width: $md7) {
+      font-size: 16px;
+    }
+    @media (orientation: landscape) and (min-height: $md5) {
+      max-height: 200px;
+      line-height: 1.15;
+    }
+  }
+}

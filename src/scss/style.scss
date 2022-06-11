@@ -1,8 +1,8 @@
 /* Variables */
-@import 'vars';
+@import '_vars';
 
 /* Mixins */
-@import 'mixins';
+@import '_mixins';
 
 /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Inter:300,regular,500,700&display=swap&subset=cyrillic-ext);
@@ -28,7 +28,7 @@ $md7: 375px;
 $mainColor: #000;
 
 /* Null */
-@import 'null';
+@import '_null';
 
 /* Body default settings */
 body {
@@ -48,7 +48,7 @@ body {
 }
 
 /* Container */
-._container {
+.container {
   max-width: $maxWidthContainer;
   margin: 0 auto;
   padding-left: 16px;
@@ -62,48 +62,32 @@ body {
   }
 }
 
-/* Forms */
-@import 'forms';
+/* Components */
+@import './components/logo';
+@import './components/heading';
+@import './components/slider-button';
+@import './components/background-grid';
+@import './components/tip';
+@import './components/address';
+@import './components/requisites';
+@import './components/accordeon';
+@import './components/buttons';
+@import './components/forms';
 
 /* Blocks */
-@import 'header';
-@import 'footer';
-@import 'tipography';
-@import 'comments';
-@import 'questions';
-@import 'home';
-@import 'hero';
-@import 'solutions';
-@import 'solutions-sed';
-@import 'integrating';
+@import '_header';
+@import '_footer';
+@import '_popup';
+@import './page-blocks/hero-block';
+@import './page-blocks/mission-block';
+@import './page-blocks/history-block';
+@import './page-blocks/philosophy-block';
+@import './page-blocks/solutions-main-block';
+@import './page-blocks/sertification-block';
+@import './page-blocks/questions-block';
+@import './page-blocks/review-block';
+@import './page-blocks/select-solution-menu-block';
 
-/* Main block */
-.page {
-  flex: 1 1 auto;
-  &__slider-solution {
-    padding-top: 100px;
-    padding-bottom: 30px;
-    @media (min-width: $md4) {
-      padding-top: 120px;
-      padding-bottom: 36px;
-    }
-    // @media (min-width: $md3) {
-    //   padding-bottom: 160px;
-    // }
-    @media (min-width: $md1) {
-      // padding-bottom: 200px;
-      padding-bottom: 84px;
-    }
-  }
-  &__sertification {
-    padding-top: 104px;
-    padding-bottom: 50px;
-    @media (min-width: $md4) {
-      padding-top: 64px;
-      padding-bottom: 72px;
-    }
-    @media (min-width: $md3) {
-      padding-bottom: 80px;
-    }
-  }
-}
+/* Pages */
+@import 'integrating-page';
+@import 'solution-page';

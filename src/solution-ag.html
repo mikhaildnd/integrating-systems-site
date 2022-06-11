@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
-  @@include('_head.html',{ "title":"Solutions-sed" })
+  @@include('_head.html',{ "title":"Активный гражданин" })
   <body>
     <div class="wrapper">
       @@include('_header.html',{})
-      <main class="page">
-        <!-- HERO -->
-        <section class="hero-section hero-section--bg hero-section--bg-sed">
+      <main>
+        <!-- Hero -->
+        <section class="hero-section hero-section--bg-ag hero-section--solution-page">
           <div
-            class="hero-section__content hero-section__content--solution _container _container--sm"
+            class="hero-section__content hero-section__content--bg hero-section__content--bg-ag container container--sm"
           >
-            <div
-              class="hero-section__text-wrapper hero-section__text-wrapper--bg hero-section__text-wrapper--bg-ag"
-            >
+            <div class="hero-section__text-wrapper">
               <p class="hero-section__text">
-                Система электронного документооборота. Позволяет автоматизировать работу с
-                документами в организации
+                Решение является одним из важнейших инструментов создания эффективной системы
+                управления городским хозяйством.
               </p>
               <div class="hero-section__title">
-                <h1>Синкопа-документ</h1>
+                <h1>Активный гражданин</h1>
               </div>
             </div>
             <div class="hero-section__btn-wrapper">
@@ -28,64 +26,44 @@
               <a href="#" class="hero-section__btn btn btn--md btn--bg-transparent btn--underline">
                 Купить
               </a>
-              <!-- <div class="hero-section__tip tip">
-                <div class="tip__image">
-                  <svg
-                    class="mouse"
-                    width="23"
-                    height="40"
-                    viewBox="0 0 23 40"
+              <div class="hero-section__tip tip">
+                <svg class="mouse-icon" width="23" height="40" viewBox="0 0 23 40" fill="none">
+                  <rect
+                    class="mouse-icon__body"
+                    x="1"
+                    y="1"
+                    width="21"
+                    height="38"
+                    rx="10.5"
+                    stroke="none"
+                    stroke-width="2"
+                  />
+                  <rect
+                    class="mouse-icon__track"
+                    opacity="none"
+                    x="9"
+                    y="8"
+                    width="5"
+                    height="18"
+                    rx="2.5"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      class="mouse__body"
-                      x="1"
-                      y="1"
-                      width="21"
-                      height="38"
-                      rx="10.5"
-                      stroke="white"
-                      stroke-width="2"
-                    />
-                    <rect
-                      class="mouse__track"
-                      opacity="0.5"
-                      x="9"
-                      y="8"
-                      width="5"
-                      height="18"
-                      rx="2.5"
-                      fill="white"
-                    />
-                    <circle class="mouse__handle" cx="11.5" cy="12.5" r="4.5" fill="white" />
-                  </svg>
-                </div>
+                  />
+                  <circle class="mouse-icon__handle" cx="11.5" cy="12.5" r="4.5" fill="none" />
+                </svg>
                 <div class="tip__text">
                   Скрольте
                   <br />
                   вниз
                 </div>
-              </div> -->
+              </div>
             </div>
           </div>
-          <!-- <div class="background-block bg bg--grid">
-            <div class="background-block__inner bg bg--cross-grid"></div>
-          </div> -->
+          <div class="background-block bg bg--grid">
+            <!-- <div class="background-block__inner bg bg--cross-grid"></div> -->
+          </div>
         </section>
-        <!-- <div class="page__group-container"> -->
-        <!-- <aside class="page__aside">
-            <nav class="side-menu">
-              <ul class="side-menu__list">
-                <li class="side-menu__item active">Выгоды использования</li>
-                <li class="side-menu__item">Как это работает</li>
-                <li class="side-menu__item">Функциональные возможности</li>
-                <li class="side-menu__item">Отзывы клиентов</li>
-                <li class="side-menu__item">Частые вопросы</li>
-              </ul>
-            </nav>
-          </aside> -->
-        <section class="solution-advantages _container _container--sm">
+        <!-- Solution-advantages -->
+        <section class="solution-advantages container container--sm">
           <div class="solution-advantages__term term">
             <p>
               СЭД «СИНКОПА-ДОКУМЕНТ» - это готовое решение дляавтоматизации процессов
@@ -102,21 +80,14 @@
           </div>
           <div class="solution-advantages__benefits benefits">
             <div class="benefits__inner">
-              <!-- <div class="benefits__heading">
-                  <h3>
-                    Выгоды
-                    <br />
-                    использования
-                  </h3>
-                </div> -->
               <ul class="benefits__list">
-                <div class="benefits__list-heading">
+                <li class="benefits__heading">
                   <h3>
                     Выгоды
                     <br />
                     использования
                   </h3>
-                </div>
+                </li>
                 <li class="benefits__item benefits__item--save item-benefits">
                   <div class="item-benefits__img">
                     <img src="img/icons/clock.svg" alt="" />
@@ -153,7 +124,7 @@
             </div>
           </div>
           <div class="solution-advantages__instructions instructions">
-            <h3 class="instructions__heading _heading">Как это работает</h3>
+            <h3 class="instructions__heading heading">Как это работает</h3>
             <div class="instructions__item">
               <div class="item-instructions">
                 <div class="item-instructions__img">
@@ -288,18 +259,14 @@
             </div>
           </div>
         </section>
-        <!-- PHILOSOPHY -->
-        <section class="page__philosophy philosophy-section" data-tabs="philosophy-tabs">
-          <!-- <div class="philosophy-section__bg-container">
-            <div class="philosophy-section__bg"></div>
-          </div> -->
+        <!-- Philosophy -->
+        <section class="philosophy-section" data-tabs="philosophy-tabs">
           <div class="philosophy-section__modal modal-philosophy">
-            <div class="modal-philosophy__aside">
-              <button class="modal-philosophy__button">
+            <button class="modal-philosophy__button modal-button">
+              <span class="modal-button__icon">
                 <span></span>
-              </button>
-            </div>
-            <!-- <div class="modal-philosophy__content-wrapper"> -->
+              </span>
+            </button>
             <div class="modal-philosophy__content">
               <div class="modal-philosophy__item">
                 <h5 class="modal-philosophy__heading">Автоматизация делопроизводства</h5>
@@ -469,9 +436,8 @@
                 </ul>
               </div>
             </div>
-            <!-- </div> -->
           </div>
-          <div class="philosophy-section__content _container">
+          <div class="philosophy-section__content container">
             <div class="philosophy-section__info">
               <div class="philosophy-section__note">
                 <span>Философия и миссия</span>
@@ -483,7 +449,7 @@
                 </h2>
               </div>
             </div>
-            <div class="philosophy-section__nav nav-philosophy">
+            <div class="nav-philosophy">
               <ul class="nav-philosophy__list">
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
@@ -615,19 +581,15 @@
             </div>
           </div>
         </section>
-        <!-- reviews -->
-        <div class="solution-reviews _container _container--sm">
-          <h3 class="solution-reviews__heading _heading">Отзывы клиентов</h3>
+        <!-- Reviews -->
+        <section class="solution-reviews container container--sm">
+          <h3 class="solution-reviews__heading heading">Отзывы клиентов</h3>
           <div class="solution-reviews__slider swiper">
-            <div class="solution-reviews__button-wrapper twin-button-wrapper">
-              <div
-                class="solution-reviews__button solution-reviews__button--next twin-button twin-button--prev"
-              >
-                <span></span>
-              </div>
-              <div class="solution-reviews__button solution-reviews__button--prev twin-button">
-                <span></span>
-              </div>
+            <div class="solution-reviews__button-wrapper">
+              <button class="slider-arrow-button solution-reviews__button--next"></button>
+              <button
+                class="slider-arrow-button slider-arrow-button--next solution-reviews__button--prev"
+              ></button>
             </div>
             <div class="swiper-wrapper">
               <div class="review-block swiper-slide">
@@ -702,134 +664,11 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- questions -->
-        <div class="questions _container _container--sm">
-          <h3 class="questions__heading _heading">Частые вопросы</h3>
-          <div class="questions__accordeon accordeon">
-            <div class="accordeon__item item-accordeon">
-              <button class="item-accordeon__top">
-                <div class="item-accordeon__heading">
-                  <span>
-                    Зависит ли стоимость программного продукта от количества автоматизируемых
-                    рабочих мест?
-                  </span>
-                </div>
-                <div class="item-accordeon__icon"></div>
-              </button>
-              <div class="item-accordeon__bottom">
-                <div class="item-accordeon__bottom-inner">
-                  <div class="item-accordeon__text">
-                    <p>
-                      Существует несколько вариантов реализации системы: это может быть как вариант
-                      размещения на сервере Вашей организации, так и вариант размещения системы в
-                      облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
-                      Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
-                      2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской
-                      части необходим любой браузер или мобильное приложение.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordeon__item item-accordeon">
-              <button class="item-accordeon__top">
-                <div class="item-accordeon__heading">
-                  <span>Как происходит процесс внедрения системы?</span>
-                </div>
-                <div class="item-accordeon__icon"></div>
-              </button>
-              <div class="item-accordeon__bottom">
-                <div class="item-accordeon__bottom-inner">
-                  <div class="item-accordeon__text">
-                    <p>
-                      Существует несколько вариантов реализации системы: это может быть как вариант
-                      размещения на сервере Вашей организации, так и вариант размещения системы в
-                      облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
-                      Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
-                      2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской
-                      части необходим любой браузер или мобильное приложение.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordeon__item item-accordeon">
-              <button class="item-accordeon__top">
-                <div class="item-accordeon__heading">
-                  <span>
-                    Требуется ли приобретение квалифицированной ЭП для всех сотрудников нашей
-                    организации, если мы будем использовать СЭД?
-                  </span>
-                </div>
-                <div class="item-accordeon__icon"></div>
-              </button>
-              <div class="item-accordeon__bottom">
-                <div class="item-accordeon__bottom-inner">
-                  <div class="item-accordeon__text">
-                    <p>
-                      Существует несколько вариантов реализации системы: это может быть как вариант
-                      размещения на сервере Вашей организации, так и вариант размещения системы в
-                      облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
-                      Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
-                      2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской
-                      части необходим любой браузер или мобильное приложение.
-                    </p>
-                    <p>
-                      Существует несколько вариантов реализации системы: это может быть как вариант
-                      размещения на сервере Вашей организации, так и вариант размещения системы в
-                      облачном сервисе. Рекомендуемые технические характеристики сервера: процессор
-                      Intel Xeon E3-1220 v6, оперативная память от 8 GB DDR4, жесткие диски от
-                      2х500GB. Операционная система Linux или AstraLinux. Для работы клиентской
-                      части необходим любой браузер или мобильное приложение.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="contacts _container _container--sm">
-          <h3 class="contacts__heading _heading">Связаться с нами</h3>
-          <form class="contacts__form form" action="#" method="post">
-            <div class="form__group form__group--name">
-              <input class="form__input" placeholder=" " type="text" id="name" name="user_name" />
-              <label class="form__label" for="name">Ваше имя</label>
-            </div>
-            <div class="form__group form__group--phone">
-              <input class="form__input" placeholder=" " type="tel" id="phone" name="user_mail" />
-              <label class="form__label" for="phone">Телефон</label>
-            </div>
-            <div class="form__group form__group--textarea">
-              <textarea
-                class="form__textarea"
-                placeholder=" "
-                id="msg"
-                name="user_message"
-              ></textarea>
-              <label class="form__label form__label--textarea" for="msg">Комментарий</label>
-            </div>
-            <div class="form__group form__group--submit">
-              <div class="form__label-checkbox checkbox-label">
-                <label class="checkbox-label__container">
-                  <div class="checkbox-label__input">
-                    <input class="checkbox-label__input" type="checkbox" />
-                  </div>
-                  <div class="checkbox-label__text">
-                    <span>
-                      Я выражаю свое согласие с Политикой конфиденциальности и разрешаю обработку
-                      своих персональных данных
-                    </span>
-                  </div>
-                </label>
-              </div>
-              <button class="form__btn btn btn--md btn--bg-brand btn--underline" type="submit">
-                Отправить
-              </button>
-            </div>
-          </form>
-        </div>
-        <!-- </div> -->
+        </section>
+        <!-- Questions -->
+        @@include('./html-chunks/_questions-accordeon.html',{})
+        <!-- Contacts -->
+        @@include('./html-chunks/_contacts-form-block.html',{})
       </main>
       @@include('_footer.html',{})
     </div>

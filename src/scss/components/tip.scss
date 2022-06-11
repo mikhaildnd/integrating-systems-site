@@ -1,0 +1,44 @@
+/* Tip */
+.tip {
+  // .tip__text
+  &__text {
+    color: $white;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 500;
+  }
+}
+
+/* Mouse */
+.mouse-icon {
+  // .mouse__body
+  &__body {
+    stroke: $white;
+  }
+
+  // .mouse__track
+  &__track {
+    fill: $white;
+    opacity: 0.5;
+  }
+
+  // .mouse__handle
+  &__handle {
+    fill: $white;
+    animation: mouse-wheel 2.3s ease-out infinite;
+    transform-origin: top;
+  }
+}
+
+/* Mouse wheel animation */
+@keyframes mouse-wheel {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

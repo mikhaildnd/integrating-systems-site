@@ -1,0 +1,14 @@
+/* Questions */
+.questions {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  @media (min-width: $md2) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  // .questions__heading
+  &__heading {
+    margin-bottom: 36px;
+  }
+}

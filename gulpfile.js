@@ -1,24 +1,20 @@
 import gulp from 'gulp';
-// import logger from 'gulplog';
 import plumber from 'gulp-plumber';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
-import webpCss from 'gulp-webpcss';
 import groupMedia from 'gulp-group-css-media-queries';
-// import sourcemap from 'gulp-sourcemaps'; //не установлен
 import gulpIf from 'gulp-if';
 import del from 'del';
-// import debug from 'gulp-debug';
 import webpackStream from 'webpack-stream';
 import sync from 'browser-sync';
 import imagemin from 'gulp-imagemin';
 import rename from 'gulp-rename';
 import fileinclude from 'gulp-file-include';
 import cleanCss from 'gulp-clean-css';
+import htmlmin from 'gulp-htmlmin';
 import newer from 'gulp-newer';
 import webp from 'imagemin-webp';
-import webpHtml from 'gulp-webp-html';
 import fonter from 'gulp-fonter';
 import ttf2woff from 'gulp-ttf2woff';
 import ttf2woff2 from 'gulp-ttf2woff2';
@@ -26,16 +22,13 @@ import ttf2woff2 from 'gulp-ttf2woff2';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import fs from 'fs';
+const isBuild = process.argv.includes('--build');
+const isDev = !process.argv.includes('--build');
 
 const scss = gulpSass(dartSass);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-// const project_name = path.basename(__dirname);
 const src_folder = 'src';
 const dist_folder = 'dist';
-
-let isDev = true; //false чтобы минифицировал js
-let isProd = !isDev;
 
 // Path
 const _path = {
@@ -105,16 +98,21 @@ export const scripts = () => {
 
 // html
 export const html = () => {
-  return (
-    gulp
-      .src(_path.src.html, {})
-      // .pipe(debug({ title: '1:' }))
-      .pipe(plumber())
-      .pipe(fileinclude())
-      .pipe(webpHtml())
-      .pipe(gulp.dest(_path.build.html))
-      .pipe(sync.stream())
-  );
+  return gulp
+    .src(_path.src.html, {})
+    .pipe(plumber())
+    .pipe(fileinclude())
+    .pipe(
+      gulpIf(
+        isBuild,
+        htmlmin({
+          removeComments: true,
+          collapseWhitespace: true,
+        }),
+      ),
+    )
+    .pipe(gulp.dest(_path.build.html))
+    .pipe(sync.stream());
 };
 
 // Styles
@@ -128,12 +126,6 @@ export const styles = () => {
       autoprefixer({
         grid: true,
         cascade: true,
-      }),
-    )
-    .pipe(
-      webpCss({
-        webpClass: '._webp',
-        noWebpClass: '._no-webp',
       }),
     )
     .pipe(gulp.dest(_path.build.css))
@@ -210,32 +202,32 @@ export const fonts = () => {
     .pipe(gulpIf(isDev, sync.stream()));
 };
 
-// Fonts: insert fonts into styles file
-export const fontsInclude = (cb) => {
-  const fileContent = src_folder + '/scss/fonts.scss';
+// // Fonts: insert fonts into styles file
+// export const fontsInclude = (cb) => {
+//   const fileContent = src_folder + '/scss/fonts.scss';
 
-  if (fs.readFileSync(fileContent) !== '') {
-    fs.writeFile(fileContent, '', cb);
-  }
+//   if (fs.readFileSync(fileContent) !== '') {
+//     fs.writeFile(fileContent, '', cb);
+//   }
 
-  fs.readdir(_path.build.fonts, (err, items) => {
-    if (items) {
-      let c_fontname;
-      for (let i = 0; i < items.length; i++) {
-        let fontname = items[i].split('.');
-        fontname = fontname[0];
-        if (c_fontname != fontname) {
-          fs.appendFile(
-            fileContent,
-            '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n',
-            cb,
-          );
-        }
-        c_fontname = fontname;
-      }
-    }
-  });
-};
+//   fs.readdir(_path.build.fonts, (err, items) => {
+//     if (items) {
+//       let c_fontname;
+//       for (let i = 0; i < items.length; i++) {
+//         let fontname = items[i].split('.');
+//         fontname = fontname[0];
+//         if (c_fontname != fontname) {
+//           fs.appendFile(
+//             fileContent,
+//             '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n',
+//             cb,
+//           );
+//         }
+//         c_fontname = fontname;
+//       }
+//     }
+//   });
+// };
 
 // Server
 export const server = () => {
@@ -261,7 +253,7 @@ export const build = gulp.series(
   gulp.parallel(html, styles, scripts, images),
   fontsOtf2ttf,
   fonts,
-  fontsInclude,
+  // fontsInclude,
 );
 
 export default gulp.series(build, gulp.parallel(server, watch));

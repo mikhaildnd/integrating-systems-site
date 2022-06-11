@@ -1,0 +1,25 @@
+/* Slider-arrow-button */
+.slider-arrow-button {
+  background-image: url(../img/icons/slider-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  width: 41px;
+  height: 41px;
+  border: 1px solid $black;
+  cursor: pointer;
+  user-select: none;
+  &:active {
+    opacity: 0.5;
+  }
+  &:first-child {
+    margin-right: -1px;
+  }
+  &--next {
+    transform: rotate(180deg);
+  }
+  &.swiper-button-disabled {
+    opacity: 0.5;
+  }
+}

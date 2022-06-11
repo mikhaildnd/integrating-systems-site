@@ -1,6 +1,7 @@
 .review-block {
   display: flex;
   flex-wrap: wrap;
+
   // .review-block__text
   &__text {
     position: relative;
@@ -72,6 +73,7 @@
 /* Autor-block */
 .autor-block {
   display: flex;
+
   // .autor-block__img
   &__img {
     flex-shrink: 0;

@@ -1,5 +1,4 @@
 .header {
-  // display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -30,13 +29,17 @@
         color: lighten($black, 20%);
       }
     }
-    .contacts-menu__item {
+    .contacts-menu__link {
       color: $black;
       &:hover {
         color: lighten($black, 20%);
       }
-      &--phone {
-        color: $brand;
+    }
+    .contacts-menu__button {
+      color: $brand;
+      &:hover,
+      &:focus-visible {
+        color: $black;
       }
     }
   }
@@ -49,7 +52,7 @@
     height: 80px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid darken($white, 70%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.238);
     @media (max-width: $md2) {
       height: 60px;
     }
@@ -60,7 +63,7 @@
 
   // .header__logo
   &__logo {
-    svg {
+    .logo__img {
       height: 24px;
       width: 88px;
     }
@@ -69,7 +72,7 @@
       margin-right: 40px;
     }
     @media (min-width: $md3) {
-      svg {
+      .logo__img {
         height: 32px;
         width: 120px;
       }
@@ -100,6 +103,12 @@
     display: flex;
     align-items: center;
     margin: 0px 0px 0px auto;
+    & .contacts-menu__button {
+      display: none;
+      @media (min-width: $md4) {
+        display: block;
+      }
+    }
   }
 
   // .header__dropdown
@@ -119,9 +128,6 @@
 
     // .header__dropdown .header-nav
     & .header-nav {
-      &:not(:last-child) {
-        margin-bottom: 20px;
-      }
       // .header__dropdown .header-nav__list
       &__list {
         @media (max-width: $md2) {
@@ -129,22 +135,25 @@
           flex-direction: column;
           width: 100%;
           max-height: 100%;
-          margin: 0; //! У ориг. листа отриц.
+          margin: 0;
         }
       }
 
       // .header__dropdown .header-nav__item
       &__item {
-        font-size: 16px;
-        line-height: 1.25;
-        padding: 0;
-        color: $white;
         &:not(:last-child) {
-          margin-bottom: 10px;
+          margin-bottom: 16px;
         }
-        &:hover {
-          color: darken($white, 20%);
-        }
+      }
+
+      // .header__dropdown .header-nav__link
+      &__link {
+        color: $white;
+        font-size: 24px;
+        line-height: 1.25;
+        display: inline-block;
+        padding-top: 8px;
+        padding-bottom: 8px;
       }
     }
 
@@ -159,19 +168,22 @@
 
       // .header__dropdown .contacts-menu__item
       &__item {
-        color: $white;
         &:not(:last-child) {
-          margin-bottom: 8px;
-        }
-        &:hover {
-          color: darken($white, 20%);
-        }
-        &--popup {
-          color: darken($white, 40%);
+          margin-bottom: 20px;
         }
         @media (max-width: $md4) {
           display: block;
         }
+      }
+      // .header__dropdown .contacts-menu__link
+      &__link {
+        font-size: 18px;
+      }
+      // .header__dropdown .contacts-menu__button
+      &__button {
+        font-size: 18px;
+        display: block;
+        color: $white;
       }
     }
   }
@@ -186,6 +198,7 @@
     padding-right: 16px;
     background-color: $brand;
     background-image: url('../img/hero-img-1.jpg');
+    filter: grayscale(1);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -197,12 +210,19 @@
 
   // .header__dropdown-menu
   &__dropdown-menu {
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    justify-content: start;
+    row-gap: 60px;
     padding-bottom: 20px;
     height: 100%;
     overflow-y: auto;
+    @media (min-width: $md7) {
+      padding-top: 22px;
+    }
   }
 
-  // .header-nav__trigger
+  // .header__trigger
   &__trigger {
     position: relative;
     z-index: 2;
@@ -211,7 +231,7 @@
     align-items: center;
     box-sizing: content-box;
     width: 25px;
-    height: 16px;
+    height: 25px;
     background: 0 0;
     border: 0;
     user-select: none;
@@ -257,38 +277,17 @@
         }
       }
     }
+    @media (min-width: $md5) {
+      width: 34px;
+      height: 34px;
+    }
     @media (min-width: $md2) {
       display: none;
     }
-    @media (min-width: $md5) {
-      width: 34px;
-    }
   }
 }
 
-/* Logo */
-.logo {
-  // .logo__img//todo мб удалить
-  &__img {
-  }
-
-  // .logo__link//todo мб удалить
-  &__link {
-    display: inline-block;
-    @media (min-width: $md2) {
-      &:focus-visible {
-        outline: 3px solid $accent;
-        outline-offset: 3px;
-      }
-    }
-  }
-
-  path {
-    transition: fill 0.2s ease;
-    fill: white;
-  }
-}
-//========================================================================================================================================================
+/* Header-nav */
 .header-nav {
   // .header-nav__list
   &__list {
@@ -312,10 +311,10 @@
   // .header-nav__link
   &__link {
     color: $white;
-    &:hover {
-      color: darken($white, 20%);
-    }
     @media (min-width: $md2) {
+      &:hover {
+        color: darken($white, 20%);
+      }
       &:focus-visible {
         color: darken($white, 20%);
         outline: 3px solid $accent;
@@ -331,6 +330,7 @@
   @media (min-width: 390px) {
     display: block;
   }
+
   // .contacts-menu__list
   &__list {
     display: grid;
@@ -352,48 +352,41 @@
     }
   }
 
-  // .contacts-menu__item
-  &__item {
+  // .contacts-menu__link
+  &__link {
     font-weight: 700;
     font-size: 13px;
     color: $white;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    transition: color 0.2s ease 0s;
     white-space: nowrap;
-    &:hover {
-      color: darken($white, 20%);
-    }
-    &--phone {
-      @media (max-width: $md2) {
-        font-size: 16px;
-        line-height: 19px;
-      }
-      @media (max-width: $md5) {
-        font-size: 14px;
-        line-height: 17px;
-      }
-    }
-    &--popup {
-      font-weight: 500;
-      color: darken($white, 40%);
+    @media (min-width: $md2) {
+      transition: color 0.2s ease;
       &:hover {
-        color: $white;
+        color: darken($white, 20%);
       }
-      @media (max-width: $md2) {
-        font-size: 12px;
-        letter-spacing: normal;
+      &:focus-visible {
+        outline: 3px solid $accent;
       }
-      @media (max-width: $md4) {
-        display: none;
-      }
+    }
+    @media (min-width: $md1) {
+      outline-offset: 3px;
     }
   }
 
-  // .contacts-menu__link
-  &__link {
-    color: inherit;
+  // .contacts-menu__button
+  &__button {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
     @media (min-width: $md2) {
+      transition: color 0.2s ease;
+      &:hover {
+        color: $white;
+      }
       &:focus-visible {
         outline: 3px solid $accent;
       }

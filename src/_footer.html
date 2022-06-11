@@ -1,17 +1,23 @@
 <footer class="footer">
   <div class="footer__item">
-    <div class="footer__nav nav-footer _container">
+    <nav class="footer__nav nav-footer container">
       <div class="nav-footer__item nav-footer__item--solutions">
-        <a href="#" class="nav-footer__link nav-footer__link--general">Решения</a>
-        <a href="#" class="nav-footer__link">Система электронного документооборота</a>
-        <a href="#" class="nav-footer__link">Мониторинг транспорта</a>
-        <a href="#" class="nav-footer__link">Такси</a>
-        <a href="#" class="nav-footer__link">Активный гражданин</a>
-        <a href="#" class="nav-footer__link">ГБО</a>
-        <a href="#" class="nav-footer__link">ДРСУ</a>
+        <h3 class="nav-footer__heading">
+          <a href="/solution.html" class="nav-footer__heading-link">Решения</a>
+        </h3>
+        <a href="/solution-sed.html" class="nav-footer__link">
+          Система электронного документооборота
+        </a>
+        <a href="/solution-transport.html" class="nav-footer__link">Мониторинг транспорта</a>
+        <a href="/solution-taksir.html" class="nav-footer__link">Такси</a>
+        <a href="/solutionag.html" class="nav-footer__link">Активный гражданин</a>
+        <a href="/solution-gbo.html" class="nav-footer__link">ГБО</a>
+        <a href="/solution-reserve.html" class="nav-footer__link">Заповедник</a>
       </div>
       <div class="nav-footer__item nav-footer__item--about">
-        <a href="#" class="nav-footer__link nav-footer__link--general">О компании</a>
+        <h3 class="nav-footer__heading">
+          <a href="#" class="nav-footer__heading-link">О компании</a>
+        </h3>
         <a href="#" class="nav-footer__link">О нас</a>
         <a href="#" class="nav-footer__link">Философия</a>
         <a href="#" class="nav-footer__link">Свидетельства</a>
@@ -19,25 +25,23 @@
         <a href="#" class="nav-footer__link">Политика конфиденциальности</a>
       </div>
       <div class="nav-footer__item nav-footer__item--blog">
-        <a href="#" class="nav-footer__link nav-footer__link--general">Блог</a>
+        <h3 class="nav-footer__heading">
+          <a href="#" class="nav-footer__heading-link">Блог</a>
+        </h3>
       </div>
       <div class="nav-footer__item nav-footer__item--contacts">
-        <a href="#" class="nav-footer__link nav-footer__link--general">Контакты</a>
+        <h3 class="nav-footer__heading">
+          <a href="#" class="nav-footer__heading-link">Контакты</a>
+        </h3>
       </div>
-    </div>
+    </nav>
   </div>
   <div class="footer__item footer__item--bg-grey">
-    <div class="footer__info _container">
+    <div class="footer__info container">
       <div class="footer__logo logo">
-        <a href="#" class="logo__link">
+        <a href="/" class="logo__link">
           <div class="logo__img">
-            <svg
-              width="120"
-              height="33"
-              viewBox="0 0 120 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg viewBox="0 0 120 33" fill="none">
               <path
                 d="M15.9566 13.2137H7.54406V0.175903H0.124924V32.4393H7.54406V19.4429H15.9359L13.9388 16.349L15.9566 13.2137Z"
                 fill-opacity="0.4"
@@ -63,18 +67,23 @@
         </a>
       </div>
       <div class="footer__copyright">
-        <span>© ООО «Кубань-Информ-Холдинг-Юг», все права защищены, 2021</span>
+        <span class="footer__copyright-item">Не для коммерчесского использования.</span>
+        <span class="footer__copyright-item">
+          © ООО «Кубань-Информ-Холдинг-Юг», все права защищены, 2022.
+        </span>
       </div>
       <div class="footer__privacy">
-        <a href="#">Политика конфиденциальности</a>
+        <a class="footer__privacy-link" href="#">Политика конфиденциальности</a>
       </div>
       <div class="footer__contacts contacts-menu">
         <ul class="contacts-menu__list">
           <li class="contacts-menu__item">
             <a href="tel:+88000000000" class="contacts-menu__link">8-800-000-00-00</a>
           </li>
-          <li class="contacts-menu__item contacts-menu__item--popup">
-            <a href="#" class="contacts-menu__link">Задать вопрос</a>
+          <li class="contacts-menu__item">
+            <button class="contacts-menu__button" data-trigger-for="main-popup">
+              Задать вопрос
+            </button>
           </li>
         </ul>
       </div>

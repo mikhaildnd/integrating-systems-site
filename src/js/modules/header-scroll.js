@@ -66,25 +66,38 @@ export class HeaderScroll {
   }
 
   getEnableCoords() {
-    if (typeof this.enableOnPoint === 'object') {
+    try {
       const trigger = document.querySelector(this.enableOnPoint.triggerElementSelector);
+      const nextSiblingElementCoords =
+        this.header.nextElementSibling.firstElementChild.getBoundingClientRect().bottom;
 
-      if (!trigger) {
-        this.coordsTriggerElement =
-          this.header.nextElementSibling.firstElementChild.getBoundingClientRect().bottom;
-      } else {
-        this.coordsTriggerElement = trigger.getBoundingClientRect().bottom;
-      }
+      if (!trigger)
+        throw new SyntaxError(
+          'triggerElementSelector: селектор отсутствует в документе, или вы совершили опечатку (;',
+        );
 
-      return this.coordsTriggerElement;
-    } else if (typeof this.enableOnPoint === 'boolean') {
-      if (this.enableOnPoint) {
-        this.coordsTriggerElement =
-          this.header.nextElementSibling.firstElementChild.getBoundingClientRect().bottom;
+      if (!nextSiblingElementCoords) return;
 
-        return this.coordsTriggerElement;
-      }
-    } else throw new TypeError('Ошибка! enableOnPoint должен быть "boolean" или "object" типа');
+      if (typeof this.enableOnPoint === 'object') {
+        const triggerElementCoords = trigger.getBoundingClientRect().bottom;
+
+        if (trigger) {
+          return triggerElementCoords;
+        } else {
+          return nextSiblingElementCoords;
+        }
+      } else if (typeof this.enableOnPoint === 'boolean') {
+        if (this.enableOnPoint) {
+          return nextSiblingElementCoords;
+        }
+        return;
+      } else
+        throw new TypeError(
+          'Ошибка! параметр "enableOnPoint" должен быть "boolean" или "object" типа',
+        );
+    } catch (error) {
+      console.error(error.message);
+    }
   }
 
   getDisableHeaderElements() {

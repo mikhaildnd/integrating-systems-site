@@ -4,34 +4,40 @@
   <body>
     <div class="wrapper">
       @@include('_header.html',{})
-      <main class="page">
-        <!-- HERO -->
-        <section class="page__hero hero-section hero-section--bg">
+      <main>
+        <!-- Hero -->
+        <section class="hero-section hero-section--bg">
           <div class="hero-section__slider">
             <div class="hero-section__slider-inner swiper">
               <div class="swiper-wrapper">
                 <picture class="swiper-slide">
-                  <img class="swiper-lazy" data-src="img/hero-img-1.jpg" alt="" />
+                  <source data-srcset="img/hero-img-6.webp" type="image/webp" />
+                  <img class="swiper-lazy" data-src="img/hero-img-6.jpg" alt="" />
                 </picture>
                 <picture class="swiper-slide">
-                  <img class="swiper-lazy" data-src="img/hero-img-2.jpg" alt="" />
-                </picture>
-                <picture class="swiper-slide">
-                  <img class="swiper-lazy" data-src="img/hero-img-3.jpg" alt="" />
-                </picture>
-                <picture class="swiper-slide">
-                  <img class="swiper-lazy" data-src="img/hero-img-4.jpg" alt="" />
-                </picture>
-                <picture class="swiper-slide">
+                  <source data-srcset="img/hero-img-5.webp" type="image/webp" />
                   <img class="swiper-lazy" data-src="img/hero-img-5.jpg" alt="" />
                 </picture>
                 <picture class="swiper-slide">
-                  <img class="swiper-lazy" data-src="img/hero-img-6.jpg" alt="" />
+                  <source data-srcset="img/hero-img-4.webp" type="image/webp" />
+                  <img class="swiper-lazy" data-src="img/hero-img-4.jpg" alt="" />
+                </picture>
+                <picture class="swiper-slide">
+                  <source data-srcset="img/hero-img-3.webp" type="image/webp" />
+                  <img class="swiper-lazy" data-src="img/hero-img-3.jpg" alt="" />
+                </picture>
+                <picture class="swiper-slide">
+                  <source data-srcset="img/hero-img-2.webp" type="image/webp" />
+                  <img class="swiper-lazy" data-src="img/hero-img-2.jpg" alt="" />
+                </picture>
+                <picture class="swiper-slide">
+                  <source data-srcset="img/hero-img-1.webp" type="image/webp" />
+                  <img class="swiper-lazy" data-src="img/hero-img-1.jpg" alt="" />
                 </picture>
               </div>
             </div>
           </div>
-          <div class="hero-section__content _container">
+          <div class="hero-section__content container">
             <div class="hero-section__text-wrapper">
               <div class="hero-section__title">
                 <h1>Автоматизация бизнес-процессов, разработка и внедрение</h1>
@@ -43,38 +49,29 @@
               </a>
             </div>
             <div class="hero-section__tip tip">
-              <div class="tip__image">
-                <svg
-                  class="mouse"
-                  width="23"
-                  height="40"
-                  viewBox="0 0 23 40"
+              <svg class="mouse-icon" width="23" height="40" viewBox="0 0 23 40" fill="none">
+                <rect
+                  class="mouse-icon__body"
+                  x="1"
+                  y="1"
+                  width="21"
+                  height="38"
+                  rx="10.5"
+                  stroke="none"
+                  stroke-width="2"
+                />
+                <rect
+                  class="mouse-icon__track"
+                  opacity="none"
+                  x="9"
+                  y="8"
+                  width="5"
+                  height="18"
+                  rx="2.5"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    class="mouse__body"
-                    x="1"
-                    y="1"
-                    width="21"
-                    height="38"
-                    rx="10.5"
-                    stroke="white"
-                    stroke-width="2"
-                  />
-                  <rect
-                    class="mouse__track"
-                    opacity="0.5"
-                    x="9"
-                    y="8"
-                    width="5"
-                    height="18"
-                    rx="2.5"
-                    fill="white"
-                  />
-                  <circle class="mouse__handle" cx="11.5" cy="12.5" r="4.5" fill="white" />
-                </svg>
-              </div>
+                />
+                <circle class="mouse-icon__handle" cx="11.5" cy="12.5" r="4.5" fill="none" />
+              </svg>
               <div class="tip__text">
                 Скрольте
                 <br />
@@ -82,27 +79,23 @@
               </div>
             </div>
           </div>
-          <!-- <div class="background-block bg bg--grid">
-            <div class="background-block__inner bg bg--cross-grid"></div>
-          </div> -->
+          <div class="background-block bg bg--grid">
+            <!-- <div class="background-block__inner bg bg--cross-grid"></div> -->
+          </div>
         </section>
-        <!-- SOLUTION -->
-        <!-- swiper-no-swiping -->
-        <div class="page__slider-solution solution-slider">
-          <div class="_container">
-            <div class="solution-slider__content solution-swiper">
-              <div class="solution-slider__slides-wrapper swiper-wrapper">
-                <div class="solution-slider__slide swiper-slide">
-                  <div
-                    class="solution-slider__slide-content solution-slider__slide-content--bg-sheets"
-                  >
-                    <!--* ::before -->
-                    <div class="solution-slider__promo">
-                      <div class="solution-slider__text-wrapper">
-                        <div class="solution-slider__title">
+        <!-- Solution -->
+        <section class="solutions">
+          <div class="container">
+            <div class="solutions__slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="solutions__slide-content solutions__slide-content--bg-sheets">
+                    <div class="solutions__promo">
+                      <div class="solutions__text-wrapper">
+                        <div class="solutions__title">
                           <h2>Система электронного документооборота</h2>
                         </div>
-                        <div class="solution-slider__text">
+                        <div class="solutions__text">
                           <p>
                             У нас многолетний опыт разработки приложений и сложных систем
                             электронной коммерции, комплексных ИТ-решений для бизнеса и государства.
@@ -111,16 +104,13 @@
                           </p>
                         </div>
                       </div>
-                      <div class="solution-slider__btn-wrapper">
-                        <a
-                          href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-white btn--underline"
-                        >
+                      <div class="solutions__btn-wrapper">
+                        <a href="#" class="solutions__btn btn btn--md btn--bg-white btn--underline">
                           Подробнее
                         </a>
                         <a
                           href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-transparent btn--underline"
+                          class="solutions__btn btn btn--md btn--bg-transparent btn--underline"
                         >
                           Все решения
                         </a>
@@ -128,33 +118,27 @@
                     </div>
                   </div>
                 </div>
-                <div class="solution-slider__slide swiper-slide">
-                  <div class="solution-slider__slide-content solution-slider__slide-content--bg-ag">
-                    <!--* ::before -->
-                    <div class="solution-slider__promo">
-                      <div class="solution-slider__text-wrapper">
-                        <div class="solution-slider__title">
-                          <h2>Система электронного документооборота</h2>
+                <div class="swiper-slide">
+                  <div class="solutions__slide-content solutions__slide-content--bg-ag">
+                    <div class="solutions__promo">
+                      <div class="solutions__text-wrapper">
+                        <div class="solutions__title">
+                          <h2>Мониторинг транспорта</h2>
                         </div>
-                        <div class="solution-slider__text">
+                        <div class="solutions__text">
                           <p>
-                            У нас многолетний опыт разработки приложений и сложных систем
-                            электронной коммерции, комплексных ИТ-решений для бизнеса и государства.
-                            Мы не просто выполняем проекты, а развиваем и поддерживаем созданные
-                            решения
+                            Решение является одним из важнейших инструментов создания эффективной
+                            системы управления городским хозяйством.
                           </p>
                         </div>
                       </div>
-                      <div class="solution-slider__btn-wrapper">
-                        <a
-                          href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-white btn--underline"
-                        >
+                      <div class="solutions__btn-wrapper">
+                        <a href="#" class="solutions__btn btn btn--md btn--bg-white btn--underline">
                           Подробнее
                         </a>
                         <a
                           href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-transparent btn--underline"
+                          class="solutions__btn btn btn--md btn--bg-transparent btn--underline"
                         >
                           Все решения
                         </a>
@@ -162,35 +146,26 @@
                     </div>
                   </div>
                 </div>
-                <div class="solution-slider__slide swiper-slide">
-                  <div
-                    class="solution-slider__slide-content solution-slider__slide-content--bg-map"
-                  >
-                    <!--* ::before -->
-                    <div class="solution-slider__promo">
-                      <div class="solution-slider__text-wrapper">
-                        <div class="solution-slider__title">
-                          <h2>Система электронного документооборота</h2>
+                <div class="swiper-slide">
+                  <div class="solutions__slide-content solutions__slide-content--bg-map">
+                    <div class="solutions__promo">
+                      <div class="solutions__text-wrapper">
+                        <div class="solutions__title">
+                          <h2>ТаксиР</h2>
                         </div>
-                        <div class="solution-slider__text">
+                        <div class="solutions__text">
                           <p>
-                            У нас многолетний опыт разработки приложений и сложных систем
-                            электронной коммерции, комплексных ИТ-решений для бизнеса и государства.
-                            Мы не просто выполняем проекты, а развиваем и поддерживаем созданные
-                            решения
+                            Инструмент повышения безопасности пассажирских перевозок легковыми такси
                           </p>
                         </div>
                       </div>
-                      <div class="solution-slider__btn-wrapper">
-                        <a
-                          href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-white btn--underline"
-                        >
+                      <div class="solutions__btn-wrapper">
+                        <a href="#" class="solutions__btn btn btn--md btn--bg-white btn--underline">
                           Подробнее
                         </a>
                         <a
                           href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-transparent btn--underline"
+                          class="solutions__btn btn btn--md btn--bg-transparent btn--underline"
                         >
                           Все решения
                         </a>
@@ -198,35 +173,27 @@
                     </div>
                   </div>
                 </div>
-                <div class="solution-slider__slide swiper-slide">
-                  <div
-                    class="solution-slider__slide-content solution-slider__slide-content--bg-map"
-                  >
-                    <!--* ::before -->
-                    <div class="solution-slider__promo">
-                      <div class="solution-slider__text-wrapper">
-                        <div class="solution-slider__title">
-                          <h2>Система электронного документооборота</h2>
+                <div class="swiper-slide">
+                  <div class="solutions__slide-content solutions__slide-content--bg-map">
+                    <div class="solutions__promo">
+                      <div class="solutions__text-wrapper">
+                        <div class="solutions__title">
+                          <h2>Активный гражданин</h2>
                         </div>
-                        <div class="solution-slider__text">
+                        <div class="solutions__text">
                           <p>
-                            У нас многолетний опыт разработки приложений и сложных систем
-                            электронной коммерции, комплексных ИТ-решений для бизнеса и государства.
-                            Мы не просто выполняем проекты, а развиваем и поддерживаем созданные
-                            решения
+                            Программный коплекс поможет национальным паркам и заповедникам
+                            использовать новые форматы работы с посетителями
                           </p>
                         </div>
                       </div>
-                      <div class="solution-slider__btn-wrapper">
-                        <a
-                          href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-white btn--underline"
-                        >
+                      <div class="solutions__btn-wrapper">
+                        <a href="#" class="solutions__btn btn btn--md btn--bg-white btn--underline">
                           Подробнее
                         </a>
                         <a
                           href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-transparent btn--underline"
+                          class="solutions__btn btn btn--md btn--bg-transparent btn--underline"
                         >
                           Все решения
                         </a>
@@ -234,17 +201,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="solution-slider__slide swiper-slide">
-                  <div
-                    class="solution-slider__slide-content solution-slider__slide-content--bg-sheets"
-                  >
-                    <!--* ::before -->
-                    <div class="solution-slider__promo">
-                      <div class="solution-slider__text-wrapper">
-                        <div class="solution-slider__title">
-                          <h2>Система электронного документооборота</h2>
+                <div class="swiper-slide">
+                  <div class="solutions__slide-content solutions__slide-content--bg-sheets">
+                    <div class="solutions__promo">
+                      <div class="solutions__text-wrapper">
+                        <div class="solutions__title">
+                          <h2>ГБО</h2>
                         </div>
-                        <div class="solution-slider__text">
+                        <div class="solutions__text">
                           <p>
                             У нас многолетний опыт разработки приложений и сложных систем
                             электронной коммерции, комплексных ИТ-решений для бизнеса и государства.
@@ -253,16 +217,13 @@
                           </p>
                         </div>
                       </div>
-                      <div class="solution-slider__btn-wrapper">
-                        <a
-                          href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-white btn--underline"
-                        >
+                      <div class="solutions__btn-wrapper">
+                        <a href="#" class="solutions__btn btn btn--md btn--bg-white btn--underline">
                           Подробнее
                         </a>
                         <a
                           href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-transparent btn--underline"
+                          class="solutions__btn btn btn--md btn--bg-transparent btn--underline"
                         >
                           Все решения
                         </a>
@@ -270,17 +231,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="solution-slider__slide swiper-slide">
-                  <div
-                    class="solution-slider__slide-content solution-slider__slide-content--bg-taxi"
-                  >
-                    <!--* ::before -->
-                    <div class="solution-slider__promo">
-                      <div class="solution-slider__text-wrapper">
-                        <div class="solution-slider__title">
-                          <h2>Система электронного документооборота</h2>
+                <div class="swiper-slide">
+                  <div class="solutions__slide-content solutions__slide-content--bg-taxi">
+                    <div class="solutions__promo">
+                      <div class="solutions__text-wrapper">
+                        <div class="solutions__title">
+                          <h2>ДРСУ</h2>
                         </div>
-                        <div class="solution-slider__text">
+                        <div class="solutions__text">
                           <p>
                             У нас многолетний опыт разработки приложений и сложных систем
                             электронной коммерции, комплексных ИТ-решений для бизнеса и государства.
@@ -289,16 +247,13 @@
                           </p>
                         </div>
                       </div>
-                      <div class="solution-slider__btn-wrapper">
-                        <a
-                          href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-white btn--underline"
-                        >
+                      <div class="solutions__btn-wrapper">
+                        <a href="#" class="solutions__btn btn btn--md btn--bg-white btn--underline">
                           Подробнее
                         </a>
                         <a
                           href="#"
-                          class="solution-slider__btn btn btn--md btn--bg-transparent btn--underline"
+                          class="solutions__btn btn btn--md btn--bg-transparent btn--underline"
                         >
                           Все решения
                         </a>
@@ -308,54 +263,45 @@
                 </div>
               </div>
             </div>
-            <div class="solution-slider__pagination">
+            <div class="solutions__pagination-slider">
               <div class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <div class="solution-slider__pagination-slide-content">
-                      <div class="solution-slider__pagination-bullet"></div>
-                      <span class="solution-slider__pagination-slide-text">СЭД</span>
+                    <div class="solutions__pagination-slide-content">
+                      <div class="solutions__pagination-bullet"></div>
+                      <span class="solutions__pagination-slide-text">СЭД</span>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="solution-slider__pagination-slide-content">
-                      <div class="solution-slider__pagination-bullet"></div>
-                      <span class="solution-slider__pagination-slide-text">СЭД</span>
+                    <div class="solutions__pagination-slide-content">
+                      <div class="solutions__pagination-bullet"></div>
+                      <span class="solutions__pagination-slide-text">Мониторинг транспорта</span>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="solution-slider__pagination-slide-content">
-                      <div class="solution-slider__pagination-bullet"></div>
-                      <span class="solution-slider__pagination-slide-text">СЭД</span>
+                    <div class="solutions__pagination-slide-content">
+                      <div class="solutions__pagination-bullet"></div>
+                      <span class="solutions__pagination-slide-text">ТаксиР</span>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="solution-slider__pagination-slide-content">
-                      <div class="solution-slider__pagination-bullet"></div>
-                      <span class="solution-slider__pagination-slide-text">СЭД</span>
+                    <div class="solutions__pagination-slide-content">
+                      <div class="solutions__pagination-bullet"></div>
+                      <span class="solutions__pagination-slide-text">Активный гражданин</span>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="solution-slider__pagination-slide-content">
-                      <div class="solution-slider__pagination-bullet"></div>
-                      <span class="solution-slider__pagination-slide-text">СЭД</span>
+                    <div class="solutions__pagination-slide-content">
+                      <div class="solutions__pagination-bullet"></div>
+                      <span class="solutions__pagination-slide-text">ГБО</span>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="solution-slider__pagination-slide-content">
-                      <div class="solution-slider__pagination-bullet"></div>
-                      <span class="solution-slider__pagination-slide-text">СЭД</span>
+                    <div class="solutions__pagination-slide-content">
+                      <div class="solutions__pagination-bullet"></div>
+                      <span class="solutions__pagination-slide-text">ДРСУ</span>
                     </div>
                   </div>
-
-                  <!-- <div class="swiper-slide">
-                      <button class="solution-slider__pagination-bullet"><span></span></button>
-                    </div>
-                     -->
-
-                  <!-- <button class="solution-slider__pagination-bullet swiper-slide"></button>
-                    <button class="solution-slider__pagination-bullet swiper-slide"></button>
-                    <button class="solution-slider__pagination-bullet swiper-slide"></button> -->
                 </div>
               </div>
             </div>
@@ -363,19 +309,15 @@
               <!-- <div class="background-block__inner bg bg--cross-grid"></div> -->
             </div>
           </div>
-        </div>
-        <!-- PHILOSOPHY -->
-        <section class="page__philosophy philosophy-section" data-tabs="philosophy-tabs">
-          <!-- <div class="philosophy-section__bg-container">
-            <div class="philosophy-section__bg"></div>
-          </div> -->
+        </section>
+        <!-- Philosophy -->
+        <section class="philosophy-section" data-tabs="philosophy-tabs">
           <div class="philosophy-section__modal modal-philosophy">
-            <div class="modal-philosophy__aside">
-              <button class="modal-philosophy__button">
+            <button class="modal-philosophy__button modal-button">
+              <span class="modal-button__icon">
                 <span></span>
-              </button>
-            </div>
-            <!-- <div class="modal-philosophy__content-wrapper"> -->
+              </span>
+            </button>
             <div class="modal-philosophy__content">
               <div class="modal-philosophy__item">
                 <h5 class="modal-philosophy__heading">Автоматизация делопроизводства</h5>
@@ -545,9 +487,8 @@
                 </ul>
               </div>
             </div>
-            <!-- </div> -->
           </div>
-          <div class="philosophy-section__content _container">
+          <div class="philosophy-section__content container">
             <div class="philosophy-section__info">
               <div class="philosophy-section__note">
                 <span>Философия и миссия</span>
@@ -559,7 +500,7 @@
                 </h2>
               </div>
             </div>
-            <div class="philosophy-section__nav nav-philosophy">
+            <div class="nav-philosophy">
               <ul class="nav-philosophy__list">
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
@@ -691,8 +632,8 @@
             </div>
           </div>
         </section>
-        <!-- MISSION -->
-        <section class="page__mission mission-section _container">
+        <!-- Mission -->
+        <section class="mission-section container">
           <div class="mission-section__content">
             <div class="mission-section__text-wrapper">
               <div class="mission-section__title">
@@ -723,9 +664,11 @@
                 </blockquote>
               </div>
               <div class="review-block__autor autor-block">
-                <!-- ?При разделении атрибутов на несколько строк gulp-webp-css ругается, хз поч -->
                 <div class="autor-block__img autor-block__img--round">
-                  <img src="img/icons/autor-avatar.jpg" alt="" />
+                  <picture>
+                    <source srcset="img/icons/autor-avatar.webp" type="image/webp" />
+                    <img src="img/icons/autor-avatar.jpg" alt="аватар технического директора" />
+                  </picture>
                 </div>
                 <div class="autor-block__autor-info">
                   <b class="autor-block__name">Венцеслав Новиков</b>
@@ -740,7 +683,7 @@
           </div>
         </section>
         <!-- HISTORY -->
-        <div class="slider-history">
+        <section class="slider-history">
           <div class="slider-history__slider swiper-history">
             <div class="slider-history__slide-wrapper swiper-wrapper">
               <div class="slider-history__slide swiper-slide">
@@ -755,10 +698,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-1.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-1.jpg"
-                    data-srcset="img/bg-history-1.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -775,10 +718,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-2.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-2.jpg"
-                    data-srcset="img/bg-history-2.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -795,10 +738,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-3.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-3.jpg"
-                    data-srcset="img/bg-history-3.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -815,10 +758,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-1.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-1.jpg"
-                    data-srcset="img/bg-history-1.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -835,10 +778,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-2.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-2.jpg"
-                    data-srcset="img/bg-history-2.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -855,10 +798,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-3.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-3.jpg"
-                    data-srcset="img/bg-history-3.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -875,10 +818,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-1.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-1.jpg"
-                    data-srcset="img/bg-history-1.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -895,10 +838,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-2.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-2.jpg"
-                    data-srcset="img/bg-history-2.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -915,10 +858,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-3.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-3.jpg"
-                    data-srcset="img/bg-history-3.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -935,10 +878,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-1.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-1.jpg"
-                    data-srcset="img/bg-history-1.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -955,10 +898,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-2.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-2.jpg"
-                    data-srcset="img/bg-history-2.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -975,10 +918,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-3.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-3.jpg"
-                    data-srcset="img/bg-history-3.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -995,10 +938,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-1.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-1.jpg"
-                    data-srcset="img/bg-history-1.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -1015,10 +958,10 @@
                   </div>
                 </div>
                 <picture class="slider-history__slide-image">
+                  <source data-srcset="img/bg-history-2.webp" type="image/webp" />
                   <img
                     class="swiper-lazy"
                     data-src="img/bg-history-2.jpg"
-                    data-srcset="img/bg-history-2.webp"
                     alt="Слайд истории компании"
                   />
                 </picture>
@@ -1135,9 +1078,9 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- SERTIFICATION -->
-        <section class="page__sertification sertification-section _container">
+        </section>
+        <!-- Sertification -->
+        <section class="sertification-section container">
           <div class="sertification-section__info">
             <div class="sertification-section__note">
               <span>Сертификаты</span>
@@ -1149,52 +1092,59 @@
               </h3>
             </div>
           </div>
-          <div class="sertification-section__slider swiper-sertification">
+          <div class="sertification-section__slider swiper">
             <div class="sertification-section__btn-wrapper">
-              <button class="sertification-section__btn sertification-section__btn--prev">
-                <!-- <span></span> -->
-              </button>
-              <button class="sertification-section__btn sertification-section__btn--next">
-                <!-- <span></span> -->
-              </button>
+              <button class="slider-arrow-button sertification-section__btn--prev"></button>
+              <button
+                class="slider-arrow-button slider-arrow-button--next sertification-section__btn--next"
+              ></button>
             </div>
-            <div class="sertification-section__slider-wrapper swiper-wrapper">
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="" />
+            <div class="swiper-wrapper">
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-1.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-2.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-1.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-2.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-1.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-2.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-1.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-2.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-2.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
-              <div class="sertification-section__slide swiper-slide">
-                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="" />
+              </picture>
+              <picture class="sertification-section__slide swiper-slide">
+                <source data-srcset="img/blank/blank-1.webp" type="image/webp" />
+                <img class="swiper-lazy" data-src="img/blank/blank-1.jpg" alt="сертификат" />
                 <div class="swiper-lazy-preloader"></div>
-              </div>
+              </picture>
             </div>
           </div>
         </section>
