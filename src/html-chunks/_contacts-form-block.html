@@ -1,0 +1,33 @@
+<div class="contacts container container--sm">
+  <h3 class="contacts__heading heading">Связаться с нами</h3>
+  <form class="form" action="#" method="post">
+    <div class="form__group form__group--name">
+      <input class="form__input" placeholder="" type="text" id="name" name="user_name" />
+      <label class="form__label" for="name">Ваше имя</label>
+    </div>
+    <div class="form__group form__group--phone">
+      <input class="form__input" placeholder="" type="tel" id="phone" name="user_mail" />
+      <label class="form__label" for="phone">Телефон</label>
+    </div>
+    <div class="form__group form__group--textarea">
+      <textarea class="form__textarea" placeholder="" id="msg" name="user_message"></textarea>
+      <label class="form__label form__label--textarea" for="msg">Комментарий</label>
+    </div>
+    <div class="form__group form__group--submit">
+      <div class="form__label-checkbox checkbox-label">
+        <label class="checkbox-label__container">
+          <span class="checkbox-label__input">
+            <input class="checkbox-label__input" type="checkbox" />
+          </span>
+          <span class="checkbox-label__text">
+            Я выражаю свое согласие с Политикой конфиденциальности и разрешаю обработку своих
+            персональных данных
+          </span>
+        </label>
+      </div>
+      <button class="form__btn btn btn--md btn--bg-brand btn--underline" type="submit">
+        Отправить
+      </button>
+    </div>
+  </form>
+</div>
