@@ -22,6 +22,7 @@ import 'swiper/css';
 import 'swiper/css/lazy';
 import 'swiper/css/a11y';
 import 'swiper/css/effect-fade';
+// import 'swiper/css/mousewheel';
 
 /* Popup */
 const mainPopup = new Popup({
@@ -173,6 +174,8 @@ const historySliderPagination = new Swiper('.slider-history__pagination', {
 
 const historySlider = new Swiper('.slider-history__slider', {
   modules: [Mousewheel, Parallax, Navigation, Thumbs, Controller, Lazy],
+  mousewheel: true,
+
   lazy: {
     loadPrevNext: true,
   },
@@ -183,7 +186,6 @@ const historySlider = new Swiper('.slider-history__slider', {
   thumbs: {
     swiper: historySliderPagination,
   },
-  mousewheel: true,
   speed: 1000,
   direction: 'vertical',
   parallax: false,
@@ -200,7 +202,7 @@ const historySlider = new Swiper('.slider-history__slider', {
   },
 });
 
-historySliderControl(historySlider, headerControl); //Контроллер для слайдера секции "История",
+historySliderControl(); //Контроллер для слайдера секции "История",
 
 /* Sertification slider */
 const sertificationSlider = new Swiper('.sertification-section__slider', {
