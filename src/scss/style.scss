@@ -91,30 +91,3 @@ body {
 /* Pages */
 @import 'integrating-page';
 @import 'solution-page';
-
-/* Main block */
-.page {
-  flex: 1 1 auto;
-  &__slider-solution {
-    padding-top: 100px;
-    padding-bottom: 30px;
-    @media (min-width: $md4) {
-      padding-top: 120px;
-      padding-bottom: 36px;
-    }
-    @media (min-width: $md1) {
-      padding-bottom: 84px;
-    }
-  }
-  &__sertification {
-    padding-top: 104px;
-    padding-bottom: 50px;
-    @media (min-width: $md4) {
-      padding-top: 64px;
-      padding-bottom: 72px;
-    }
-    @media (min-width: $md3) {
-      padding-bottom: 80px;
-    }
-  }
-}

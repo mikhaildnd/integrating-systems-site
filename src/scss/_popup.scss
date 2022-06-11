@@ -19,6 +19,7 @@
       transform: translateY(0%);
     }
   }
+
   // .popup__body
   &__body {
     max-height: 100%;
@@ -34,6 +35,7 @@
       max-width: 900px;
     }
   }
+
   // .popup__inner
   &__inner {
     display: grid;
@@ -45,17 +47,18 @@
       grid-template-columns: 1fr 70px;
     }
   }
+
   // .popup__content
   &__content {
     padding: 20px;
     position: relative;
-    // max-width: 580px;
     margin-left: auto;
     margin-right: auto;
     @media (min-width: $md3) {
       padding: 40px;
     }
   }
+
   // .popup__heading
   &__heading {
     font-size: 20px;
@@ -69,6 +72,7 @@
       font-size: 26px;
     }
   }
+
   // .popup__close
   &__close {
     order: -1;

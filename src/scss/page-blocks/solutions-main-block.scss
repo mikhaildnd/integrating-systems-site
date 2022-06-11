@@ -3,9 +3,21 @@
   position: relative; //для грида
   z-index: 1;
   background-color: $brand;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  @media (min-width: $md4) {
+    padding-top: 120px;
+    padding-bottom: 36px;
+  }
+  @media (min-width: $md1) {
+    padding-bottom: 84px;
+  }
+
+  // .solutions__slider
   &__slider {
     margin-bottom: 24px;
   }
+
   // .solutions__slide-content
   &__slide-content {
     z-index: 2;

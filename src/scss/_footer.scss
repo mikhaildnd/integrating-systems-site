@@ -1,6 +1,7 @@
 .footer {
   display: flex;
   flex-direction: column;
+
   // .footer__item
   &__item {
     background-color: $black;
@@ -8,11 +9,13 @@
       background-color: rgb(59, 59, 59);
     }
   }
+
   // .footer__nav
   &__nav {
     padding-top: 45px;
     padding-bottom: 45px;
   }
+
   // .footer__info
   &__info {
     display: grid;
@@ -42,6 +45,7 @@
       row-gap: 0;
     }
   }
+
   // .footer__logo
   &__logo {
     grid-area: logo;
@@ -56,6 +60,7 @@
       }
     }
   }
+
   // .footer__copyright
   &__copyright {
     grid-area: rights;
@@ -88,6 +93,7 @@
       margin-bottom: 5px;
     }
   }
+
   // .footer__privacy-link
   &__privacy-link {
     color: darken($white, 40%);

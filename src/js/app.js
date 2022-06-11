@@ -63,45 +63,45 @@ const headerControl = new HeaderScroll('.header', {
   fillClass: 'header--theme-white',
   elementsOnWhichDisable: ['.slider-history'],
   enableOnPoint: {
-    triggerElementSelector: '.page__hero',
+    triggerElementSelector: '.hero-section',
   },
 });
 
 /* Hero slider */
-// const heroSlider = new Swiper('.hero-section__slider-inner', {
-//   modules: [EffectFade, Lazy, Autoplay],
-//   effect: 'fade',
-//   fadeEffect: {
-//     crossFade: true,
-//   },
-//   preloadImages: false,
-//   lazy: {
-//     loadOnTransitionStart: true,
-//     loadPrevNext: true,
-//   },
-//   autoplay: {
-//     delay: 15000,
-//     disableOnInteraction: false,
-//     waitForTransition: false,
-//   },
-//   on: {
-//     init() {
-//       window.addEventListener('scroll', () => {
-//         let sliderBottom = this.el.getBoundingClientRect().bottom;
+const heroSlider = new Swiper('.hero-section__slider-inner', {
+  modules: [EffectFade, Lazy, Autoplay],
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+  preloadImages: false,
+  lazy: {
+    loadOnTransitionStart: true,
+    loadPrevNext: true,
+  },
+  autoplay: {
+    delay: 15000,
+    disableOnInteraction: false,
+    waitForTransition: false,
+  },
+  on: {
+    init() {
+      window.addEventListener('scroll', () => {
+        let sliderBottom = this.el.getBoundingClientRect().bottom;
 
-//         if (sliderBottom)
-//           if (sliderBottom <= 0 && this.autoplay.running) {
-//             this.autoplay.stop();
-//           } else if (sliderBottom > 0 && !this.autoplay.running) {
-//             this.autoplay.start();
-//           }
-//       });
-//     },
-//     autoplayStop() {
-//       this.slideTo(0);
-//     },
-//   },
-// });
+        if (sliderBottom)
+          if (sliderBottom <= 0 && this.autoplay.running) {
+            this.autoplay.stop();
+          } else if (sliderBottom > 0 && !this.autoplay.running) {
+            this.autoplay.start();
+          }
+      });
+    },
+    autoplayStop() {
+      this.slideTo(0);
+    },
+  },
+});
 
 /* Solution section scripts */
 const solutionSliderPagination = new Swiper('.solutions__pagination-slider .swiper', {
