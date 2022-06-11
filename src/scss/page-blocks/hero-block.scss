@@ -60,9 +60,15 @@
   }
   &--bg-contacts {
     background-image: url('../img/bg-contacts.jpg');
+    background-image: image-set('../img/bg-contacts.webp' type('image/webp'));
   }
   &--bg-integrating {
     background-image: url('../img/bg-integrating-2.jpg');
+    background-image: image-set('../img/bg-integrating-2.webp' type('image/webp'));
+  }
+  &--bg-solutions-img {
+    background-image: url('../img/hero-img-6.jpg');
+    background-image: image-set('../img/hero-img-6.webp' type('image/webp'));
   }
 
   /* Сетка не используется на данный момент */
