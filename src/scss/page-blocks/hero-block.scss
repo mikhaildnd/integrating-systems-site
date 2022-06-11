@@ -217,6 +217,9 @@
     line-height: 1.5;
     max-width: 65%;
     margin-bottom: 10px;
+    a {
+      color: inherit;
+    }
     @media (min-width: $md7) {
       font-size: 18px;
       margin-bottom: 15px;
@@ -227,6 +230,16 @@
     @media (min-width: $md3) {
       font-size: 22px;
       max-width: 390px;
+    }
+    @media (min-width: $md2) {
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+        &:focus-visible {
+          outline: 3px solid $accent;
+        }
+      }
     }
     @media (min-width: $md1) {
       font-size: 24px;
