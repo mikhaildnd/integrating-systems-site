@@ -22,7 +22,7 @@ import 'swiper/css';
 import 'swiper/css/lazy';
 import 'swiper/css/a11y';
 import 'swiper/css/effect-fade';
-// import 'swiper/css/mousewheel';
+import 'swiper/css/mousewheel';
 
 /* Popup */
 const mainPopup = new Popup({
@@ -240,7 +240,6 @@ const sertificationSlider = new Swiper('.sertification-section__slider', {
 const reviewsSlider = new Swiper('.solution-reviews__slider', {
   modules: [Navigation],
   speed: 1000,
-  // spaceBetween: 40,
   breakpoints: {
     320: {
       spaceBetween: 50,
