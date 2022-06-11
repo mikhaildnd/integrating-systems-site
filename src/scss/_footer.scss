@@ -105,6 +105,15 @@
   // .footer__contacts
   &__contacts {
     grid-area: contacts;
+    & .contacts-menu__list {
+      grid-auto-flow: row;
+      justify-content: end;
+      row-gap: 10px;
+      @media (min-width: $md5) {
+        grid-auto-flow: column;
+        column-gap: 15px;
+      }
+    }
     & .contacts-menu__button {
       color: $white;
       &:hover {
