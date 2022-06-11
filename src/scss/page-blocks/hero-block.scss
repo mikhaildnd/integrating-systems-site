@@ -3,18 +3,17 @@
   position: relative;
   padding-top: 60px;
   padding-bottom: 24px;
-  min-height: 340px;
   height: 100vh;
   background-color: #000000;
+  @media (min-aspect-ratio: 16/10) and (max-width: 1023px) {
+    height: unset;
+    min-height: unset;
+  }
   @media (min-width: $md6) {
     padding-bottom: 40px;
   }
-  @media (min-width: $md5) {
-    min-height: 400px;
-  }
   @media (min-width: $md4) {
     padding-bottom: 80px;
-    min-height: 635px;
   }
   @media (min-width: $md2) {
     padding-top: 80px;
@@ -27,16 +26,37 @@
     padding-bottom: 80px;
   }
 
+  &--solution-page {
+    min-height: 550px;
+    @media (min-width: $md7) and (orientation: portrait) {
+      min-height: 580px;
+    }
+    @media (min-width: $md5) and (orientation: portrait) {
+      min-height: 635px;
+    }
+  }
   &--bg {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
-  &--bg-img-1 {
-    background-image: url('../img/hero-img-5.jpg');
-  }
   &--bg-sed {
     background-color: #351299;
+  }
+  &--bg-ag {
+    background-color: #e74926;
+  }
+  &--bg-gbo {
+    background-color: #005a8c;
+  }
+  &--bg-taxir {
+    background-color: #ffa800;
+  }
+  &--bg-reserve {
+    background-color: #00a743;
+  }
+  &--bg-transport {
+    background-color: #00978e;
   }
   &--bg-contacts {
     background-image: url('../img/bg-contacts.jpg');
@@ -48,6 +68,7 @@
   //   top: 154px;
   //   right: 14px;
   // }
+
   // .hero-section__slider
   &__slider {
     pointer-events: none;
@@ -76,8 +97,8 @@
   // .hero-section__slider-inner
   //нужно, чтобы изображения не вылазили за границы блока
   &__slider-inner {
-    width: 100%;
     height: 100%;
+    //не ставить max-h
   }
 
   // .hero-section__content
@@ -90,6 +111,85 @@
     height: 100%;
     position: relative;
     width: 100%;
+    &--bg {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 10%;
+        right: 50%;
+        width: calc(100% - 32px);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        height: 225px;
+        width: 320px;
+        opacity: 0.5;
+        transform: translate(50%, -10%);
+        @media (max-width: 767px) and (min-aspect-ratio: 16/10) {
+          display: none;
+        }
+        @media (max-width: 980px) and (min-aspect-ratio: 16/9) {
+          opacity: 0.2;
+        }
+        @media (min-width: $md4) and (orientation: landscape) and (min-aspect-ratio: 16/13) {
+          top: 5%;
+          right: -20%;
+          transform: translateX(-20%);
+        }
+        @media (min-width: $md7) {
+          width: 343px;
+          height: 295px;
+        }
+        @media (min-width: $md5) {
+          width: 400px;
+          height: 300px;
+        }
+        @media (min-width: $md4) {
+          width: 600px;
+          height: 450px;
+        }
+      }
+    }
+    &--bg-ag {
+      &::before {
+        background-image: url(../img/solutions-ag.svg);
+        background-position: top 0 right -20px;
+      }
+    }
+    &--bg-taxir {
+      &::before {
+        background-image: url(../img/solutions-taxi.svg);
+      }
+    }
+    &--bg-sed {
+      &::before {
+        background-image: url(../img/solutions-sheet.svg);
+        height: 305px;
+        @media (min-width: $md7) {
+          height: 360px;
+        }
+        @media (min-width: $md6) {
+          height: 500px;
+        }
+        @media (min-width: $md5) {
+          width: 460px;
+          height: 550px;
+        }
+        @media (min-width: $md4) {
+          width: 550px;
+          height: 600px;
+        }
+        @media (min-width: $md1) {
+          width: 600px;
+          height: 650px;
+        }
+      }
+    }
+    &--bg-reserve {
+      &::before {
+        background-image: url(../img/map.png);
+      }
+    }
   }
 
   // .hero-section__text-wrapper
@@ -108,82 +208,24 @@
     @media (min-width: $md1) {
       margin-bottom: 64px;
     }
-    &--bg {
-      &::before {
-        position: absolute;
-        bottom: 100%;
-        right: 0;
-        width: 100%;
-        content: '';
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        height: 225px;
-        opacity: 0.5;
-        @media (min-width: $md7) {
-          height: 295px;
-        }
-        @media (min-width: $md4) {
-          height: 645px;
-        }
-        @media (min-width: $md3) {
-          height: 490px;
-          right: -50%;
-          bottom: -30px;
-        }
-        @media (min-width: $md1) {
-          height: 600px;
-          bottom: -100px;
-        }
-        @media (min-width: 1920px) {
-          height: 640px;
-        }
-        @media (max-width: 500px) and (min-height: $md4) {
-          height: 410px;
-        }
-        // @media (max-height: 560px) {
-        //   display: none;
-        // }
-      }
-    }
-    &--bg-sheets {
-      &::before {
-        background-image: url(../img/solutions-sheet.svg);
-      }
-    }
-    &--bg-taxi {
-      &::before {
-        background-image: url(../img/solutions-taxi.svg);
-      }
-    }
-    &--bg-ag {
-      &::before {
-        background-image: url(../img/solutions-ag.svg);
-      }
-    }
-    &--bg-map {
-      &::before {
-        background-image: url(../img/map.png);
-      }
-    }
   }
 
   // .hero-section__text
   &__text {
-    font-size: 12px;
+    font-size: 14px;
     color: $white;
     line-height: 1.5;
     max-width: 65%;
     margin-bottom: 10px;
     @media (min-width: $md7) {
-      font-size: 14px;
+      font-size: 18px;
       margin-bottom: 15px;
     }
     @media (min-width: $md5) {
-      font-size: 16px;
+      font-size: 20px;
     }
     @media (min-width: $md3) {
-      font-size: 18px;
+      font-size: 22px;
       max-width: 390px;
     }
     @media (min-width: $md1) {
@@ -194,17 +236,17 @@
 
   // .hero-section__title
   &__title {
-    font-size: 28px;
+    font-size: 38px;
     font-weight: 700;
     color: $white;
     @media (min-width: $md7) {
-      font-size: 30px;
+      font-size: 42px;
     }
     @media (min-width: $md6) {
-      font-size: 38px;
+      font-size: 46px;
     }
     @media (min-width: $md5) {
-      font-size: 40px;
+      font-size: 54px;
       max-width: 400px;
     }
     @media (min-width: $md4) {
@@ -265,7 +307,6 @@
   }
 
   // .hero-section__tip
-  //*
   &__tip {
     display: none;
     position: absolute;
@@ -326,23 +367,3 @@
     }
   }
 }
-
-// @keyframes hero {
-//   0% {
-//     opacity: 0;
-//     transform: scale(1);
-//   }
-//   15% {
-//     opacity: 0.7;
-//   }
-//   50% {
-//     opacity: 1;
-//   }
-//   85% {
-//     opacity: 0.7;
-//   }
-//   100% {
-//     opacity: 0;
-//     transform: scale(1.3);
-//   }
-// }
