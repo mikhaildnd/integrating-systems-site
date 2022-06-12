@@ -39,6 +39,7 @@ const _path = {
     images: dist_folder + '/img/',
     fonts: dist_folder + '/fonts/',
     videos: dist_folder + '/videos/',
+    favicon: dist_folder + '/',
   },
   src: {
     favicon: src_folder + '/img/favicon.{jpg,png,svg,gif,ico,webp}',
@@ -48,6 +49,7 @@ const _path = {
     images: [src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}', '!**/favicon.*'],
     fonts: src_folder + '/fonts/*.ttf',
     videos: src_folder + '/videos/*.*',
+    favicon: [src_folder + '/favicon.ico', src_folder + '/manifest.json'],
   },
   watch: {
     html: src_folder + '/**/*.html',
@@ -56,6 +58,15 @@ const _path = {
     images: src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
   },
   clean: './' + dist_folder + '/',
+};
+
+//favicon
+export const favicon = () => {
+  return gulp
+    .src(_path.src.favicon)
+    .pipe(plumber())
+    .pipe(gulp.dest(_path.build.favicon))
+    .pipe(sync.stream());
 };
 
 //Webpack configuration
@@ -250,7 +261,7 @@ export const watch = () => {
 
 export const build = gulp.series(
   clean,
-  gulp.parallel(html, styles, scripts, images),
+  gulp.parallel(html, styles, scripts, images, favicon),
   fontsOtf2ttf,
   fonts,
   // fontsInclude,
