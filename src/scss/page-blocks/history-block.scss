@@ -226,6 +226,7 @@
 
   // .slider-history__slide-image
   &__slide-image {
+    background-color: $accent;
     img {
       object-fit: cover;
       width: 100%;

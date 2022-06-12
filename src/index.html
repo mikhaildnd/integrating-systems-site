@@ -683,8 +683,8 @@
           </div>
         </section>
         <!-- HISTORY -->
-        <section class="slider-history">
-          <div class="slider-history__slider swiper-history">
+        <div class="slider-history">
+          <div class="slider-history__slider swiper">
             <div class="slider-history__slide-wrapper swiper-wrapper">
               <div class="slider-history__slide swiper-slide">
                 <div class="slider-history__text-wrapper">
@@ -981,6 +981,7 @@
                 </picture>
               </div>
             </div>
+            <div class="swiper-scrollbar"></div>
           </div>
           <div class="slider-history__static-block">
             <div class="slider-history__static-block-inner">
@@ -1034,9 +1035,10 @@
                 </div>
               </div>
               <div class="slider-history__btn-wrapper">
-                <button class="slider-history__btn skip btn btn--xs btn--bg-white btn--underline">
+                <!-- ?Отключена, тк блок слайдера фиксируется неккоректно в разныхъ браузерах -->
+                <!-- <button class="slider-history__btn skip btn btn--xs btn--bg-white btn--underline">
                   Пропустить
-                </button>
+                </button> -->
                 <button
                   class="slider-history__btn swiper-button-prev btn btn--xs btn--bg-transparent"
                 >
@@ -1092,7 +1094,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
         <!-- Sertification -->
         <section class="sertification-section container">
           <div class="sertification-section__info">
@@ -1114,96 +1116,150 @@
               ></button>
             </div>
             <div class="swiper-wrapper">
-              <picture class="sertification-section__slide swiper-slide">
-                <source srcset="data:,1w" data-srcset="img/blank/blank-1.webp" type="image/webp" />
-                <img
-                  class="swiper-lazy"
-                  src="data:,"
-                  data-src="img/blank/blank-1.jpg"
-                  alt="сертификат"
-                />
+              <div class="sertification-section__slide swiper-slide">
+                <picture class="sertification-section__picture">
+                  <source
+                    srcset="data:,1w"
+                    data-srcset="img/blank/blank-1.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="swiper-lazy"
+                    src="data:,"
+                    data-src="img/blank/blank-1.jpg"
+                    alt="сертификат"
+                  />
+                </picture>
                 <span class="swiper-lazy-preloader"></span>
-              </picture>
-              <picture class="sertification-section__slide swiper-slide">
-                <source srcset="data:,1w" data-srcset="img/blank/blank-2.webp" type="image/webp" />
-                <img
-                  class="swiper-lazy"
-                  src="data:,"
-                  data-src="img/blank/blank-2.jpg"
-                  alt="сертификат"
-                />
+              </div>
+              <div class="sertification-section__slide swiper-slide">
+                <picture class="sertification-section__picture">
+                  <source
+                    srcset="data:,1w"
+                    data-srcset="img/blank/blank-2.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="swiper-lazy"
+                    src="data:,"
+                    data-src="img/blank/blank-2.jpg"
+                    alt="сертификат"
+                  />
+                </picture>
                 <span class="swiper-lazy-preloader"></span>
-              </picture>
-              <picture class="sertification-section__slide swiper-slide">
-                <source srcset="data:,1w" data-srcset="img/blank/blank-1.webp" type="image/webp" />
-                <img
-                  class="swiper-lazy"
-                  src="data:,"
-                  data-src="img/blank/blank-1.jpg"
-                  alt="сертификат"
-                />
+              </div>
+              <div class="sertification-section__slide swiper-slide">
+                <picture class="sertification-section__picture">
+                  <source
+                    srcset="data:,1w"
+                    data-srcset="img/blank/blank-1.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="swiper-lazy"
+                    src="data:,"
+                    data-src="img/blank/blank-1.jpg"
+                    alt="сертификат"
+                  />
+                </picture>
                 <span class="swiper-lazy-preloader"></span>
-              </picture>
-              <picture class="sertification-section__slide swiper-slide">
-                <source srcset="data:,1w" data-srcset="img/blank/blank-2.webp" type="image/webp" />
-                <img
-                  class="swiper-lazy"
-                  src="data:,"
-                  data-src="img/blank/blank-2.jpg"
-                  alt="сертификат"
-                />
+              </div>
+              <div class="sertification-section__slide swiper-slide">
+                <picture class="sertification-section__picture">
+                  <source
+                    srcset="data:,1w"
+                    data-srcset="img/blank/blank-2.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="swiper-lazy"
+                    src="data:,"
+                    data-src="img/blank/blank-2.jpg"
+                    alt="сертификат"
+                  />
+                </picture>
                 <span class="swiper-lazy-preloader"></span>
-              </picture>
-              <picture class="sertification-section__slide swiper-slide">
-                <source srcset="data:,1w" data-srcset="img/blank/blank-1.webp" type="image/webp" />
-                <img
-                  class="swiper-lazy"
-                  src="data:,"
-                  data-src="img/blank/blank-1.jpg"
-                  alt="сертификат"
-                />
+              </div>
+              <div class="sertification-section__slide swiper-slide">
+                <picture class="sertification-section__picture">
+                  <source
+                    srcset="data:,1w"
+                    data-srcset="img/blank/blank-1.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="swiper-lazy"
+                    src="data:,"
+                    data-src="img/blank/blank-1.jpg"
+                    alt="сертификат"
+                  />
+                </picture>
                 <span class="swiper-lazy-preloader"></span>
-              </picture>
-              <picture class="sertification-section__slide swiper-slide">
-                <source srcset="data:,1w" data-srcset="img/blank/blank-2.webp" type="image/webp" />
-                <img
-                  class="swiper-lazy"
-                  src="data:,"
-                  data-src="img/blank/blank-2.jpg"
-                  alt="сертификат"
-                />
+              </div>
+              <div class="sertification-section__slide swiper-slide">
+                <picture class="sertification-section__picture">
+                  <source
+                    srcset="data:,1w"
+                    data-srcset="img/blank/blank-2.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="swiper-lazy"
+                    src="data:,"
+                    data-src="img/blank/blank-2.jpg"
+                    alt="сертификат"
+                  />
+                </picture>
                 <span class="swiper-lazy-preloader"></span>
-              </picture>
-              <picture class="sertification-section__slide swiper-slide">
-                <source srcset="data:,1w" data-srcset="img/blank/blank-1.webp" type="image/webp" />
-                <img
-                  class="swiper-lazy"
-                  src="data:,"
-                  data-src="img/blank/blank-1.jpg"
-                  alt="сертификат"
-                />
+              </div>
+              <div class="sertification-section__slide swiper-slide">
+                <picture class="sertification-section__picture">
+                  <source
+                    srcset="data:,1w"
+                    data-srcset="img/blank/blank-1.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="swiper-lazy"
+                    src="data:,"
+                    data-src="img/blank/blank-1.jpg"
+                    alt="сертификат"
+                  />
+                </picture>
                 <span class="swiper-lazy-preloader"></span>
-              </picture>
-              <picture class="sertification-section__slide swiper-slide">
-                <source srcset="data:,1w" data-srcset="img/blank/blank-2.webp" type="image/webp" />
-                <img
-                  class="swiper-lazy"
-                  src="data:,"
-                  data-src="img/blank/blank-2.jpg"
-                  alt="сертификат"
-                />
+              </div>
+              <div class="sertification-section__slide swiper-slide">
+                <picture class="sertification-section__picture">
+                  <source
+                    srcset="data:,1w"
+                    data-srcset="img/blank/blank-2.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="swiper-lazy"
+                    src="data:,"
+                    data-src="img/blank/blank-2.jpg"
+                    alt="сертификат"
+                  />
+                </picture>
                 <span class="swiper-lazy-preloader"></span>
-              </picture>
-              <picture class="sertification-section__slide swiper-slide">
-                <source srcset="data:,1w" data-srcset="img/blank/blank-1.webp" type="image/webp" />
-                <img
-                  class="swiper-lazy"
-                  src="data:,"
-                  data-src="img/blank/blank-1.jpg"
-                  alt="сертификат"
-                />
+              </div>
+              <div class="sertification-section__slide swiper-slide">
+                <picture class="sertification-section__picture">
+                  <source
+                    srcset="data:,1w"
+                    data-srcset="img/blank/blank-1.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="swiper-lazy"
+                    src="data:,"
+                    data-src="img/blank/blank-1.jpg"
+                    alt="сертификат"
+                  />
+                </picture>
                 <span class="swiper-lazy-preloader"></span>
-              </picture>
+              </div>
             </div>
           </div>
         </section>

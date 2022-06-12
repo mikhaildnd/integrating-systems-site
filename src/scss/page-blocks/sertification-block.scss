@@ -61,9 +61,15 @@
 
   // .sertification-section__slide
   &__slide {
-    display: block;
+    position: relative;
+    //чтобы прелоадеры отображались по центру дока
     margin-top: auto;
     margin-bottom: auto;
+  }
+
+  // .sertification-section__picture
+  &__picture {
+    display: block;
     img {
       display: block;
       max-width: 100%;
