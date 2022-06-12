@@ -1,5 +1,5 @@
 import { HeaderScroll } from './modules/header-scroll.js';
-import { historySliderControl } from './modules/history-slider-control.js';
+// import { historySliderControl } from './modules/history-slider-control.js';
 import { Accordeon } from './modules/toggle-accordeon.js';
 import { toggleCards, yearsCountChanger } from './modules/helpers.js';
 import { TabManager } from './modules/tabs-manager.js';
@@ -175,7 +175,6 @@ const historySliderPagination = new Swiper('.slider-history__pagination', {
 const historySlider = new Swiper('.slider-history__slider', {
   modules: [Mousewheel, Parallax, Navigation, Thumbs, Controller, Lazy],
   mousewheel: true,
-
   lazy: {
     loadPrevNext: true,
   },
@@ -190,7 +189,6 @@ const historySlider = new Swiper('.slider-history__slider', {
   direction: 'vertical',
   parallax: false,
   slidesPerView: 1,
-
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -202,7 +200,7 @@ const historySlider = new Swiper('.slider-history__slider', {
   },
 });
 
-historySliderControl(); //Контроллер для слайдера секции "История",
+// historySliderControl(); //Контроллер для слайдера секции "История",
 
 /* Sertification slider */
 const sertificationSlider = new Swiper('.sertification-section__slider', {
