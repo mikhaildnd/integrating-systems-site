@@ -45,6 +45,12 @@ const burgerMenuToggler = () => {
   const header = document.querySelector('.header');
 
   burgerBtn.addEventListener('click', () => {
+    let ariaLabelStateCondition = 'true' === burgerBtn.getAttribute('aria-expanded');
+    burgerBtn.setAttribute('aria-expanded', !ariaLabelStateCondition),
+      ariaLabelStateCondition
+        ? burgerBtn.setAttribute('aria-label', 'Открыть меню')
+        : burgerBtn.setAttribute('aria-label', 'Закрыть меню');
+
     burgerBtn.classList.toggle('active');
     burgerMenu.classList.toggle('active');
     header.classList.toggle('active');
