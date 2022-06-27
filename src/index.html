@@ -313,7 +313,11 @@
         <!-- Philosophy -->
         <section class="philosophy-section" data-tabs="philosophy-tabs">
           <div class="philosophy-section__modal modal-philosophy">
-            <button class="modal-philosophy__button modal-button">
+            <button
+              class="modal-philosophy__button modal-button"
+              type="button"
+              aria-label="Закрыть модальное окно"
+            >
               <span class="modal-button__icon">
                 <span></span>
               </span>
@@ -504,7 +508,7 @@
               <ul class="nav-philosophy__list">
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <button class="nav-philosophy__button">
+                    <button class="nav-philosophy__button" type="button">
                       <span></span>
                     </button>
                   </div>
@@ -522,7 +526,7 @@
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <button class="nav-philosophy__button">
+                    <button class="nav-philosophy__button" type="button">
                       <span></span>
                     </button>
                   </div>
@@ -540,7 +544,7 @@
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <button class="nav-philosophy__button">
+                    <button class="nav-philosophy__button" type="button">
                       <span></span>
                     </button>
                   </div>
@@ -558,7 +562,7 @@
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <button class="nav-philosophy__button">
+                    <button class="nav-philosophy__button" type="button">
                       <span></span>
                     </button>
                   </div>
@@ -576,7 +580,7 @@
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <button class="nav-philosophy__button">
+                    <button class="nav-philosophy__button" type="button">
                       <span></span>
                     </button>
                   </div>
@@ -594,7 +598,7 @@
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <button class="nav-philosophy__button">
+                    <button class="nav-philosophy__button" type="button">
                       <span></span>
                     </button>
                   </div>
@@ -612,7 +616,7 @@
                 </li>
                 <li class="nav-philosophy__item">
                   <div class="nav-philosophy__button-wrapper">
-                    <button class="nav-philosophy__button">
+                    <button class="nav-philosophy__button" type="button">
                       <span></span>
                     </button>
                   </div>
@@ -1040,6 +1044,8 @@
                 </button> -->
                 <button
                   class="slider-history__btn swiper-button-prev btn btn--xs btn--bg-transparent"
+                  type="button"
+                  aria-label="предыдущий слайд"
                 >
                   <svg
                     width="24"
@@ -1066,6 +1072,8 @@
                 </button>
                 <button
                   class="slider-history__btn swiper-button-next btn btn--xs btn--bg-transparent"
+                  type="button"
+                  aria-label="следующий слайд"
                 >
                   <svg
                     width="24"
@@ -1109,9 +1117,15 @@
           </div>
           <div class="sertification-section__slider swiper">
             <div class="sertification-section__btn-wrapper">
-              <button class="slider-arrow-button sertification-section__btn--prev"></button>
+              <button
+                class="slider-arrow-button sertification-section__btn--prev"
+                type="button"
+                aria-label="предыдущий слайд"
+              ></button>
               <button
                 class="slider-arrow-button slider-arrow-button--next sertification-section__btn--next"
+                type="button"
+                aria-label="следующий слайд"
               ></button>
             </div>
             <div class="swiper-wrapper">
