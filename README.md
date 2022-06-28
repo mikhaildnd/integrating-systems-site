@@ -2,7 +2,9 @@
 
 ![Изображение главной страницы](https://user-images.githubusercontent.com/58606474/176154497-688aee40-dfd4-4216-b978-fe2e67dcf7dd.jpg)
 
-## Список доступных страниц
+## Список доступных страниц:
+> *Все страницы загружены на сервис [Netlify](https://www.netlify.com/)*
+
 * [Главная страница](https://integrating-system-site.netlify.app/)
 * [Страница списка решений для бизнеса](https://integrating-system-site.netlify.app/solutions.html)
 * [Страница описания бизнес-решения](https://integrating-system-site.netlify.app/solution-ag.html)
