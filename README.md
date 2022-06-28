@@ -7,8 +7,8 @@
 
 * [Главная страница](https://integrating-system-site.netlify.app/)
 * [Страница списка решений для бизнеса](https://integrating-system-site.netlify.app/solutions.html)
-* [Страница описания бизнес-решения](https://integrating-system-site.netlify.app/solution-ag.html)
-* [Страница описания бизнес-решения](https://integrating-system-site.netlify.app/solution-taxir.html)
+* [Страница описания бизнес-решения#1](https://integrating-system-site.netlify.app/solution-ag.html)
+* [Страница описания бизнес-решения#2](https://integrating-system-site.netlify.app/solution-taxir.html)
 * [Страница описания опыта внедрения систем](https://integrating-system-site.netlify.app/integrating.html)
 * [Страница контактов](https://integrating-system-site.netlify.app/contacts.html)
 
