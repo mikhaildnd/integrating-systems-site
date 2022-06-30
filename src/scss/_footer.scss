@@ -25,9 +25,9 @@
       'logo contacts'
       'privacy privacy'
       'rights rights ';
-    row-gap: 18px;
+    row-gap: 10px;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 15px;
     @media (min-width: 650px) {
       grid-template-rows: minmax(60px, 1fr) min-content;
       grid-template-areas:
@@ -144,7 +144,7 @@
       'solutions about'
       'blog contacts';
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 10px;
+    column-gap: 30px;
   }
   @media (min-width: $md3) {
     grid-template-areas: 'solutions about blog contacts';
