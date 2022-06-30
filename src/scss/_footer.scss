@@ -28,12 +28,6 @@
     row-gap: 10px;
     padding-top: 40px;
     padding-bottom: 15px;
-    @media (min-width: 650px) {
-      grid-template-rows: minmax(60px, 1fr) min-content;
-      grid-template-areas:
-        'logo contacts'
-        'privacy rights';
-    }
     @media (min-width: $md3) {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: minmax(80px, 1fr) min-content min-content;
