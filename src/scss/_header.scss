@@ -25,10 +25,11 @@
       border-bottom: 0;
     }
     .header-nav__link {
-      @media (min-width: $md3) {
+      color: $black;
+      @media (min-width: $md4) {
         &:hover,
         &:focus {
-          color: darken($white, 20%);
+          color: $brand;
         }
       }
     }
