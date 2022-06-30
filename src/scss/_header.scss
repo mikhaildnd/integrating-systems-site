@@ -7,26 +7,29 @@
   transition: all 0.2s ease;
   &--theme-white {
     background-color: #fff;
-    .header__content {
-      border-bottom: 0;
-    }
-    .logo path {
-      fill: #1e468a;
-    }
-    .header__trigger {
-      span {
-        background-color: $brand;
-        &::before,
-        &::after {
+    &:not(.active) {
+      .logo path {
+        fill: #1e468a;
+      }
+      .header__trigger {
+        span {
           background-color: $brand;
+          &::before,
+          &::after {
+            background-color: $brand;
+          }
         }
       }
     }
+    .header__content {
+      border-bottom: 0;
+    }
     .header-nav__link {
-      color: $black;
-      &:hover,
-      &:focus {
-        color: lighten($black, 20%);
+      @media (min-width: $md3) {
+        &:hover,
+        &:focus {
+          color: darken($white, 20%);
+        }
       }
     }
     .contacts-menu__link {
@@ -157,6 +160,10 @@
         display: inline-block;
         padding-top: 8px;
         padding-bottom: 8px;
+        &:hover,
+        &:focus {
+          color: darken($white, 20%);
+        }
       }
     }
 
@@ -180,13 +187,22 @@
       }
       // .header__dropdown .contacts-menu__link
       &__link {
+        color: $white;
         font-size: 18px;
+        &:hover,
+        &:focus {
+          color: darken($white, 20%);
+        }
       }
       // .header__dropdown .contacts-menu__button
       &__button {
         font-size: 18px;
         display: block;
         color: $white;
+        &:hover,
+        &:focus {
+          color: darken($white, 20%);
+        }
       }
     }
   }
@@ -202,7 +218,6 @@
     background-color: $brand;
     background-image: url('../img/hero-img-1.jpg');
     background-image: image-set('../img/hero-img-1.webp' type('image/webp'));
-    filter: grayscale(1);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
